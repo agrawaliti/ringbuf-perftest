@@ -1,0 +1,129 @@
+============================================
+Running test on: rbt-rb-05211604
+Duration: 120s | Clients: 20 pods
+Results: /tmp/ringbuf-results-05211604/rbt-rb-05211604
+============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: /home/itiagrawal/.kube/config has permissions "644".
+It should be readable and writable only by its owner.
+WARNING: Merged "rbt-rb-05211604" as current context in /home/itiagrawal/.kube/config
+namespace/perf-test created
+[1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+  Receiver on node: aks-np32core-30529984-vmss000001
+[2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+  Waiting for bpftool to install (30s)...
+[3/8] Capturing cluster metadata...
+[4/8] Capturing Retina pre-test state...
+  Retina pod: retina-agent-s9l7x
+[5/8] Capturing eBPF map state (pre-test)...
+  eBPF maps captured (0
+0 entries)
+[6/8] Capturing softirq baseline...
+[7/8] Deploying 20 client pods (duration=120s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 of 20 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+
+  Test running... sampling throughput every 15s:
+  [16:05:11] [16:05:09] throughput=7.28 Gb/s  conns_total=320  conns_active=320
+  [16:05:27] [16:05:25] throughput=7.40 Gb/s  conns_total=320  conns_active=320
+  [16:05:43] [16:05:41] throughput=7.67 Gb/s  conns_total=320  conns_active=320
+  [16:05:59] [16:05:57] throughput=8.33 Gb/s  conns_total=320  conns_active=320
+  [16:06:15] [16:06:13] throughput=12.85 Gb/s  conns_total=320  conns_active=320
+  [16:06:31] [16:06:29] throughput=15.19 Gb/s  conns_total=320  conns_active=320
+  [16:06:47] [16:06:45] throughput=12.47 Gb/s  conns_total=320  conns_active=177
+  [16:07:03] [16:07:01] throughput=8.50 Gb/s  conns_total=640  conns_active=322
+  [16:07:19] [16:07:17] throughput=7.49 Gb/s  conns_total=640  conns_active=320
+
+[8/8] Collecting final results...
+  Saving receiver logs...
+  Saving client logs...
+  Saving Retina logs...
+  Computing summary...
+
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-rb-05211604
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-rb-05211604
+Date: Thu May 21 16:08:09 UTC 2026
+Duration: 120s
+Client replicas: 20 (each 16 conns = 320 total TCP streams)
+Receiver node: aks-np32core-30529984-vmss000001
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[16:07:49] throughput=7.17 Gb/s  conns_total=640  conns_active=320
+[16:07:51] throughput=7.22 Gb/s  conns_total=640  conns_active=320
+[16:07:53] throughput=7.58 Gb/s  conns_total=640  conns_active=320
+[16:07:55] throughput=8.29 Gb/s  conns_total=640  conns_active=320
+[16:07:57] throughput=8.33 Gb/s  conns_total=640  conns_active=320
+[16:07:59] throughput=7.76 Gb/s  conns_total=640  conns_active=320
+[16:08:01] throughput=7.28 Gb/s  conns_total=640  conns_active=320
+[16:08:03] throughput=7.38 Gb/s  conns_total=640  conns_active=320
+[16:08:05] throughput=7.64 Gb/s  conns_total=640  conns_active=320
+[16:08:07] throughput=7.56 Gb/s  conns_total=640  conns_active=320
+
+=== PEAK THROUGHPUT ===
+  Peak: 15.21 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+  No relevant maps
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: enabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+
+═══════════════════════════════════════
+Results saved to: /tmp/ringbuf-results-05211604/rbt-rb-05211604/
+═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+retina-posttest.log
+retina-pretest.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-rb-05211604
