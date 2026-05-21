@@ -93,33 +93,32 @@ echo "[5/8] Capturing eBPF map state (pre-test)..."
     echo "Date: $(date -u)"
     echo ""
 
-    # List all BPF maps
+    # List all BPF maps (use nsenter to access host's bpftool)
     echo "--- All BPF maps ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool map show 2>&1 || \
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bash -c 'ls /usr/lib/linux-tools/*/bpftool 2>/dev/null && /usr/lib/linux-tools/*/bpftool map show' 2>&1 || \
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool map show 2>&1 || \
     echo "bpftool not available"
     echo ""
 
     # Detailed retina/packet maps in JSON
     echo "--- Retina map details (JSON) ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool map show -j 2>/dev/null | \
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool map show -j 2>/dev/null | \
         jq '[.[] | select(.name != null) | select(.name | test("retina|packet|event"; "i"))]' 2>/dev/null || echo "[]"
     echo ""
 
     # Ring buffer and perf event array maps specifically
     echo "--- Ring buffer & perf event array maps ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool map show -j 2>/dev/null | \
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool map show -j 2>/dev/null | \
         jq '[.[] | select(.type == "ringbuf" or .type == "perf_event_array")]' 2>/dev/null || echo "[]"
     echo ""
 
     # All BPF programs
     echo "--- BPF programs ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool prog show 2>&1 | grep -B1 -A3 -i "retina\|packet\|kprobe\|tracepoint" || echo "No retina programs"
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool prog show 2>&1 | grep -B1 -A3 -i "retina\|packet\|kprobe\|tracepoint" || echo "No retina programs"
     echo ""
 
     # Memory info
     echo "--- BPF map memory summary ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool map show -j 2>/dev/null | \
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool map show -j 2>/dev/null | \
         jq -r '.[] | "\(.id)\t\(.name // "unnamed")\t\(.type)\tmax_entries=\(.max_entries)\tbytes_memlock=\(.bytes_memlock // 0)"' 2>/dev/null || true
 } > "$RESULTS_DIR/ebpf-maps-pretest.txt" 2>&1
 echo "  eBPF maps captured ($(grep -c "^[0-9]" "$RESULTS_DIR/ebpf-maps-pretest.txt" 2>/dev/null || echo 0) entries)"
@@ -165,18 +164,18 @@ kubectl exec softirq-monitor -n "$NAMESPACE" -- cat /host/proc/softirqs > "$RESU
     echo "Date: $(date -u)"
     echo ""
     echo "--- All BPF maps ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool map show 2>&1 || echo "bpftool not available"
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool map show 2>&1 || echo "bpftool not available"
     echo ""
     echo "--- Retina map details (JSON) ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool map show -j 2>/dev/null | \
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool map show -j 2>/dev/null | \
         jq '[.[] | select(.name != null) | select(.name | test("retina|packet|event"; "i"))]' 2>/dev/null || echo "[]"
     echo ""
     echo "--- Ring buffer & perf event array maps ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool map show -j 2>/dev/null | \
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool map show -j 2>/dev/null | \
         jq '[.[] | select(.type == "ringbuf" or .type == "perf_event_array")]' 2>/dev/null || echo "[]"
     echo ""
     echo "--- BPF map memory summary ---"
-    kubectl exec softirq-monitor -n "$NAMESPACE" -- bpftool map show -j 2>/dev/null | \
+    kubectl exec softirq-monitor -n "$NAMESPACE" -- nsenter -t 1 -m -- bpftool map show -j 2>/dev/null | \
         jq -r '.[] | "\(.id)\t\(.name // "unnamed")\t\(.type)\tmax_entries=\(.max_entries)\tbytes_memlock=\(.bytes_memlock // 0)"' 2>/dev/null || true
 } > "$RESULTS_DIR/ebpf-maps-posttest.txt" 2>&1
 
