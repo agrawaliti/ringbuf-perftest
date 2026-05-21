@@ -1,0 +1,240 @@
+=== tcp-client-6797498d8-4vrzj ===
+[15:17:15] sending=715.59 Mb/s  conns=16
+[15:17:17] sending=677.61 Mb/s  conns=16
+[15:17:19] sending=668.02 Mb/s  conns=16
+[15:17:21] sending=671.35 Mb/s  conns=16
+[15:17:23] sending=667.06 Mb/s  conns=16
+[15:17:25] sending=664.44 Mb/s  conns=16
+[15:17:27] sending=671.31 Mb/s  conns=16
+[15:17:29] sending=660.71 Mb/s  conns=16
+[15:17:31] sending=671.87 Mb/s  conns=16
+[15:17:33] sending=659.73 Mb/s  conns=16
+
+=== tcp-client-6797498d8-5pn84 ===
+[15:17:17] sending=761.55 Mb/s  conns=16
+[15:17:19] sending=764.65 Mb/s  conns=16
+[15:17:21] sending=770.82 Mb/s  conns=16
+[15:17:23] sending=799.08 Mb/s  conns=16
+[15:17:25] sending=831.35 Mb/s  conns=16
+[15:17:27] sending=821.04 Mb/s  conns=16
+[15:17:29] sending=851.01 Mb/s  conns=16
+[15:17:31] sending=851.51 Mb/s  conns=16
+[15:17:33] sending=851.09 Mb/s  conns=16
+[15:17:35] sending=873.34 Mb/s  conns=16
+
+=== tcp-client-6797498d8-7txz7 ===
+[15:17:17] sending=740.25 Mb/s  conns=16
+[15:17:19] sending=742.91 Mb/s  conns=16
+[15:17:21] sending=741.55 Mb/s  conns=16
+[15:17:23] sending=751.77 Mb/s  conns=16
+[15:17:25] sending=756.94 Mb/s  conns=16
+[15:17:27] sending=760.93 Mb/s  conns=16
+[15:17:29] sending=731.31 Mb/s  conns=16
+[15:17:31] sending=747.44 Mb/s  conns=16
+[15:17:33] sending=736.87 Mb/s  conns=16
+[15:17:35] sending=760.52 Mb/s  conns=16
+
+=== tcp-client-6797498d8-82dj7 ===
+[15:17:19] sending=740.38 Mb/s  conns=16
+[15:17:21] sending=732.80 Mb/s  conns=16
+[15:17:23] sending=736.03 Mb/s  conns=16
+[15:17:25] sending=732.91 Mb/s  conns=16
+[15:17:27] sending=720.36 Mb/s  conns=16
+[15:17:29] sending=725.06 Mb/s  conns=16
+[15:17:31] sending=728.35 Mb/s  conns=16
+[15:17:33] sending=727.24 Mb/s  conns=16
+[15:17:35] sending=745.92 Mb/s  conns=16
+[15:17:37] sending=735.18 Mb/s  conns=16
+
+=== tcp-client-6797498d8-8rrcq ===
+[15:17:19] sending=721.53 Mb/s  conns=16
+[15:17:21] sending=724.01 Mb/s  conns=16
+[15:17:23] sending=733.10 Mb/s  conns=16
+[15:17:25] sending=714.34 Mb/s  conns=16
+[15:17:27] sending=707.76 Mb/s  conns=16
+[15:17:29] sending=711.63 Mb/s  conns=16
+[15:17:31] sending=682.13 Mb/s  conns=16
+[15:17:33] sending=692.28 Mb/s  conns=16
+[15:17:35] sending=732.81 Mb/s  conns=16
+[15:17:37] sending=737.75 Mb/s  conns=16
+
+=== tcp-client-6797498d8-cn69w ===
+[15:17:21] sending=768.27 Mb/s  conns=16
+[15:17:23] sending=769.41 Mb/s  conns=16
+[15:17:25] sending=758.63 Mb/s  conns=16
+[15:17:27] sending=763.17 Mb/s  conns=16
+[15:17:29] sending=758.40 Mb/s  conns=16
+[15:17:31] sending=756.28 Mb/s  conns=16
+[15:17:33] sending=756.09 Mb/s  conns=16
+[15:17:35] sending=788.98 Mb/s  conns=16
+[15:17:37] sending=790.22 Mb/s  conns=16
+[15:17:39] sending=765.29 Mb/s  conns=16
+
+=== tcp-client-6797498d8-gp2q9 ===
+[15:17:22] sending=746.25 Mb/s  conns=16
+[15:17:24] sending=741.49 Mb/s  conns=16
+[15:17:26] sending=744.00 Mb/s  conns=16
+[15:17:28] sending=755.75 Mb/s  conns=16
+[15:17:30] sending=739.73 Mb/s  conns=16
+[15:17:32] sending=746.39 Mb/s  conns=16
+[15:17:34] sending=767.84 Mb/s  conns=16
+[15:17:36] sending=777.68 Mb/s  conns=16
+[15:17:38] sending=793.96 Mb/s  conns=16
+[15:17:40] sending=780.55 Mb/s  conns=16
+
+=== tcp-client-6797498d8-jkmwq ===
+[15:17:21] sending=787.12 Mb/s  conns=16
+[15:17:23] sending=794.30 Mb/s  conns=16
+[15:17:25] sending=750.32 Mb/s  conns=16
+[15:17:27] sending=737.32 Mb/s  conns=16
+[15:17:29] sending=742.49 Mb/s  conns=16
+[15:17:31] sending=770.98 Mb/s  conns=16
+[15:17:33] sending=813.72 Mb/s  conns=16
+[15:17:35] sending=821.82 Mb/s  conns=16
+[15:17:37] sending=795.79 Mb/s  conns=16
+[15:17:39] sending=812.07 Mb/s  conns=16
+
+=== tcp-client-6797498d8-jpscl ===
+[15:17:23] sending=595.66 Mb/s  conns=16
+[15:17:25] sending=597.04 Mb/s  conns=16
+[15:17:27] sending=601.34 Mb/s  conns=16
+[15:17:29] sending=602.24 Mb/s  conns=16
+[15:17:31] sending=596.00 Mb/s  conns=16
+[15:17:33] sending=605.91 Mb/s  conns=16
+[15:17:35] sending=623.64 Mb/s  conns=16
+[15:17:37] sending=620.62 Mb/s  conns=16
+[15:17:39] sending=620.01 Mb/s  conns=16
+[15:17:41] sending=628.15 Mb/s  conns=16
+
+=== tcp-client-6797498d8-nfdm8 ===
+[15:17:23] sending=729.11 Mb/s  conns=16
+[15:17:25] sending=727.54 Mb/s  conns=16
+[15:17:27] sending=760.86 Mb/s  conns=16
+[15:17:29] sending=744.21 Mb/s  conns=16
+[15:17:31] sending=754.29 Mb/s  conns=16
+[15:17:33] sending=762.32 Mb/s  conns=16
+[15:17:35] sending=773.28 Mb/s  conns=16
+[15:17:37] sending=763.22 Mb/s  conns=16
+[15:17:39] sending=776.33 Mb/s  conns=16
+[15:17:41] sending=778.57 Mb/s  conns=16
+
+=== tcp-client-6797498d8-pfg2h ===
+[15:17:25] sending=856.46 Mb/s  conns=16
+[15:17:27] sending=841.52 Mb/s  conns=16
+[15:17:29] sending=838.17 Mb/s  conns=16
+[15:17:31] sending=860.33 Mb/s  conns=16
+[15:17:33] sending=851.25 Mb/s  conns=16
+[15:17:35] sending=864.12 Mb/s  conns=16
+[15:17:37] sending=857.09 Mb/s  conns=16
+[15:17:39] sending=872.12 Mb/s  conns=16
+[15:17:41] sending=857.18 Mb/s  conns=16
+[15:17:43] sending=857.30 Mb/s  conns=16
+
+=== tcp-client-6797498d8-qs688 ===
+[15:17:25] sending=661.67 Mb/s  conns=16
+[15:17:27] sending=656.30 Mb/s  conns=16
+[15:17:29] sending=653.69 Mb/s  conns=16
+[15:17:31] sending=660.82 Mb/s  conns=16
+[15:17:33] sending=665.35 Mb/s  conns=16
+[15:17:35] sending=667.87 Mb/s  conns=16
+[15:17:37] sending=677.81 Mb/s  conns=16
+[15:17:39] sending=674.94 Mb/s  conns=16
+[15:17:41] sending=676.35 Mb/s  conns=16
+[15:17:43] sending=670.96 Mb/s  conns=16
+
+=== tcp-client-6797498d8-tgrkc ===
+[15:17:27] sending=736.98 Mb/s  conns=16
+[15:17:29] sending=736.17 Mb/s  conns=16
+[15:17:31] sending=733.58 Mb/s  conns=16
+[15:17:33] sending=746.29 Mb/s  conns=16
+[15:17:35] sending=759.42 Mb/s  conns=16
+[15:17:37] sending=755.24 Mb/s  conns=16
+[15:17:39] sending=720.08 Mb/s  conns=16
+[15:17:41] sending=736.58 Mb/s  conns=16
+[15:17:43] sending=753.88 Mb/s  conns=16
+[15:17:45] sending=760.19 Mb/s  conns=16
+
+=== tcp-client-6797498d8-vt7xz ===
+[15:17:27] sending=1.17 Gb/s  conns=16
+[15:17:29] sending=1.19 Gb/s  conns=16
+[15:17:31] sending=1.21 Gb/s  conns=16
+[15:17:33] sending=1.03 Gb/s  conns=16
+[15:17:35] sending=789.87 Mb/s  conns=16
+[15:17:37] sending=787.09 Mb/s  conns=16
+[15:17:39] sending=806.42 Mb/s  conns=16
+[15:17:41] sending=807.18 Mb/s  conns=16
+[15:17:43] sending=808.21 Mb/s  conns=16
+[15:17:45] sending=806.39 Mb/s  conns=16
+
+=== tcp-client-6797498d8-xbmxh ===
+[15:17:29] sending=941.07 Mb/s  conns=16
+[15:17:31] sending=913.25 Mb/s  conns=16
+[15:17:33] sending=889.09 Mb/s  conns=16
+[15:17:35] sending=910.85 Mb/s  conns=16
+[15:17:37] sending=939.22 Mb/s  conns=16
+[15:17:39] sending=929.41 Mb/s  conns=16
+[15:17:41] sending=899.69 Mb/s  conns=16
+[15:17:43] sending=917.29 Mb/s  conns=16
+[15:17:45] sending=928.67 Mb/s  conns=16
+[15:17:47] sending=895.51 Mb/s  conns=16
+
+=== tcp-client-6797498d8-xcjg8 ===
+[15:17:29] sending=705.48 Mb/s  conns=16
+[15:17:31] sending=709.37 Mb/s  conns=16
+[15:17:33] sending=723.09 Mb/s  conns=16
+[15:17:35] sending=728.69 Mb/s  conns=16
+[15:17:37] sending=730.94 Mb/s  conns=16
+[15:17:39] sending=728.02 Mb/s  conns=16
+[15:17:41] sending=734.09 Mb/s  conns=16
+[15:17:43] sending=731.86 Mb/s  conns=16
+[15:17:45] sending=737.48 Mb/s  conns=16
+[15:17:47] sending=729.91 Mb/s  conns=16
+
+=== tcp-client-6797498d8-z28pw ===
+[15:17:31] sending=677.50 Mb/s  conns=16
+[15:17:33] sending=692.03 Mb/s  conns=16
+[15:17:35] sending=704.51 Mb/s  conns=16
+[15:17:37] sending=708.87 Mb/s  conns=16
+[15:17:39] sending=715.10 Mb/s  conns=16
+[15:17:41] sending=710.27 Mb/s  conns=16
+[15:17:43] sending=705.93 Mb/s  conns=16
+[15:17:45] sending=711.72 Mb/s  conns=16
+[15:17:47] sending=710.45 Mb/s  conns=16
+[15:17:49] sending=710.79 Mb/s  conns=16
+
+=== tcp-client-6797498d8-z4fs4 ===
+[15:17:31] sending=736.68 Mb/s  conns=16
+[15:17:33] sending=738.29 Mb/s  conns=16
+[15:17:35] sending=755.20 Mb/s  conns=16
+[15:17:37] sending=742.51 Mb/s  conns=16
+[15:17:39] sending=748.28 Mb/s  conns=16
+[15:17:41] sending=747.08 Mb/s  conns=16
+[15:17:43] sending=738.90 Mb/s  conns=16
+[15:17:45] sending=737.89 Mb/s  conns=16
+[15:17:47] sending=751.47 Mb/s  conns=16
+[15:17:49] sending=746.28 Mb/s  conns=16
+
+=== tcp-client-6797498d8-zv7t2 ===
+[15:17:33] sending=780.79 Mb/s  conns=16
+[15:17:35] sending=776.84 Mb/s  conns=16
+[15:17:37] sending=795.94 Mb/s  conns=16
+[15:17:39] sending=767.86 Mb/s  conns=16
+[15:17:41] sending=780.97 Mb/s  conns=16
+[15:17:43] sending=775.22 Mb/s  conns=16
+[15:17:45] sending=795.38 Mb/s  conns=16
+[15:17:47] sending=811.24 Mb/s  conns=16
+[15:17:49] sending=819.07 Mb/s  conns=16
+[15:17:51] sending=766.10 Mb/s  conns=16
+
+=== tcp-client-6797498d8-zvcnh ===
+[15:17:33] sending=678.86 Mb/s  conns=16
+[15:17:35] sending=688.77 Mb/s  conns=16
+[15:17:37] sending=686.51 Mb/s  conns=16
+[15:17:39] sending=684.49 Mb/s  conns=16
+[15:17:41] sending=689.54 Mb/s  conns=16
+[15:17:43] sending=687.88 Mb/s  conns=16
+[15:17:45] sending=680.13 Mb/s  conns=16
+[15:17:47] sending=687.85 Mb/s  conns=16
+[15:17:49] sending=691.17 Mb/s  conns=16
+[15:17:51] sending=685.16 Mb/s  conns=16
+

@@ -1,0 +1,18 @@
+=== eBPF Maps (pre-test) ===
+Date: Thu May 21 15:37:08 UTC 2026
+
+--- All BPF maps ---
+error: Internal error occurred: Internal error occurred: error executing command in container: failed to exec in container: failed to start exec "bfc5c3c775ffa5b744d289f50d7497a26c765c33e6cd81d645eb04c870997859": OCI runtime exec failed: exec failed: unable to start container process: exec: "bpftool": executable file not found in $PATH: unknown
+command terminated with exit code 2
+bpftool not available
+
+--- Retina map details (JSON) ---
+[]
+
+--- Ring buffer & perf event array maps ---
+[]
+
+--- BPF programs ---
+No retina programs
+
+--- BPF map memory summary ---

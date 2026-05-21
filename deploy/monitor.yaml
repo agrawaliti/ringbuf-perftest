@@ -1,0 +1,62 @@
+---
+# Privileged pod for monitoring softirq stats on the receiver node
+apiVersion: v1
+kind: Pod
+metadata:
+  name: softirq-monitor
+  namespace: perf-test
+spec:
+  nodeSelector:
+    agentpool: np32core
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchLabels:
+            app: tcp-receiver
+        topologyKey: kubernetes.io/hostname
+  hostNetwork: true
+  hostPID: true
+  containers:
+  - name: monitor
+    image: ubuntu:22.04
+    command:
+    - /bin/bash
+    - -c
+    - |
+      apt-get update -qq && apt-get install -y -qq linux-tools-generic bpftool 2>/dev/null || true
+      # Try to find bpftool from host or package
+      which bpftool || ln -sf /usr/lib/linux-tools/*/bpftool /usr/sbin/bpftool 2>/dev/null || true
+      # Also try to copy bpftool from host via nsenter
+      if ! which bpftool &>/dev/null; then
+        nsenter -t 1 -m -- which bpftool &>/dev/null && \
+          cp $(nsenter -t 1 -m -- which bpftool) /usr/sbin/bpftool 2>/dev/null || true
+      fi
+      # Create wrapper if bpftool still not available - use nsenter
+      if ! which bpftool &>/dev/null; then
+        echo '#!/bin/bash' > /usr/sbin/bpftool
+        echo 'nsenter -t 1 -m -- bpftool "$@"' >> /usr/sbin/bpftool
+        chmod +x /usr/sbin/bpftool
+      fi
+      sleep infinity
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - name: proc
+      mountPath: /host/proc
+      readOnly: true
+    - name: sys
+      mountPath: /sys
+      readOnly: true
+    - name: bpf
+      mountPath: /sys/fs/bpf
+  volumes:
+  - name: proc
+    hostPath:
+      path: /proc
+  - name: sys
+    hostPath:
+      path: /sys
+  - name: bpf
+    hostPath:
+      path: /sys/fs/bpf

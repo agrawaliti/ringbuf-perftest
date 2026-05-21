@@ -1,0 +1,9 @@
+[15:15:03] [15:15:01] throughput=15.19 Gb/s  conns_total=304  conns_active=304
+[15:15:19] [15:15:17] throughput=15.22 Gb/s  conns_total=320  conns_active=320
+[15:15:35] [15:15:33] throughput=15.22 Gb/s  conns_total=320  conns_active=320
+[15:15:51] [15:15:49] throughput=15.28 Gb/s  conns_total=320  conns_active=320
+[15:16:07] [15:16:05] throughput=15.20 Gb/s  conns_total=320  conns_active=320
+[15:16:23] [15:16:21] throughput=15.20 Gb/s  conns_total=320  conns_active=320
+[15:16:39] [15:16:37] throughput=15.19 Gb/s  conns_total=320  conns_active=320
+[15:16:55] [15:16:53] throughput=15.19 Gb/s  conns_total=496  conns_active=240
+[15:17:11] [15:17:09] throughput=15.20 Gb/s  conns_total=608  conns_active=288

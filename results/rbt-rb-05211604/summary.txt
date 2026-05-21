@@ -1,0 +1,53 @@
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-rb-05211604
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-rb-05211604
+Date: Thu May 21 16:08:09 UTC 2026
+Duration: 120s
+Client replicas: 20 (each 16 conns = 320 total TCP streams)
+Receiver node: aks-np32core-30529984-vmss000001
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[16:07:49] throughput=7.17 Gb/s  conns_total=640  conns_active=320
+[16:07:51] throughput=7.22 Gb/s  conns_total=640  conns_active=320
+[16:07:53] throughput=7.58 Gb/s  conns_total=640  conns_active=320
+[16:07:55] throughput=8.29 Gb/s  conns_total=640  conns_active=320
+[16:07:57] throughput=8.33 Gb/s  conns_total=640  conns_active=320
+[16:07:59] throughput=7.76 Gb/s  conns_total=640  conns_active=320
+[16:08:01] throughput=7.28 Gb/s  conns_total=640  conns_active=320
+[16:08:03] throughput=7.38 Gb/s  conns_total=640  conns_active=320
+[16:08:05] throughput=7.64 Gb/s  conns_total=640  conns_active=320
+[16:08:07] throughput=7.56 Gb/s  conns_total=640  conns_active=320
+
+=== PEAK THROUGHPUT ===
+  Peak: 15.21 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+  No relevant maps
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: enabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255

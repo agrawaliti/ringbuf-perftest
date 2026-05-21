@@ -1,0 +1,3 @@
+FROM scratch
+COPY bin/receiver /receiver
+ENTRYPOINT ["/receiver"]

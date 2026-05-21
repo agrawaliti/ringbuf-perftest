@@ -1,0 +1,47 @@
+---
+# Client deployment - multiple pods each with unique source IP
+# This ensures SO_REUSEPORT on receiver distributes across cores via flow hash
+# Deploy on DIFFERENT node than receiver to generate real network traffic
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcp-client
+  namespace: perf-test
+  labels:
+    app: tcp-client
+spec:
+  replicas: 20  # 20 pods = 20 unique source IPs for flow hash distribution
+  selector:
+    matchLabels:
+      app: tcp-client
+  template:
+    metadata:
+      labels:
+        app: tcp-client
+    spec:
+      nodeSelector:
+        agentpool: np32core
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: tcp-receiver
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - name: client
+        image: REGISTRY/ringbuf-client:latest
+        args:
+        - "--target=tcp-receiver.perf-test.svc.cluster.local:8080"
+        - "--conns=16"       # 16 conns per pod × 20 pods = 320 total connections
+        - "--duration=120s"
+        - "--payload=4096"
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "64Mi"
+          limits:
+            cpu: "2"
+            memory: "128Mi"

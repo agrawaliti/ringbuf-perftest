@@ -1,0 +1,56 @@
+---
+# Receiver deployment - runs on 32-core node with SO_REUSEPORT
+# Multiple listener threads accept connections, kernel distributes via flow hash
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcp-receiver
+  namespace: perf-test
+  labels:
+    app: tcp-receiver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tcp-receiver
+  template:
+    metadata:
+      labels:
+        app: tcp-receiver
+    spec:
+      nodeSelector:
+        agentpool: np32core
+      containers:
+      - name: receiver
+        image: REGISTRY/ringbuf-receiver:latest
+        args:
+        - "--port=8080"
+        - "--listeners=32"   # Match CPU count for full SO_REUSEPORT distribution
+        - "--workers=32"
+        - "--buf=32768"
+        - "--report=2"
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "16"
+            memory: "512Mi"
+          limits:
+            cpu: "30"
+            memory: "1Gi"
+---
+# Service for the receiver - ClusterIP, clients connect here
+apiVersion: v1
+kind: Service
+metadata:
+  name: tcp-receiver
+  namespace: perf-test
+spec:
+  selector:
+    app: tcp-receiver
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+  type: ClusterIP
