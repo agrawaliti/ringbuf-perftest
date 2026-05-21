@@ -23,6 +23,18 @@ Replicates the traffic pattern from Zain's blog post: `SO_REUSEPORT` distributes
 
 **Key finding:** Ring buffer eliminates the throughput variance/instability of perf array and provides slightly better median throughput (~7% improvement), but both show ~50% loss on 32-core under heavy load.
 
+### eBPF Maps (Ring Buffer cluster)
+
+| Map ID | Name | Type | Size | Memlock |
+|--------|------|------|------|---------|
+| 63 | `retina_filter` | lpm_trie | 255 entries | 4KB |
+| 64 | `retina_conntrac` | lru_hash | 262,144 entries | 37.7MB |
+| 73 | `events` | ringbuf | 4MB | 0 |
+| 74 | `sk_cache` | percpu_hash | 8,192 entries | 6.4MB |
+| 84,108,153,189,203,224,245 | `retina_packetpa` | ringbuf | 8MB each | 0 |
+
+7 ring buffer maps (`retina_packetpa`) × 8MB = **56MB total** for the packet parser ring buffers (one per retina-agent pod).
+
 ## Directory Structure
 
 ```
