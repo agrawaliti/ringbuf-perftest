@@ -11,29 +11,12 @@ Replicates the traffic pattern from Zain's blog post: `SO_REUSEPORT` distributes
 - **Node:** Standard_D32s_v3 (32 vCPU) on AKS with azure overlay CNI
 - **Duration:** 120s per test, throughput sampled every 2s at receiver
 
-## Results (2026-05-21)
+## Results
 
-| Metric | Baseline (no Retina) | Perf Array | Ring Buffer |
-|--------|---------------------|------------|-------------|
-| Steady-state throughput | 15.20 Gb/s | ~7.0 Gb/s | ~7.5 Gb/s |
-| Stability | ±0.02 Gb/s | Highly variable (6.7–15.2) | Stable (±0.5) |
-| Peak | 16.22 Gb/s | 15.32 Gb/s | 15.21 Gb/s |
-| Throughput loss | — | ~54% | ~50% |
-| Softirq drops | 0 | 0 | 0 |
-
-**Key finding:** Ring buffer eliminates the throughput variance/instability of perf array and provides slightly better median throughput (~7% improvement), but both show ~50% loss on 32-core under heavy load.
-
-### eBPF Maps (Ring Buffer cluster)
-
-| Map ID | Name | Type | Size | Memlock |
-|--------|------|------|------|---------|
-| 63 | `retina_filter` | lpm_trie | 255 entries | 4KB |
-| 64 | `retina_conntrac` | lru_hash | 262,144 entries | 37.7MB |
-| 73 | `events` | ringbuf | 4MB | 0 |
-| 74 | `sk_cache` | percpu_hash | 8,192 entries | 6.4MB |
-| 84,108,153,189,203,224,245 | `retina_packetpa` | ringbuf | 8MB each | 0 |
-
-7 ring buffer maps (`retina_packetpa`) × 8MB = **56MB total** for the packet parser ring buffers (one per retina-agent pod).
+| Run | Date | SKU | Scenarios | Summary |
+|---|---|---|---|---|
+| [`rbt-05211604`](results/rbt-05211604/RESULTS.md) | 2026-05-21 | D32s_v3 (32 vCPU) | Single load profile | RB ~7% better median; both ~50% vs base on single-NUMA |
+| [`rl-05291154`](results/rl-05291154/RESULTS.md) | 2026-05-29 | D32s_v3 (32 vCPU) | 8 real-life scenarios | RB 6× less CPU at extreme packet rate; NIC saturation at 15.18 Gb/s |
 
 ## Directory Structure
 
