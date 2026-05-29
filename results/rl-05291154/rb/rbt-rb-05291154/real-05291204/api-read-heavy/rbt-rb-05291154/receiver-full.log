@@ -1,0 +1,240 @@
+2026/05/29 11:04:30 Starting receiver: port=8080 listeners=32 workers=32 cores=32 buf=32768
+2026/05/29 11:04:30 listener 27: accepting connections on :8080
+2026/05/29 11:04:30 listener 13: accepting connections on :8080
+2026/05/29 11:04:30 listener 22: accepting connections on :8080
+2026/05/29 11:04:30 listener 23: accepting connections on :8080
+2026/05/29 11:04:30 listener 0: accepting connections on :8080
+2026/05/29 11:04:30 listener 18: accepting connections on :8080
+2026/05/29 11:04:30 listener 24: accepting connections on :8080
+2026/05/29 11:04:30 listener 17: accepting connections on :8080
+2026/05/29 11:04:30 listener 28: accepting connections on :8080
+2026/05/29 11:04:30 listener 1: accepting connections on :8080
+2026/05/29 11:04:30 listener 25: accepting connections on :8080
+2026/05/29 11:04:30 listener 19: accepting connections on :8080
+2026/05/29 11:04:30 listener 14: accepting connections on :8080
+2026/05/29 11:04:30 listener 26: accepting connections on :8080
+2026/05/29 11:04:30 listener 20: accepting connections on :8080
+2026/05/29 11:04:30 listener 15: accepting connections on :8080
+2026/05/29 11:04:30 listener 29: accepting connections on :8080
+2026/05/29 11:04:30 listener 16: accepting connections on :8080
+2026/05/29 11:04:30 listener 21: accepting connections on :8080
+2026/05/29 11:04:30 listener 30: accepting connections on :8080
+2026/05/29 11:04:30 listener 2: accepting connections on :8080
+2026/05/29 11:04:30 listener 9: accepting connections on :8080
+2026/05/29 11:04:30 listener 31: accepting connections on :8080
+2026/05/29 11:04:30 listener 10: accepting connections on :8080
+2026/05/29 11:04:30 listener 3: accepting connections on :8080
+2026/05/29 11:04:30 listener 11: accepting connections on :8080
+2026/05/29 11:04:30 listener 4: accepting connections on :8080
+2026/05/29 11:04:30 listener 5: accepting connections on :8080
+2026/05/29 11:04:30 listener 6: accepting connections on :8080
+2026/05/29 11:04:30 listener 7: accepting connections on :8080
+2026/05/29 11:04:30 listener 12: accepting connections on :8080
+2026/05/29 11:04:30 listener 8: accepting connections on :8080
+[11:04:32] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:34] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:36] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:38] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:40] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:42] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:44] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:46] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:48] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:50] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:52] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:54] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:56] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:04:58] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:00] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:02] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:04] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:06] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:08] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:10] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:12] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:14] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:16] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:18] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:20] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:22] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:24] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:26] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:28] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:30] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:32] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:34] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:36] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:38] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:40] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:42] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:44] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:46] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:48] throughput=0.00 Kb/s  conns_total=0  conns_active=0
+[11:05:50] throughput=68.46 Mb/s  conns_total=212  conns_active=212
+[11:05:52] throughput=1.35 Gb/s  conns_total=456  conns_active=456
+[11:05:54] throughput=696.73 Mb/s  conns_total=456  conns_active=456
+[11:05:56] throughput=703.95 Mb/s  conns_total=456  conns_active=456
+[11:05:58] throughput=704.64 Mb/s  conns_total=456  conns_active=456
+[11:06:00] throughput=694.54 Mb/s  conns_total=456  conns_active=456
+[11:06:02] throughput=720.79 Mb/s  conns_total=504  conns_active=504
+[11:06:04] throughput=698.42 Mb/s  conns_total=552  conns_active=552
+[11:06:06] throughput=693.00 Mb/s  conns_total=576  conns_active=576
+[11:06:08] throughput=666.94 Mb/s  conns_total=576  conns_active=576
+[11:06:10] throughput=679.30 Mb/s  conns_total=576  conns_active=576
+[11:06:12] throughput=674.62 Mb/s  conns_total=576  conns_active=576
+[11:06:14] throughput=672.12 Mb/s  conns_total=576  conns_active=576
+[11:06:16] throughput=677.73 Mb/s  conns_total=576  conns_active=576
+[11:06:18] throughput=694.39 Mb/s  conns_total=576  conns_active=576
+[11:06:20] throughput=684.80 Mb/s  conns_total=576  conns_active=576
+[11:06:22] throughput=685.95 Mb/s  conns_total=576  conns_active=576
+[11:06:24] throughput=686.39 Mb/s  conns_total=576  conns_active=576
+[11:06:26] throughput=673.00 Mb/s  conns_total=576  conns_active=576
+[11:06:28] throughput=684.12 Mb/s  conns_total=576  conns_active=576
+[11:06:30] throughput=693.49 Mb/s  conns_total=576  conns_active=576
+[11:06:32] throughput=679.19 Mb/s  conns_total=576  conns_active=576
+[11:06:34] throughput=688.10 Mb/s  conns_total=576  conns_active=576
+[11:06:36] throughput=675.38 Mb/s  conns_total=576  conns_active=576
+[11:06:38] throughput=675.83 Mb/s  conns_total=576  conns_active=576
+[11:06:40] throughput=681.36 Mb/s  conns_total=576  conns_active=576
+[11:06:42] throughput=687.91 Mb/s  conns_total=576  conns_active=576
+[11:06:44] throughput=679.76 Mb/s  conns_total=576  conns_active=576
+[11:06:46] throughput=678.35 Mb/s  conns_total=576  conns_active=576
+[11:06:48] throughput=687.66 Mb/s  conns_total=576  conns_active=576
+[11:06:50] throughput=676.92 Mb/s  conns_total=576  conns_active=576
+[11:06:52] throughput=677.73 Mb/s  conns_total=576  conns_active=576
+[11:06:54] throughput=676.96 Mb/s  conns_total=576  conns_active=576
+[11:06:56] throughput=676.65 Mb/s  conns_total=576  conns_active=576
+[11:06:58] throughput=676.39 Mb/s  conns_total=576  conns_active=576
+[11:07:00] throughput=682.19 Mb/s  conns_total=576  conns_active=576
+[11:07:02] throughput=684.26 Mb/s  conns_total=576  conns_active=576
+[11:07:04] throughput=684.65 Mb/s  conns_total=576  conns_active=576
+[11:07:06] throughput=679.88 Mb/s  conns_total=576  conns_active=576
+[11:07:08] throughput=665.94 Mb/s  conns_total=576  conns_active=576
+[11:07:10] throughput=681.04 Mb/s  conns_total=576  conns_active=576
+[11:07:12] throughput=672.03 Mb/s  conns_total=576  conns_active=576
+[11:07:14] throughput=672.97 Mb/s  conns_total=576  conns_active=576
+[11:07:16] throughput=671.50 Mb/s  conns_total=576  conns_active=576
+[11:07:18] throughput=677.02 Mb/s  conns_total=576  conns_active=576
+[11:07:20] throughput=672.10 Mb/s  conns_total=576  conns_active=576
+[11:07:22] throughput=677.69 Mb/s  conns_total=576  conns_active=576
+[11:07:24] throughput=667.69 Mb/s  conns_total=576  conns_active=576
+[11:07:26] throughput=670.90 Mb/s  conns_total=576  conns_active=576
+[11:07:28] throughput=680.58 Mb/s  conns_total=576  conns_active=576
+[11:07:30] throughput=683.96 Mb/s  conns_total=576  conns_active=576
+[11:07:32] throughput=3.41 Gb/s  conns_total=576  conns_active=576
+[11:07:34] throughput=6.19 Gb/s  conns_total=576  conns_active=576
+[11:07:36] throughput=6.20 Gb/s  conns_total=576  conns_active=576
+[11:07:38] throughput=6.17 Gb/s  conns_total=576  conns_active=576
+[11:07:40] throughput=6.13 Gb/s  conns_total=576  conns_active=576
+[11:07:42] throughput=6.15 Gb/s  conns_total=576  conns_active=576
+[11:07:44] throughput=5.99 Gb/s  conns_total=576  conns_active=576
+[11:07:46] throughput=6.02 Gb/s  conns_total=576  conns_active=576
+[11:07:48] throughput=5.61 Gb/s  conns_total=576  conns_active=576
+[11:07:50] throughput=5.04 Gb/s  conns_total=576  conns_active=576
+[11:07:52] throughput=5.12 Gb/s  conns_total=576  conns_active=576
+[11:07:54] throughput=4.97 Gb/s  conns_total=576  conns_active=576
+[11:07:56] throughput=4.99 Gb/s  conns_total=576  conns_active=576
+[11:07:58] throughput=4.81 Gb/s  conns_total=576  conns_active=576
+[11:08:00] throughput=1.78 Gb/s  conns_total=576  conns_active=576
+[11:08:02] throughput=693.17 Mb/s  conns_total=576  conns_active=576
+[11:08:04] throughput=716.73 Mb/s  conns_total=576  conns_active=576
+[11:08:06] throughput=696.48 Mb/s  conns_total=576  conns_active=576
+[11:08:08] throughput=706.89 Mb/s  conns_total=576  conns_active=576
+[11:08:10] throughput=697.13 Mb/s  conns_total=576  conns_active=576
+[11:08:12] throughput=689.93 Mb/s  conns_total=576  conns_active=576
+[11:08:14] throughput=679.71 Mb/s  conns_total=576  conns_active=576
+[11:08:16] throughput=682.10 Mb/s  conns_total=576  conns_active=576
+[11:08:18] throughput=698.34 Mb/s  conns_total=576  conns_active=576
+[11:08:20] throughput=699.97 Mb/s  conns_total=576  conns_active=576
+[11:08:22] throughput=687.21 Mb/s  conns_total=576  conns_active=576
+[11:08:24] throughput=694.98 Mb/s  conns_total=576  conns_active=576
+[11:08:26] throughput=673.58 Mb/s  conns_total=576  conns_active=576
+[11:08:28] throughput=665.18 Mb/s  conns_total=576  conns_active=576
+[11:08:30] throughput=669.59 Mb/s  conns_total=576  conns_active=576
+[11:08:32] throughput=676.22 Mb/s  conns_total=576  conns_active=576
+[11:08:34] throughput=673.58 Mb/s  conns_total=576  conns_active=576
+[11:08:36] throughput=670.98 Mb/s  conns_total=576  conns_active=576
+[11:08:38] throughput=676.24 Mb/s  conns_total=576  conns_active=576
+[11:08:40] throughput=668.66 Mb/s  conns_total=576  conns_active=576
+[11:08:42] throughput=675.33 Mb/s  conns_total=576  conns_active=576
+[11:08:44] throughput=681.00 Mb/s  conns_total=576  conns_active=576
+[11:08:46] throughput=666.14 Mb/s  conns_total=576  conns_active=576
+[11:08:48] throughput=679.69 Mb/s  conns_total=576  conns_active=576
+[11:08:50] throughput=683.79 Mb/s  conns_total=576  conns_active=576
+[11:08:52] throughput=671.75 Mb/s  conns_total=576  conns_active=576
+[11:08:54] throughput=672.73 Mb/s  conns_total=576  conns_active=576
+[11:08:56] throughput=672.37 Mb/s  conns_total=576  conns_active=576
+[11:08:58] throughput=671.12 Mb/s  conns_total=576  conns_active=576
+[11:09:00] throughput=675.37 Mb/s  conns_total=576  conns_active=576
+[11:09:02] throughput=672.70 Mb/s  conns_total=576  conns_active=576
+[11:09:04] throughput=678.90 Mb/s  conns_total=576  conns_active=576
+[11:09:06] throughput=674.83 Mb/s  conns_total=576  conns_active=576
+[11:09:08] throughput=672.96 Mb/s  conns_total=576  conns_active=576
+[11:09:10] throughput=682.49 Mb/s  conns_total=576  conns_active=576
+[11:09:12] throughput=678.46 Mb/s  conns_total=576  conns_active=576
+[11:09:14] throughput=680.48 Mb/s  conns_total=576  conns_active=576
+[11:09:16] throughput=671.25 Mb/s  conns_total=576  conns_active=576
+[11:09:18] throughput=673.53 Mb/s  conns_total=576  conns_active=576
+[11:09:20] throughput=663.79 Mb/s  conns_total=576  conns_active=576
+[11:09:22] throughput=673.24 Mb/s  conns_total=576  conns_active=576
+[11:09:24] throughput=674.07 Mb/s  conns_total=576  conns_active=576
+[11:09:26] throughput=670.62 Mb/s  conns_total=576  conns_active=576
+[11:09:28] throughput=671.11 Mb/s  conns_total=576  conns_active=576
+[11:09:30] throughput=685.63 Mb/s  conns_total=576  conns_active=576
+[11:09:32] throughput=684.50 Mb/s  conns_total=576  conns_active=576
+[11:09:34] throughput=678.47 Mb/s  conns_total=576  conns_active=576
+[11:09:36] throughput=676.82 Mb/s  conns_total=576  conns_active=576
+[11:09:38] throughput=665.16 Mb/s  conns_total=576  conns_active=576
+[11:09:40] throughput=669.80 Mb/s  conns_total=576  conns_active=576
+[11:09:42] throughput=672.81 Mb/s  conns_total=576  conns_active=576
+[11:09:44] throughput=667.99 Mb/s  conns_total=576  conns_active=576
+[11:09:46] throughput=2.63 Gb/s  conns_total=576  conns_active=576
+[11:09:48] throughput=5.59 Gb/s  conns_total=576  conns_active=576
+[11:09:50] throughput=5.89 Gb/s  conns_total=576  conns_active=576
+[11:09:52] throughput=6.04 Gb/s  conns_total=576  conns_active=576
+[11:09:54] throughput=6.02 Gb/s  conns_total=576  conns_active=576
+[11:09:56] throughput=5.98 Gb/s  conns_total=576  conns_active=576
+[11:09:58] throughput=5.92 Gb/s  conns_total=576  conns_active=576
+[11:10:00] throughput=6.01 Gb/s  conns_total=576  conns_active=576
+[11:10:02] throughput=6.03 Gb/s  conns_total=576  conns_active=576
+[11:10:04] throughput=5.85 Gb/s  conns_total=576  conns_active=576
+[11:10:06] throughput=5.81 Gb/s  conns_total=576  conns_active=576
+[11:10:08] throughput=5.83 Gb/s  conns_total=576  conns_active=576
+[11:10:10] throughput=5.93 Gb/s  conns_total=576  conns_active=576
+[11:10:12] throughput=6.02 Gb/s  conns_total=576  conns_active=576
+[11:10:14] throughput=6.04 Gb/s  conns_total=576  conns_active=576
+[11:10:16] throughput=5.94 Gb/s  conns_total=576  conns_active=576
+[11:10:18] throughput=5.35 Gb/s  conns_total=576  conns_active=576
+[11:10:20] throughput=5.24 Gb/s  conns_total=576  conns_active=576
+[11:10:22] throughput=5.18 Gb/s  conns_total=576  conns_active=576
+[11:10:24] throughput=871.58 Mb/s  conns_total=576  conns_active=576
+[11:10:26] throughput=684.28 Mb/s  conns_total=576  conns_active=576
+[11:10:28] throughput=683.42 Mb/s  conns_total=576  conns_active=576
+[11:10:30] throughput=700.12 Mb/s  conns_total=576  conns_active=576
+[11:10:32] throughput=694.77 Mb/s  conns_total=576  conns_active=576
+[11:10:34] throughput=685.30 Mb/s  conns_total=576  conns_active=576
+[11:10:36] throughput=675.01 Mb/s  conns_total=576  conns_active=576
+[11:10:38] throughput=678.56 Mb/s  conns_total=576  conns_active=576
+[11:10:40] throughput=682.13 Mb/s  conns_total=576  conns_active=576
+[11:10:42] throughput=682.82 Mb/s  conns_total=576  conns_active=576
+[11:10:44] throughput=681.06 Mb/s  conns_total=576  conns_active=576
+[11:10:46] throughput=685.15 Mb/s  conns_total=576  conns_active=576
+[11:10:48] throughput=690.41 Mb/s  conns_total=576  conns_active=576
+[11:10:50] throughput=716.64 Mb/s  conns_total=576  conns_active=152
+[11:10:52] throughput=2.14 Gb/s  conns_total=816  conns_active=360
+[11:10:54] throughput=714.44 Mb/s  conns_total=888  conns_active=432
+[11:10:56] throughput=696.74 Mb/s  conns_total=888  conns_active=432
+[11:10:58] throughput=701.27 Mb/s  conns_total=888  conns_active=432
+[11:11:00] throughput=701.05 Mb/s  conns_total=888  conns_active=432
+[11:11:02] throughput=709.85 Mb/s  conns_total=888  conns_active=384
+[11:11:04] throughput=736.65 Mb/s  conns_total=984  conns_active=432
+[11:11:06] throughput=751.42 Mb/s  conns_total=1128  conns_active=552
+[11:11:08] throughput=708.93 Mb/s  conns_total=1128  conns_active=552
+[11:11:10] throughput=701.05 Mb/s  conns_total=1152  conns_active=576
+[11:11:12] throughput=684.26 Mb/s  conns_total=1152  conns_active=576
+[11:11:14] throughput=682.32 Mb/s  conns_total=1152  conns_active=576
+[11:11:16] throughput=698.13 Mb/s  conns_total=1152  conns_active=576
+[11:11:18] throughput=716.89 Mb/s  conns_total=1152  conns_active=576
+[11:11:20] throughput=690.07 Mb/s  conns_total=1152  conns_active=576
+[11:11:22] throughput=703.31 Mb/s  conns_total=1152  conns_active=576
+[11:11:24] throughput=694.17 Mb/s  conns_total=1152  conns_active=576

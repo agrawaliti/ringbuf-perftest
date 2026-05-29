@@ -56,6 +56,8 @@ Replicates the traffic pattern from Zain's blog post: `SO_REUSEPORT` distributes
 ├── 3-run-test.sh           # Run test with full logging (eBPF maps, softirq, throughput)
 ├── 4-compare-results.sh    # Generate comparison table
 ├── 5-destroy.sh            # Delete cluster resources
+├── 6-run-matrix.sh         # Sweep load/QPS/payload combinations
+├── 7-real-life-scenarios.sh # Run realistic workload presets
 ├── run-sequential.sh       # Orchestrate all 3 variants sequentially
 └── push-to-acr.sh          # Push images to ACR (handles DNS issues)
 ```
@@ -82,8 +84,56 @@ Replicates the traffic pattern from Zain's blog post: `SO_REUSEPORT` distributes
 # 4. Run test
 ./3-run-test.sh <cluster-name> <resource-group> <duration> <results-dir>
 
+# 4b. Run a custom load profile
+./3-run-test.sh <cluster-name> <resource-group> <duration> <results-dir> <client-replicas> <conns-per-pod> <payload-bytes> <qps-per-conn>
+
+# 4c. Sweep load/QPS/payload matrix on one cluster
+./6-run-matrix.sh <cluster-name> <resource-group> <duration> <results-dir>
+
+# 4d. Run realistic preset scenarios (default 900s duration)
+./7-real-life-scenarios.sh <cluster-name> <resource-group> <scenario|all> [duration] [results-dir]
+
 # 5. Cleanup
 ./5-destroy.sh <resource-group>
+```
+
+### Load and Kernel Validation
+
+`3-run-test.sh` now supports explicit traffic-shaping knobs:
+
+- client replicas (pod count)
+- connections per pod
+- payload size in bytes
+- writes/sec per connection (`qps`, with `0` as unlimited)
+
+QPS supports parsed suffixes for larger long-run rates:
+
+- `5000` = 5,000 writes/sec per connection
+- `5k` = 5,000 writes/sec per connection
+- `2m` = 2,000,000 writes/sec per connection
+- `1g` = 1,000,000,000 writes/sec per connection
+
+Each test run also captures host kernel/network environment in `kernel-env.txt`, including:
+
+- `net.core` socket buffer limits (`rmem_*`, `wmem_*`)
+- queue/backlog settings (`netdev_max_backlog`, `somaxconn`, `tcp_max_syn_backlog`)
+- TCP buffer autotuning (`tcp_rmem`, `tcp_wmem`, `tcp_moderate_rcvbuf`)
+- NIC queue RPS settings (`rps_cpus`, `rps_flow_cnt`)
+
+### Real-World Scenario Presets
+
+`7-real-life-scenarios.sh` includes practical workload profiles:
+
+- `api-read-heavy` — many small calls (`payload=512`, high QPS)
+- `grpc-streaming` — medium payload sustained streams
+- `iot-telemetry` — tiny payload + very high QPS
+- `log-shipper` — larger payload at moderate QPS
+- `mixed-web-spiky` — mixed web-style traffic profile
+
+Run all presets in one pass:
+
+```bash
+./7-real-life-scenarios.sh <cluster> <rg> all 900
 ```
 
 ## Collected Data Per Test

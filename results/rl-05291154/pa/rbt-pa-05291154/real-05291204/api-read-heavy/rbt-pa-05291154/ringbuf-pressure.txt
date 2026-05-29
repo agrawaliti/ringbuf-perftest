@@ -1,0 +1,408 @@
+=== Fri May 29 11:06:13 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 88,
+    "name": "retina_dropreas",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 94,
+    "name": "retina_dns_even",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  }
+]
+=== Fri May 29 11:06:44 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 88,
+    "name": "retina_dropreas",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 94,
+    "name": "retina_dns_even",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  }
+]
+=== Fri May 29 11:07:15 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 88,
+    "name": "retina_dropreas",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 94,
+    "name": "retina_dns_even",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  }
+]
+=== Fri May 29 11:07:46 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  }
+]
+=== Fri May 29 11:08:17 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 104,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 106,
+    "name": "retina_dns_even",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 111,
+    "name": "retina_dropreas",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  }
+]
+=== Fri May 29 11:08:48 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 104,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 106,
+    "name": "retina_dns_even",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 111,
+    "name": "retina_dropreas",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 122,
+    "name": "events",
+    "type": "ringbuf",
+    "max_entries": 4194304,
+    "bytes_memlock": 0
+  },
+  {
+    "id": 123,
+    "name": "dns_events",
+    "type": "ringbuf",
+    "max_entries": 2097152,
+    "bytes_memlock": 0
+  }
+]
+=== Fri May 29 11:09:20 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 104,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 106,
+    "name": "retina_dns_even",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 111,
+    "name": "retina_dropreas",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 122,
+    "name": "events",
+    "type": "ringbuf",
+    "max_entries": 4194304,
+    "bytes_memlock": 0
+  },
+  {
+    "id": 123,
+    "name": "dns_events",
+    "type": "ringbuf",
+    "max_entries": 2097152,
+    "bytes_memlock": 0
+  }
+]
+=== Fri May 29 11:09:51 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 104,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 122,
+    "name": "events",
+    "type": "ringbuf",
+    "max_entries": 4194304,
+    "bytes_memlock": 0
+  },
+  {
+    "id": 123,
+    "name": "dns_events",
+    "type": "ringbuf",
+    "max_entries": 2097152,
+    "bytes_memlock": 0
+  }
+]
+=== Fri May 29 11:10:22 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 104,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 122,
+    "name": "events",
+    "type": "ringbuf",
+    "max_entries": 4194304,
+    "bytes_memlock": 0
+  },
+  {
+    "id": 123,
+    "name": "dns_events",
+    "type": "ringbuf",
+    "max_entries": 2097152,
+    "bytes_memlock": 0
+  },
+  {
+    "id": 139,
+    "name": "retina_dns_even",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 144,
+    "name": "retina_dropreas",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 148,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  }
+]
+=== Fri May 29 11:10:54 UTC 2026 ===
+[
+  {
+    "id": 68,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 92,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 104,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 122,
+    "name": "events",
+    "type": "ringbuf",
+    "max_entries": 4194304,
+    "bytes_memlock": 0
+  },
+  {
+    "id": 123,
+    "name": "dns_events",
+    "type": "ringbuf",
+    "max_entries": 2097152,
+    "bytes_memlock": 0
+  },
+  {
+    "id": 139,
+    "name": "retina_dns_even",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 144,
+    "name": "retina_dropreas",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  },
+  {
+    "id": 148,
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+    "max_entries": 32,
+    "bytes_memlock": 4096
+  }
+]

@@ -1,0 +1,15 @@
+[10:54:29] === Creating cluster: rbt-base-05291154 (variant=base) ===
+[10:54:32] Creating AKS cluster...
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: The new node pool will enable SSH access, recommended to use '--ssh-access disabled' option to disable SSH access for the node pool to make it more secure.
+[10:54:53] Cluster creation submitted, waiting...
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+[10:58:30] Adding np32core nodepool (2× Standard_D32s_v3)...
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: The new node pool will enable SSH access, recommended to use '--ssh-access disabled' option to disable SSH access for the node pool to make it more secure.
+[11:00:51] Attaching ACR (acndev.azurecr.io)...
+  (ACR attach skipped)
+[11:01:02] Fetching kubeconfig -> /tmp/kube-rbt-base-05291154.yaml
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-base-05291154" as current context in /tmp/kube-rbt-base-05291154.yaml
+[11:01:10] DONE: rbt-base-05291154

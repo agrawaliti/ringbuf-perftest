@@ -29,6 +29,7 @@ spec:
         - "--workers=32"
         - "--buf=32768"
         - "--report=2"
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
           protocol: TCP

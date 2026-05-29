@@ -1,0 +1,117 @@
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 11:56:52 UTC 2026
+Duration: 300s
+Client replicas: 40
+Conns per pod: 4
+Total TCP streams: 160
+Payload size: 256 bytes
+QPS per connection: 0 (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000000
+Throughput samples: 53 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:56:32] throughput=2.44 Gb/s  conns_total=320  conns_active=160
+[11:56:34] throughput=2.60 Gb/s  conns_total=320  conns_active=160
+[11:56:36] throughput=2.53 Gb/s  conns_total=320  conns_active=160
+[11:56:38] throughput=2.55 Gb/s  conns_total=320  conns_active=160
+[11:56:40] throughput=2.51 Gb/s  conns_total=320  conns_active=160
+[11:56:42] throughput=2.37 Gb/s  conns_total=320  conns_active=160
+[11:56:44] throughput=2.39 Gb/s  conns_total=320  conns_active=160
+[11:56:46] throughput=2.61 Gb/s  conns_total=320  conns_active=160
+[11:56:48] throughput=2.47 Gb/s  conns_total=320  conns_active=160
+[11:56:50] throughput=2.11 Gb/s  conns_total=320  conns_active=160
+
+=== PEAK THROUGHPUT ===
+  Peak: 11.53 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+61: lpm_trie  name retina_filter  flags 0x1
+62: lru_hash  name retina_conntrac  flags 0x0
+68: perf_event_array  name retina_packetpa  flags 0x0
+92: perf_event_array  name retina_packetpa  flags 0x0
+104: perf_event_array  name retina_packetpa  flags 0x0
+122: ringbuf  name events  flags 0x0
+123: ringbuf  name dns_events  flags 0x0
+148: perf_event_array  name retina_packetpa  flags 0x0
+163: perf_event_array  name retina_packetpa  flags 0x0
+218: perf_event_array  name retina_packetpa  flags 0x0
+306: perf_event_array  name retina_packetpa  flags 0x0
+360: perf_event_array  name retina_packetpa  flags 0x0
+417: perf_event_array  name retina_packetpa  flags 0x0
+423: perf_event_array  name retina_packetpa  flags 0x0
+463: perf_event_array  name retina_packetpa  flags 0x0
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:50:02 UTC 2026
+Node: aks-np32core-39298647-vmss000000
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-mqgsv   26m          121Mi           
+retina-agent-mqgsv   26m          121Mi           
+retina-agent-mqgsv   127m         118Mi           
+retina-agent-466wd   16m          118Mi           
+retina-agent-466wd   16m          118Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=104 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=122 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=123 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=148 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=163 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=218 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=306 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=360 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=417 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=423 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=454 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=459 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=463 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=68 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=92 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096

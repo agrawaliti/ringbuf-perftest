@@ -7,6 +7,8 @@ import (
 	"net"
 	"os"
 	"os/signal"
+	"strconv"
+	"strings"
 	"sync"
 	"sync/atomic"
 	"syscall"
@@ -22,10 +24,12 @@ var (
 	connections = flag.Int("conns", 32, "number of concurrent TCP connections")
 	duration    = flag.Duration("duration", 60*time.Second, "test duration")
 	payloadSize = flag.Int("payload", 4096, "payload size per write in bytes")
+	qpsRaw      = flag.String("qps", "0", "writes per second per connection; supports suffixes k/m/g (e.g., 5k, 2m), 0 = unlimited")
 )
 
 var totalBytes atomic.Int64
 var totalConns atomic.Int64
+var qpsPerConn int64
 
 func main() {
 	flag.Parse()
@@ -34,8 +38,17 @@ func main() {
 		log.Fatal("--target is required (e.g., receiver-svc:8080)")
 	}
 
+	parsedQPS, err := parseQPS(*qpsRaw)
+	if err != nil {
+		log.Fatalf("invalid --qps value %q: %v", *qpsRaw, err)
+	}
+	qpsPerConn = parsedQPS
+
 	log.Printf("Starting client: target=%s conns=%d duration=%v payload=%d",
 		*target, *connections, *duration, *payloadSize)
+	if qpsPerConn > 0 {
+		log.Printf("Rate limit enabled: %d writes/s per connection", qpsPerConn)
+	}
 
 	// Create stop channel
 	stop := make(chan struct{})
@@ -81,6 +94,16 @@ func runConnection(id int, stop <-chan struct{}) {
 		payload[i] = byte(i % 251)
 	}
 
+	var ticker *time.Ticker
+	if qpsPerConn > 0 {
+		interval := time.Second / time.Duration(qpsPerConn)
+		if interval <= 0 {
+			interval = time.Nanosecond
+		}
+		ticker = time.NewTicker(interval)
+		defer ticker.Stop()
+	}
+
 	for {
 		select {
 		case <-stop:
@@ -105,6 +128,15 @@ func runConnection(id int, stop <-chan struct{}) {
 			default:
 			}
 
+			if ticker != nil {
+				select {
+				case <-stop:
+					conn.Close()
+					return
+				case <-ticker.C:
+				}
+			}
+
 			n, err := conn.Write(payload)
 			if err != nil {
 				conn.Close()
@@ -113,6 +145,41 @@ func runConnection(id int, stop <-chan struct{}) {
 			totalBytes.Add(int64(n))
 		}
 	}
+}
+
+func parseQPS(raw string) (int64, error) {
+	v := strings.TrimSpace(strings.ToLower(raw))
+	if v == "" {
+		return 0, fmt.Errorf("empty value")
+	}
+
+	multiplier := int64(1)
+	suffix := v[len(v)-1]
+	switch suffix {
+	case 'k':
+		multiplier = 1_000
+		v = v[:len(v)-1]
+	case 'm':
+		multiplier = 1_000_000
+		v = v[:len(v)-1]
+	case 'g':
+		multiplier = 1_000_000_000
+		v = v[:len(v)-1]
+	}
+
+	base, err := strconv.ParseInt(v, 10, 64)
+	if err != nil {
+		return 0, err
+	}
+	if base < 0 {
+		return 0, fmt.Errorf("must be >= 0")
+	}
+
+	if base > 0 && base > (int64(^uint64(0)>>1)/multiplier) {
+		return 0, fmt.Errorf("value overflow")
+	}
+
+	return base * multiplier, nil
 }
 
 func reporter(stop <-chan struct{}) {

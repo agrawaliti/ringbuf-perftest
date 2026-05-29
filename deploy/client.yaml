@@ -33,11 +33,13 @@ spec:
       containers:
       - name: client
         image: REGISTRY/ringbuf-client:latest
+        imagePullPolicy: Always
         args:
         - "--target=tcp-receiver.perf-test.svc.cluster.local:8080"
         - "--conns=16"       # 16 conns per pod × 20 pods = 320 total connections
         - "--duration=120s"
         - "--payload=4096"
+        - "--qps=0"          # writes per second per connection (0 = unlimited)
         resources:
           requests:
             cpu: "500m"

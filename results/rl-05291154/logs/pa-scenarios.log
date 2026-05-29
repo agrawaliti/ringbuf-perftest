@@ -1,0 +1,2131 @@
+[11:04:16] === Running scenarios on rbt-pa-05291154 (variant=pa) ===
+
+=== Scenario: api-read-heavy ===
+replicas=24 conns/pod=24 payload=512B qps/conn=8k duration=300s
+[11:04:16] ============================================
+[11:04:16] Running test on: rbt-pa-05291154
+[11:04:16] Duration: 300s | Clients: 24 pods
+[11:04:16] Load profile: conns/pod=24 payload=512B qps/conn=8k
+[11:04:17] Results: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/api-read-heavy/rbt-pa-05291154
+[11:04:17] KUBECONFIG: /tmp/kube-rbt-pa-05291154.yaml
+[11:04:17] ============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+namespace/perf-test created
+[11:04:25] [1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+[11:04:33]   Receiver pod: tcp-receiver-6bd7d55766-rnjxn  node: aks-np32core-39298647-vmss000000
+[11:04:33] [2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+[11:04:36]   Waiting for bpftool to install (30s)...
+[11:05:06]   Monitor pod ready
+[11:05:06] [3/8] Capturing cluster metadata...
+[11:05:11] [4/8] Capturing Retina pre-test state...
+[11:05:13]   Retina pod: retina-agent-466wd
+[11:05:13] [4.5/8] Capturing kernel/sysctl network configuration...
+[11:05:38]   Kernel env captured
+[11:05:38] [5/8] Capturing eBPF map state (pre-test)...
+[11:05:46]   eBPF maps captured (36 entries)
+[11:05:46] [6/8] Capturing softirq baseline...
+[11:05:49]   Softirq baseline captured
+[11:05:49] [7/8] Deploying 24 client pods (duration=300s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 1 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 2 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 3 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 4 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 5 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 6 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 7 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 8 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 9 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 10 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 11 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 12 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 13 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 14 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 15 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 16 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 17 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 18 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 19 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 20 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 21 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 22 of 24 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 23 of 24 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+[11:06:13]   All client pods ready — test started at Fri May 29 11:06:13 UTC 2026
+[11:06:13] 
+[11:06:13]   Test running... sampling throughput every 5s:
+[11:06:13]   [11:06:13] [11:06:09] throughput=1.05 Gb/s  conns_total=528  conns_active=528
+[11:06:19]   [11:06:19] [11:06:15] throughput=1.04 Gb/s  conns_total=576  conns_active=576
+[11:06:25]   [11:06:25] [11:06:21] throughput=1.09 Gb/s  conns_total=576  conns_active=576
+[11:06:31]   [11:06:31] [11:06:27] throughput=1.05 Gb/s  conns_total=576  conns_active=576
+[11:06:37]   [11:06:37] [11:06:33] throughput=1.11 Gb/s  conns_total=576  conns_active=576
+[11:06:42]   [11:06:42] [11:06:39] throughput=1.12 Gb/s  conns_total=576  conns_active=576
+[11:06:48]   [11:06:48] [11:06:45] throughput=1.11 Gb/s  conns_total=576  conns_active=576
+[11:06:54]   [11:06:54] [11:06:51] throughput=1.06 Gb/s  conns_total=576  conns_active=576
+[11:07:00]   [11:07:00] [11:06:57] throughput=1.02 Gb/s  conns_total=576  conns_active=576
+[11:07:05]   [11:07:05] [11:07:03] throughput=1.06 Gb/s  conns_total=576  conns_active=576
+[11:07:11]   [11:07:11] [11:07:07] throughput=1.03 Gb/s  conns_total=576  conns_active=576
+[11:07:17]   [11:07:17] [11:07:13] throughput=1.06 Gb/s  conns_total=576  conns_active=576
+[11:07:23]   [11:07:23] [11:07:19] throughput=1.08 Gb/s  conns_total=576  conns_active=576
+[11:07:29]   [11:07:29] [11:07:25] throughput=1.05 Gb/s  conns_total=576  conns_active=576
+[11:07:34]   [11:07:34] [11:07:31] throughput=4.45 Gb/s  conns_total=576  conns_active=576
+[11:07:40]   [11:07:40] [11:07:37] throughput=4.32 Gb/s  conns_total=576  conns_active=576
+[11:07:46]   [11:07:46] [11:07:43] throughput=4.37 Gb/s  conns_total=576  conns_active=576
+[11:07:52]   [11:07:52] [11:07:49] throughput=3.83 Gb/s  conns_total=576  conns_active=576
+[11:07:58]   [11:07:58] [11:07:55] throughput=4.87 Gb/s  conns_total=576  conns_active=576
+[11:08:04]   [11:08:04] [11:08:01] throughput=1.05 Gb/s  conns_total=576  conns_active=576
+[11:08:09]   [11:08:09] [11:08:07] throughput=1.01 Gb/s  conns_total=576  conns_active=576
+[11:08:15]   [11:08:15] [11:08:13] throughput=1.05 Gb/s  conns_total=576  conns_active=576
+[11:08:21]   [11:08:21] [11:08:17] throughput=1.05 Gb/s  conns_total=576  conns_active=576
+[11:08:27]   [11:08:27] [11:08:23] throughput=1.10 Gb/s  conns_total=576  conns_active=576
+[11:08:33]   [11:08:33] [11:08:29] throughput=1.12 Gb/s  conns_total=576  conns_active=576
+[11:08:39]   [11:08:39] [11:08:35] throughput=1.10 Gb/s  conns_total=576  conns_active=576
+[11:08:45]   [11:08:45] [11:08:41] throughput=1.10 Gb/s  conns_total=576  conns_active=576
+[11:08:50]   [11:08:50] [11:08:47] throughput=1.13 Gb/s  conns_total=576  conns_active=576
+[11:08:56]   [11:08:56] [11:08:53] throughput=1.10 Gb/s  conns_total=576  conns_active=576
+[11:09:02]   [11:09:02] [11:08:59] throughput=1.07 Gb/s  conns_total=576  conns_active=576
+[11:09:08]   [11:09:08] [11:09:05] throughput=2.29 Gb/s  conns_total=576  conns_active=576
+[11:09:14]   [11:09:14] [11:09:11] throughput=1.11 Gb/s  conns_total=576  conns_active=576
+[11:09:20]   [11:09:20] [11:09:17] throughput=1.12 Gb/s  conns_total=576  conns_active=576
+[11:09:25]   [11:09:25] [11:09:23] throughput=1.14 Gb/s  conns_total=576  conns_active=576
+[11:09:31]   [11:09:31] [11:09:27] throughput=1.07 Gb/s  conns_total=576  conns_active=576
+[11:09:37]   [11:09:37] [11:09:33] throughput=1.08 Gb/s  conns_total=576  conns_active=576
+[11:09:43]   [11:09:43] [11:09:39] throughput=1.04 Gb/s  conns_total=576  conns_active=576
+[11:09:49]   [11:09:49] [11:09:45] throughput=4.33 Gb/s  conns_total=576  conns_active=576
+[11:09:55]   [11:09:55] [11:09:51] throughput=4.32 Gb/s  conns_total=576  conns_active=576
+[11:10:00]   [11:10:00] [11:09:57] throughput=4.25 Gb/s  conns_total=576  conns_active=576
+[11:10:06]   [11:10:06] [11:10:03] throughput=4.32 Gb/s  conns_total=576  conns_active=576
+[11:10:12]   [11:10:12] [11:10:09] throughput=4.17 Gb/s  conns_total=576  conns_active=576
+[11:10:18]   [11:10:18] [11:10:15] throughput=4.60 Gb/s  conns_total=576  conns_active=576
+[11:10:24]   [11:10:24] [11:10:21] throughput=5.59 Gb/s  conns_total=576  conns_active=576
+[11:10:29]   [11:10:29] [11:10:27] throughput=2.05 Gb/s  conns_total=576  conns_active=576
+[11:10:35]   [11:10:35] [11:10:31] throughput=1.03 Gb/s  conns_total=576  conns_active=576
+[11:10:41]   [11:10:41] [11:10:37] throughput=981.71 Mb/s  conns_total=576  conns_active=576
+[11:10:47]   [11:10:47] [11:10:43] throughput=959.48 Mb/s  conns_total=576  conns_active=576
+[11:10:53]   [11:10:53] [11:10:49] throughput=1.02 Gb/s  conns_total=576  conns_active=576
+[11:10:58]   [11:10:58] [11:10:55] throughput=1.15 Gb/s  conns_total=720  conns_active=240
+[11:11:04]   [11:11:04] [11:11:01] throughput=1.05 Gb/s  conns_total=936  conns_active=456
+[11:11:10]   [11:11:10] [11:11:07] throughput=1.04 Gb/s  conns_total=1008  conns_active=480
+[11:11:16]   [11:11:16] [11:11:13] throughput=1.03 Gb/s  conns_total=1152  conns_active=576
+[11:11:21]   [11:11:21] [11:11:19] throughput=1.09 Gb/s  conns_total=1152  conns_active=576
+[11:11:26]   Test complete — 54 throughput samples collected
+[11:11:26] 
+[11:11:26] [8/8] Collecting final results...
+[11:11:34]   Saving receiver logs...
+[11:11:35]   Saving client logs...
+[11:11:55]   Saving Retina logs...
+[11:11:55]   Computing summary...
+[11:11:57] 
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 11:11:55 UTC 2026
+Duration: 300s
+Client replicas: 24
+Conns per pod: 24
+Total TCP streams: 576
+Payload size: 512 bytes
+QPS per connection: 8k (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000000
+Throughput samples: 54 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:11:35] throughput=1.07 Gb/s  conns_total=1152  conns_active=576
+[11:11:37] throughput=1.03 Gb/s  conns_total=1152  conns_active=576
+[11:11:39] throughput=1.03 Gb/s  conns_total=1152  conns_active=576
+[11:11:41] throughput=1.01 Gb/s  conns_total=1152  conns_active=576
+[11:11:43] throughput=1.04 Gb/s  conns_total=1152  conns_active=576
+[11:11:45] throughput=1.07 Gb/s  conns_total=1152  conns_active=576
+[11:11:47] throughput=1.04 Gb/s  conns_total=1152  conns_active=576
+[11:11:49] throughput=1.03 Gb/s  conns_total=1152  conns_active=576
+[11:11:51] throughput=1.02 Gb/s  conns_total=1152  conns_active=576
+[11:11:53] throughput=1.05 Gb/s  conns_total=1152  conns_active=576
+
+=== PEAK THROUGHPUT ===
+  Peak: 5.66 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+61: lpm_trie  name retina_filter  flags 0x1
+62: lru_hash  name retina_conntrac  flags 0x0
+68: perf_event_array  name retina_packetpa  flags 0x0
+92: perf_event_array  name retina_packetpa  flags 0x0
+104: perf_event_array  name retina_packetpa  flags 0x0
+122: ringbuf  name events  flags 0x0
+123: ringbuf  name dns_events  flags 0x0
+139: perf_event_array  name retina_dns_even  flags 0x0
+142: hash  name retina_dropreas  flags 0x0
+143: percpu_hash  name retina_dropreas  flags 0x0
+144: perf_event_array  name retina_dropreas  flags 0x0
+145: hash  name retina_dropreas  flags 0x0
+146: hash  name retina_dropreas  flags 0x0
+147: percpu_hash  name retina_packetfo  flags 0x0
+148: perf_event_array  name retina_packetpa  flags 0x0
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:05:13 UTC 2026
+Node: aks-np32core-39298647-vmss000000
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-twv6g   21m          119Mi           
+retina-agent-mqgsv   97m          119Mi           
+retina-agent-mqgsv   17m          119Mi           
+retina-agent-mqgsv   17m          119Mi           
+retina-agent-mqgsv   14m          119Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=104 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=106 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=111 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=122 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=123 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=139 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=144 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=148 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=68 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=88 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=92 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=94 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+[11:11:57] 
+[11:11:57] Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+[11:12:00] 
+[11:12:00] ═══════════════════════════════════════
+[11:12:00] Results saved to: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/api-read-heavy/rbt-pa-05291154/
+[11:12:00] ═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+kernel-env.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+resource-usage.txt
+retina-posttest.log
+retina-pretest.txt
+ringbuf-pressure.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-pa-05291154
+
+=== Scenario: grpc-streaming ===
+replicas=20 conns/pod=16 payload=2048B qps/conn=2k duration=300s
+[11:12:00] ============================================
+[11:12:00] Running test on: rbt-pa-05291154
+[11:12:00] Duration: 300s | Clients: 20 pods
+[11:12:00] Load profile: conns/pod=16 payload=2048B qps/conn=2k
+[11:12:00] Results: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/grpc-streaming/rbt-pa-05291154
+[11:12:00] KUBECONFIG: /tmp/kube-rbt-pa-05291154.yaml
+[11:12:00] ============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+namespace/perf-test configured
+[11:12:16] [1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+[11:12:21]   Receiver pod: tcp-receiver-6bd7d55766-8hjtk  node: aks-np32core-39298647-vmss000001
+[11:12:21] [2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+[11:12:25]   Waiting for bpftool to install (30s)...
+[11:12:55]   Monitor pod ready
+[11:12:55] [3/8] Capturing cluster metadata...
+[11:12:59] [4/8] Capturing Retina pre-test state...
+[11:13:00]   Retina pod: retina-agent-mqgsv
+[11:13:00] [4.5/8] Capturing kernel/sysctl network configuration...
+[11:13:21]   Kernel env captured
+[11:13:21] [5/8] Capturing eBPF map state (pre-test)...
+[11:13:27]   eBPF maps captured (77 entries)
+[11:13:27] [6/8] Capturing softirq baseline...
+[11:13:31]   Softirq baseline captured
+[11:13:31] [7/8] Deploying 20 client pods (duration=300s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 1 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 2 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 3 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 4 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 5 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 6 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 7 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 8 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 9 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 10 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 11 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 12 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 13 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 14 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 15 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 16 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 17 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 18 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 19 of 20 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+[11:13:50]   All client pods ready — test started at Fri May 29 11:13:50 UTC 2026
+[11:13:50] 
+[11:13:50]   Test running... sampling throughput every 5s:
+[11:13:51]   [11:13:51] [11:13:47] throughput=3.93 Gb/s  conns_total=320  conns_active=320
+[11:13:57]   [11:13:57] [11:13:53] throughput=3.83 Gb/s  conns_total=320  conns_active=320
+[11:14:02]   [11:14:02] [11:13:59] throughput=3.98 Gb/s  conns_total=320  conns_active=320
+[11:14:08]   [11:14:08] [11:14:05] throughput=3.93 Gb/s  conns_total=320  conns_active=320
+[11:14:14]   [11:14:14] [11:14:11] throughput=3.97 Gb/s  conns_total=320  conns_active=320
+[11:14:20]   [11:14:20] [11:14:15] throughput=3.96 Gb/s  conns_total=320  conns_active=320
+[11:14:25]   [11:14:25] [11:14:21] throughput=3.90 Gb/s  conns_total=320  conns_active=320
+[11:14:31]   [11:14:31] [11:14:27] throughput=3.91 Gb/s  conns_total=320  conns_active=320
+[11:14:37]   [11:14:37] [11:14:33] throughput=3.90 Gb/s  conns_total=320  conns_active=320
+[11:14:42]   [11:14:42] [11:14:39] throughput=3.94 Gb/s  conns_total=320  conns_active=320
+[11:14:49]   [11:14:49] [11:14:45] throughput=3.97 Gb/s  conns_total=320  conns_active=320
+[11:14:55]   [11:14:55] [11:14:51] throughput=3.99 Gb/s  conns_total=320  conns_active=320
+[11:15:01]   [11:15:01] [11:14:57] throughput=6.15 Gb/s  conns_total=320  conns_active=320
+[11:15:07]   [11:15:07] [11:15:03] throughput=6.90 Gb/s  conns_total=320  conns_active=320
+[11:15:12]   [11:15:12] [11:15:09] throughput=6.82 Gb/s  conns_total=320  conns_active=320
+[11:15:18]   [11:15:18] [11:15:15] throughput=6.86 Gb/s  conns_total=320  conns_active=320
+[11:15:24]   [11:15:24] [11:15:21] throughput=6.82 Gb/s  conns_total=320  conns_active=320
+[11:15:29]   [11:15:29] [11:15:25] throughput=6.84 Gb/s  conns_total=320  conns_active=320
+[11:15:35]   [11:15:35] [11:15:31] throughput=6.86 Gb/s  conns_total=320  conns_active=320
+[11:15:41]   [11:15:41] [11:15:37] throughput=6.88 Gb/s  conns_total=320  conns_active=320
+[11:15:47]   [11:15:47] [11:15:43] throughput=6.85 Gb/s  conns_total=320  conns_active=320
+[11:15:53]   [11:15:53] [11:15:49] throughput=6.84 Gb/s  conns_total=320  conns_active=320
+[11:15:58]   [11:15:58] [11:15:55] throughput=6.86 Gb/s  conns_total=320  conns_active=320
+[11:16:04]   [11:16:04] [11:16:01] throughput=6.83 Gb/s  conns_total=320  conns_active=320
+[11:16:10]   [11:16:10] [11:16:07] throughput=6.88 Gb/s  conns_total=320  conns_active=320
+[11:16:16]   [11:16:16] [11:16:11] throughput=6.87 Gb/s  conns_total=320  conns_active=320
+[11:16:21]   [11:16:21] [11:16:17] throughput=6.90 Gb/s  conns_total=320  conns_active=320
+[11:16:27]   [11:16:27] [11:16:23] throughput=6.65 Gb/s  conns_total=320  conns_active=320
+[11:16:33]   [11:16:33] [11:16:29] throughput=5.84 Gb/s  conns_total=320  conns_active=320
+[11:16:39]   [11:16:39] [11:16:35] throughput=5.22 Gb/s  conns_total=320  conns_active=320
+[11:16:44]   [11:16:44] [11:16:41] throughput=3.83 Gb/s  conns_total=320  conns_active=320
+[11:16:50]   [11:16:50] [11:16:47] throughput=3.85 Gb/s  conns_total=320  conns_active=320
+[11:16:56]   [11:16:56] [11:16:53] throughput=3.73 Gb/s  conns_total=320  conns_active=320
+[11:17:01]   [11:17:01] [11:16:57] throughput=3.78 Gb/s  conns_total=320  conns_active=320
+[11:17:07]   [11:17:07] [11:17:03] throughput=3.70 Gb/s  conns_total=320  conns_active=320
+[11:17:13]   [11:17:13] [11:17:09] throughput=3.73 Gb/s  conns_total=320  conns_active=320
+[11:17:19]   [11:17:19] [11:17:15] throughput=3.83 Gb/s  conns_total=320  conns_active=320
+[11:17:25]   [11:17:25] [11:17:21] throughput=3.77 Gb/s  conns_total=320  conns_active=320
+[11:17:30]   [11:17:30] [11:17:27] throughput=3.77 Gb/s  conns_total=320  conns_active=320
+[11:17:36]   [11:17:36] [11:17:33] throughput=3.70 Gb/s  conns_total=320  conns_active=320
+[11:17:42]   [11:17:42] [11:17:37] throughput=3.79 Gb/s  conns_total=320  conns_active=320
+[11:17:47]   [11:17:47] [11:17:43] throughput=3.79 Gb/s  conns_total=320  conns_active=320
+[11:17:53]   [11:17:53] [11:17:49] throughput=3.76 Gb/s  conns_total=320  conns_active=320
+[11:17:59]   [11:17:59] [11:17:55] throughput=3.91 Gb/s  conns_total=320  conns_active=320
+[11:18:05]   [11:18:05] [11:18:01] throughput=3.76 Gb/s  conns_total=320  conns_active=320
+[11:18:11]   [11:18:11] [11:18:07] throughput=3.75 Gb/s  conns_total=320  conns_active=320
+[11:18:17]   [11:18:17] [11:18:13] throughput=3.84 Gb/s  conns_total=320  conns_active=320
+[11:18:23]   [11:18:23] [11:18:19] throughput=3.37 Gb/s  conns_total=320  conns_active=320
+[11:18:28]   [11:18:28] [11:18:25] throughput=3.29 Gb/s  conns_total=320  conns_active=320
+[11:18:34]   [11:18:34] [11:18:31] throughput=5.91 Gb/s  conns_total=320  conns_active=320
+[11:18:40]   [11:18:40] [11:18:35] throughput=1.44 Gb/s  conns_total=480  conns_active=176
+[11:18:46]   [11:18:46] [11:18:41] throughput=4.45 Gb/s  conns_total=528  conns_active=224
+[11:18:51]   [11:18:51] [11:18:47] throughput=4.78 Gb/s  conns_total=560  conns_active=240
+[11:18:57]   [11:18:57] [11:18:53] throughput=6.64 Gb/s  conns_total=640  conns_active=320
+[11:19:02]   Test complete — 54 throughput samples collected
+[11:19:02] 
+[11:19:02] [8/8] Collecting final results...
+[11:19:10]   Saving receiver logs...
+[11:19:11]   Saving client logs...
+[11:19:30]   Saving Retina logs...
+[11:19:31]   Computing summary...
+[11:19:33] 
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 11:19:31 UTC 2026
+Duration: 300s
+Client replicas: 20
+Conns per pod: 16
+Total TCP streams: 320
+Payload size: 2048 bytes
+QPS per connection: 2k (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000001
+Throughput samples: 54 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:19:09] throughput=6.82 Gb/s  conns_total=640  conns_active=320
+[11:19:11] throughput=6.70 Gb/s  conns_total=640  conns_active=320
+[11:19:13] throughput=6.78 Gb/s  conns_total=640  conns_active=320
+[11:19:15] throughput=6.82 Gb/s  conns_total=640  conns_active=320
+[11:19:17] throughput=6.78 Gb/s  conns_total=640  conns_active=320
+[11:19:19] throughput=6.82 Gb/s  conns_total=640  conns_active=320
+[11:19:21] throughput=6.81 Gb/s  conns_total=640  conns_active=320
+[11:19:23] throughput=6.82 Gb/s  conns_total=640  conns_active=320
+[11:19:25] throughput=6.83 Gb/s  conns_total=640  conns_active=320
+[11:19:27] throughput=6.79 Gb/s  conns_total=640  conns_active=320
+
+=== PEAK THROUGHPUT ===
+  Peak: 6.91 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+64: lpm_trie  name retina_filter  flags 0x1
+65: lru_hash  name retina_conntrac  flags 0x0
+71: perf_event_array  name retina_packetpa  flags 0x0
+91: perf_event_array  name retina_packetpa  flags 0x0
+151: perf_event_array  name retina_packetpa  flags 0x0
+169: ringbuf  name events  flags 0x0
+170: ringbuf  name dns_events  flags 0x0
+186: perf_event_array  name retina_packetpa  flags 0x0
+229: perf_event_array  name retina_packetpa  flags 0x0
+249: perf_event_array  name retina_packetpa  flags 0x0
+    "name": "retina_filter",
+    "name": "retina_conntrac",
+    "type": "perf_event_array",
+    "name": "retina_packetpa",
+    "type": "perf_event_array",
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:13:00 UTC 2026
+Node: aks-np32core-39298647-vmss000001
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-466wd   23m          130Mi           
+retina-agent-466wd   23m          130Mi           
+retina-agent-twv6g   20m          118Mi           
+retina-agent-twv6g   20m          118Mi           
+retina-agent-mqgsv   13m          115Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=151 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=169 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=170 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=186 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=229 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=231 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=236 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=245 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=249 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=251 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=71 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=91 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+[11:19:33] 
+[11:19:33] Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+[11:19:37] 
+[11:19:37] ═══════════════════════════════════════
+[11:19:37] Results saved to: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/grpc-streaming/rbt-pa-05291154/
+[11:19:37] ═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+kernel-env.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+resource-usage.txt
+retina-posttest.log
+retina-pretest.txt
+ringbuf-pressure.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-pa-05291154
+
+=== Scenario: iot-telemetry ===
+replicas=30 conns/pod=12 payload=128B qps/conn=20k duration=300s
+[11:19:37] ============================================
+[11:19:37] Running test on: rbt-pa-05291154
+[11:19:37] Duration: 300s | Clients: 30 pods
+[11:19:37] Load profile: conns/pod=12 payload=128B qps/conn=20k
+[11:19:37] Results: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/iot-telemetry/rbt-pa-05291154
+[11:19:37] KUBECONFIG: /tmp/kube-rbt-pa-05291154.yaml
+[11:19:37] ============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+namespace/perf-test configured
+[11:19:54] [1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+[11:19:58]   Receiver pod: tcp-receiver-6bd7d55766-zlrkr  node: aks-np32core-39298647-vmss000001
+[11:19:58] [2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+[11:20:00]   Waiting for bpftool to install (30s)...
+[11:20:30]   Monitor pod ready
+[11:20:30] [3/8] Capturing cluster metadata...
+[11:20:34] [4/8] Capturing Retina pre-test state...
+[11:20:36]   Retina pod: retina-agent-mqgsv
+[11:20:36] [4.5/8] Capturing kernel/sysctl network configuration...
+[11:20:58]   Kernel env captured
+[11:20:58] [5/8] Capturing eBPF map state (pre-test)...
+[11:21:05]   eBPF maps captured (52 entries)
+[11:21:05] [6/8] Capturing softirq baseline...
+[11:21:08]   Softirq baseline captured
+[11:21:08] [7/8] Deploying 30 client pods (duration=300s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 out of 30 new replicas have been updated...
+Waiting for deployment "tcp-client" rollout to finish: 0 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 1 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 2 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 3 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 4 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 5 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 6 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 7 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 8 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 9 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 10 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 11 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 12 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 13 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 14 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 15 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 16 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 17 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 18 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 19 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 20 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 21 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 22 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 23 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 24 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 25 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 26 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 27 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 28 of 30 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 29 of 30 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+[11:21:17]   All client pods ready — test started at Fri May 29 11:21:17 UTC 2026
+[11:21:17] 
+[11:21:17]   Test running... sampling throughput every 5s:
+[11:21:18]   [11:21:18] [11:21:14] throughput=2.43 Gb/s  conns_total=336  conns_active=336
+[11:21:24]   [11:21:24] [11:21:20] throughput=3.30 Gb/s  conns_total=360  conns_active=360
+[11:21:30]   [11:21:30] [11:21:26] throughput=3.09 Gb/s  conns_total=360  conns_active=360
+[11:21:36]   [11:21:36] [11:21:32] throughput=2.89 Gb/s  conns_total=360  conns_active=360
+[11:21:41]   [11:21:41] [11:21:38] throughput=243.14 Mb/s  conns_total=360  conns_active=360
+[11:21:48]   [11:21:48] [11:21:44] throughput=240.47 Mb/s  conns_total=360  conns_active=360
+[11:21:54]   [11:21:54] [11:21:50] throughput=252.50 Mb/s  conns_total=360  conns_active=360
+[11:22:00]   [11:22:00] [11:21:56] throughput=248.49 Mb/s  conns_total=360  conns_active=360
+[11:22:06]   [11:22:06] [11:22:02] throughput=241.03 Mb/s  conns_total=360  conns_active=360
+[11:22:11]   [11:22:11] [11:22:08] throughput=249.32 Mb/s  conns_total=360  conns_active=360
+[11:22:17]   [11:22:17] [11:22:14] throughput=241.76 Mb/s  conns_total=360  conns_active=360
+[11:22:23]   [11:22:23] [11:22:20] throughput=250.01 Mb/s  conns_total=360  conns_active=360
+[11:22:29]   [11:22:29] [11:22:26] throughput=243.42 Mb/s  conns_total=360  conns_active=360
+[11:22:34]   [11:22:34] [11:22:32] throughput=246.91 Mb/s  conns_total=360  conns_active=360
+[11:22:40]   [11:22:40] [11:22:36] throughput=253.03 Mb/s  conns_total=360  conns_active=360
+[11:22:46]   [11:22:46] [11:22:42] throughput=244.14 Mb/s  conns_total=360  conns_active=360
+[11:22:52]   [11:22:52] [11:22:48] throughput=245.85 Mb/s  conns_total=360  conns_active=360
+[11:22:58]   [11:22:58] [11:22:54] throughput=248.04 Mb/s  conns_total=360  conns_active=360
+[11:23:04]   [11:23:04] [11:23:00] throughput=239.52 Mb/s  conns_total=360  conns_active=360
+[11:23:09]   [11:23:09] [11:23:06] throughput=235.80 Mb/s  conns_total=360  conns_active=360
+[11:23:15]   [11:23:15] [11:23:12] throughput=239.00 Mb/s  conns_total=360  conns_active=360
+[11:23:21]   [11:23:21] [11:23:18] throughput=593.43 Mb/s  conns_total=360  conns_active=360
+[11:23:27]   [11:23:27] [11:23:24] throughput=1.02 Gb/s  conns_total=360  conns_active=360
+[11:23:33]   [11:23:33] [11:23:30] throughput=983.18 Mb/s  conns_total=360  conns_active=360
+[11:23:39]   [11:23:39] [11:23:36] throughput=976.31 Mb/s  conns_total=360  conns_active=360
+[11:23:45]   [11:23:45] [11:23:42] throughput=1.01 Gb/s  conns_total=360  conns_active=360
+[11:23:50]   [11:23:50] [11:23:46] throughput=999.85 Mb/s  conns_total=360  conns_active=360
+[11:23:56]   [11:23:56] [11:23:52] throughput=1.02 Gb/s  conns_total=360  conns_active=360
+[11:24:02]   [11:24:02] [11:23:58] throughput=1.03 Gb/s  conns_total=360  conns_active=360
+[11:24:08]   [11:24:08] [11:24:04] throughput=1.00 Gb/s  conns_total=360  conns_active=360
+[11:24:13]   [11:24:13] [11:24:10] throughput=979.16 Mb/s  conns_total=360  conns_active=360
+[11:24:19]   [11:24:19] [11:24:16] throughput=1.04 Gb/s  conns_total=360  conns_active=360
+[11:24:25]   [11:24:25] [11:24:22] throughput=1.04 Gb/s  conns_total=360  conns_active=360
+[11:24:31]   [11:24:31] [11:24:28] throughput=1.02 Gb/s  conns_total=360  conns_active=360
+[11:24:36]   [11:24:36] [11:24:32] throughput=1.01 Gb/s  conns_total=360  conns_active=360
+[11:24:42]   [11:24:42] [11:24:38] throughput=1.00 Gb/s  conns_total=360  conns_active=360
+[11:24:48]   [11:24:48] [11:24:44] throughput=981.47 Mb/s  conns_total=360  conns_active=360
+[11:24:54]   [11:24:54] [11:24:50] throughput=1.01 Gb/s  conns_total=360  conns_active=360
+[11:25:00]   [11:25:00] [11:24:56] throughput=1.04 Gb/s  conns_total=360  conns_active=360
+[11:25:06]   [11:25:06] [11:25:02] throughput=995.41 Mb/s  conns_total=360  conns_active=360
+[11:25:11]   [11:25:11] [11:25:08] throughput=1.01 Gb/s  conns_total=360  conns_active=360
+[11:25:17]   [11:25:17] [11:25:14] throughput=1.02 Gb/s  conns_total=360  conns_active=360
+[11:25:23]   [11:25:23] [11:25:20] throughput=1.01 Gb/s  conns_total=360  conns_active=360
+[11:25:29]   [11:25:29] [11:25:26] throughput=1.03 Gb/s  conns_total=360  conns_active=360
+[11:25:34]   [11:25:34] [11:25:32] throughput=1.02 Gb/s  conns_total=360  conns_active=360
+[11:25:40]   [11:25:40] [11:25:36] throughput=1.02 Gb/s  conns_total=360  conns_active=360
+[11:25:46]   [11:25:46] [11:25:42] throughput=1.03 Gb/s  conns_total=360  conns_active=360
+[11:25:52]   [11:25:52] [11:25:48] throughput=1.04 Gb/s  conns_total=360  conns_active=360
+[11:25:58]   [11:25:58] [11:25:54] throughput=1.01 Gb/s  conns_total=360  conns_active=360
+[11:26:04]   [11:26:04] [11:26:00] throughput=1.01 Gb/s  conns_total=360  conns_active=360
+[11:26:09]   [11:26:09] [11:26:06] throughput=1.00 Gb/s  conns_total=360  conns_active=360
+[11:26:15]   [11:26:15] [11:26:12] throughput=935.52 Mb/s  conns_total=420  conns_active=144
+[11:26:21]   [11:26:21] [11:26:18] throughput=962.10 Mb/s  conns_total=696  conns_active=336
+[11:26:27]   [11:26:27] [11:26:24] throughput=994.14 Mb/s  conns_total=720  conns_active=360
+[11:26:32]   Test complete — 54 throughput samples collected
+[11:26:32] 
+[11:26:32] [8/8] Collecting final results...
+[11:26:40]   Saving receiver logs...
+[11:26:40]   Saving client logs...
+[11:27:04]   Saving Retina logs...
+[11:27:05]   Computing summary...
+[11:27:07] 
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 11:27:05 UTC 2026
+Duration: 300s
+Client replicas: 30
+Conns per pod: 12
+Total TCP streams: 360
+Payload size: 128 bytes
+QPS per connection: 20k (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000001
+Throughput samples: 54 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:26:44] throughput=1.00 Gb/s  conns_total=720  conns_active=360
+[11:26:46] throughput=1.02 Gb/s  conns_total=720  conns_active=360
+[11:26:48] throughput=985.64 Mb/s  conns_total=720  conns_active=360
+[11:26:50] throughput=1.00 Gb/s  conns_total=720  conns_active=360
+[11:26:52] throughput=990.13 Mb/s  conns_total=720  conns_active=360
+[11:26:54] throughput=991.45 Mb/s  conns_total=720  conns_active=360
+[11:26:56] throughput=1.01 Gb/s  conns_total=720  conns_active=360
+[11:26:58] throughput=1.01 Gb/s  conns_total=720  conns_active=360
+[11:27:00] throughput=977.16 Mb/s  conns_total=720  conns_active=360
+[11:27:02] throughput=999.17 Mb/s  conns_total=720  conns_active=360
+
+=== PEAK THROUGHPUT ===
+  Peak: 3.30 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+64: lpm_trie  name retina_filter  flags 0x1
+65: lru_hash  name retina_conntrac  flags 0x0
+71: perf_event_array  name retina_packetpa  flags 0x0
+91: perf_event_array  name retina_packetpa  flags 0x0
+151: perf_event_array  name retina_packetpa  flags 0x0
+169: ringbuf  name events  flags 0x0
+170: ringbuf  name dns_events  flags 0x0
+186: perf_event_array  name retina_packetpa  flags 0x0
+229: perf_event_array  name retina_packetpa  flags 0x0
+249: perf_event_array  name retina_packetpa  flags 0x0
+268: perf_event_array  name retina_packetpa  flags 0x0
+    "name": "retina_filter",
+    "name": "retina_conntrac",
+    "type": "perf_event_array",
+    "name": "retina_packetpa",
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:20:36 UTC 2026
+Node: aks-np32core-39298647-vmss000001
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-466wd   204m         132Mi           
+retina-agent-466wd   204m         132Mi           
+retina-agent-466wd   17m          132Mi           
+retina-agent-466wd   17m          132Mi           
+retina-agent-bww8w   24m          119Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=151 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=169 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=170 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=186 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=229 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=249 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=264 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=268 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=270 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=71 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=91 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+[11:27:07] 
+[11:27:07] Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+[11:27:11] 
+[11:27:11] ═══════════════════════════════════════
+[11:27:11] Results saved to: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/iot-telemetry/rbt-pa-05291154/
+[11:27:11] ═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+kernel-env.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+resource-usage.txt
+retina-posttest.log
+retina-pretest.txt
+ringbuf-pressure.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-pa-05291154
+
+=== Scenario: log-shipper ===
+replicas=12 conns/pod=10 payload=16384B qps/conn=400 duration=300s
+[11:27:11] ============================================
+[11:27:11] Running test on: rbt-pa-05291154
+[11:27:11] Duration: 300s | Clients: 12 pods
+[11:27:11] Load profile: conns/pod=10 payload=16384B qps/conn=400
+[11:27:11] Results: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/log-shipper/rbt-pa-05291154
+[11:27:11] KUBECONFIG: /tmp/kube-rbt-pa-05291154.yaml
+[11:27:11] ============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+namespace/perf-test configured
+[11:27:26] [1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+[11:27:30]   Receiver pod: tcp-receiver-6bd7d55766-659zt  node: aks-np32core-39298647-vmss000001
+[11:27:30] [2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+[11:27:32]   Waiting for bpftool to install (30s)...
+[11:28:02]   Monitor pod ready
+[11:28:02] [3/8] Capturing cluster metadata...
+[11:28:06] [4/8] Capturing Retina pre-test state...
+[11:28:07]   Retina pod: retina-agent-mqgsv
+[11:28:07] [4.5/8] Capturing kernel/sysctl network configuration...
+[11:28:29]   Kernel env captured
+[11:28:29] [5/8] Capturing eBPF map state (pre-test)...
+[11:28:35]   eBPF maps captured (83 entries)
+[11:28:35] [6/8] Capturing softirq baseline...
+[11:28:38]   Softirq baseline captured
+[11:28:38] [7/8] Deploying 12 client pods (duration=300s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 out of 12 new replicas have been updated...
+Waiting for deployment "tcp-client" rollout to finish: 0 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 1 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 2 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 4 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 5 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 6 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 7 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 8 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 9 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 10 of 12 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 11 of 12 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+[11:28:43]   All client pods ready — test started at Fri May 29 11:28:43 UTC 2026
+[11:28:43] 
+[11:28:43]   Test running... sampling throughput every 5s:
+[11:28:44]   [11:28:44] [11:28:40] throughput=2.30 Gb/s  conns_total=120  conns_active=120
+[11:28:50]   [11:28:50] [11:28:46] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:28:56]   [11:28:56] [11:28:52] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:29:01]   [11:29:01] [11:28:58] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:29:07]   [11:29:07] [11:29:04] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:29:13]   [11:29:13] [11:29:10] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:29:19]   [11:29:19] [11:29:16] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:29:24]   [11:29:24] [11:29:20] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:29:30]   [11:29:30] [11:29:26] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:29:36]   [11:29:36] [11:29:32] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:29:42]   [11:29:42] [11:29:38] throughput=6.23 Gb/s  conns_total=120  conns_active=120
+[11:29:47]   [11:29:47] [11:29:44] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:29:53]   [11:29:53] [11:29:50] throughput=6.23 Gb/s  conns_total=120  conns_active=120
+[11:29:59]   [11:29:59] [11:29:56] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:30:05]   [11:30:05] [11:30:02] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:30:10]   [11:30:10] [11:30:08] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:30:16]   [11:30:16] [11:30:12] throughput=6.27 Gb/s  conns_total=120  conns_active=120
+[11:30:22]   [11:30:22] [11:30:18] throughput=6.27 Gb/s  conns_total=120  conns_active=120
+[11:30:28]   [11:30:28] [11:30:24] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:30:33]   [11:30:33] [11:30:30] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:30:39]   [11:30:39] [11:30:36] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:30:45]   [11:30:45] [11:30:42] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:30:51]   [11:30:51] [11:30:48] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:30:56]   [11:30:56] [11:30:54] throughput=6.27 Gb/s  conns_total=120  conns_active=120
+[11:31:02]   [11:31:02] [11:30:58] throughput=6.24 Gb/s  conns_total=120  conns_active=120
+[11:31:08]   [11:31:08] [11:31:04] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:31:14]   [11:31:14] [11:31:10] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:31:20]   [11:31:20] [11:31:16] throughput=6.27 Gb/s  conns_total=120  conns_active=120
+[11:31:25]   [11:31:25] [11:31:22] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:31:31]   [11:31:31] [11:31:28] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:31:37]   [11:31:37] [11:31:34] throughput=6.24 Gb/s  conns_total=120  conns_active=120
+[11:31:42]   [11:31:42] [11:31:38] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:31:48]   [11:31:48] [11:31:44] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:31:54]   [11:31:54] [11:31:50] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:32:00]   [11:32:00] [11:31:56] throughput=6.27 Gb/s  conns_total=120  conns_active=120
+[11:32:05]   [11:32:05] [11:32:02] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:32:11]   [11:32:11] [11:32:08] throughput=6.23 Gb/s  conns_total=120  conns_active=120
+[11:32:17]   [11:32:17] [11:32:14] throughput=6.24 Gb/s  conns_total=120  conns_active=120
+[11:32:23]   [11:32:23] [11:32:20] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:32:28]   [11:32:28] [11:32:26] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:32:34]   [11:32:34] [11:32:30] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:32:40]   [11:32:40] [11:32:36] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:32:46]   [11:32:46] [11:32:42] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:32:52]   [11:32:52] [11:32:48] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:32:58]   [11:32:58] [11:32:54] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:33:04]   [11:33:04] [11:33:00] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:33:10]   [11:33:10] [11:33:06] throughput=6.26 Gb/s  conns_total=120  conns_active=120
+[11:33:17]   [11:33:17] [11:33:14] throughput=6.27 Gb/s  conns_total=120  conns_active=120
+[11:33:23]   [11:33:23] [11:33:20] throughput=6.24 Gb/s  conns_total=120  conns_active=120
+[11:33:29]   [11:33:29] [11:33:26] throughput=6.27 Gb/s  conns_total=120  conns_active=120
+[11:33:35]   [11:33:35] [11:33:32] throughput=6.27 Gb/s  conns_total=120  conns_active=120
+[11:33:41]   [11:33:41] [11:33:38] throughput=6.25 Gb/s  conns_total=120  conns_active=120
+[11:33:47]   [11:33:47] [11:33:44] throughput=6.25 Gb/s  conns_total=240  conns_active=120
+[11:33:53]   [11:33:53] [11:33:50] throughput=6.24 Gb/s  conns_total=240  conns_active=120
+[11:33:58]   Test complete — 54 throughput samples collected
+[11:33:58] 
+[11:33:58] [8/8] Collecting final results...
+[11:34:05]   Saving receiver logs...
+[11:34:05]   Saving client logs...
+[11:34:20]   Saving Retina logs...
+[11:34:21]   Computing summary...
+[11:34:22] 
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 11:34:21 UTC 2026
+Duration: 300s
+Client replicas: 12
+Conns per pod: 10
+Total TCP streams: 120
+Payload size: 16384 bytes
+QPS per connection: 400 (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000001
+Throughput samples: 54 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:34:00] throughput=6.25 Gb/s  conns_total=240  conns_active=120
+[11:34:02] throughput=6.25 Gb/s  conns_total=240  conns_active=120
+[11:34:04] throughput=6.25 Gb/s  conns_total=240  conns_active=120
+[11:34:06] throughput=6.25 Gb/s  conns_total=240  conns_active=120
+[11:34:08] throughput=6.25 Gb/s  conns_total=240  conns_active=120
+[11:34:10] throughput=6.25 Gb/s  conns_total=240  conns_active=120
+[11:34:12] throughput=6.26 Gb/s  conns_total=240  conns_active=120
+[11:34:14] throughput=6.26 Gb/s  conns_total=240  conns_active=120
+[11:34:16] throughput=6.26 Gb/s  conns_total=240  conns_active=120
+[11:34:18] throughput=6.26 Gb/s  conns_total=240  conns_active=120
+
+=== PEAK THROUGHPUT ===
+  Peak: 6.28 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+64: lpm_trie  name retina_filter  flags 0x1
+65: lru_hash  name retina_conntrac  flags 0x0
+71: perf_event_array  name retina_packetpa  flags 0x0
+91: perf_event_array  name retina_packetpa  flags 0x0
+151: perf_event_array  name retina_packetpa  flags 0x0
+169: ringbuf  name events  flags 0x0
+170: ringbuf  name dns_events  flags 0x0
+186: perf_event_array  name retina_packetpa  flags 0x0
+229: perf_event_array  name retina_packetpa  flags 0x0
+249: perf_event_array  name retina_packetpa  flags 0x0
+268: perf_event_array  name retina_packetpa  flags 0x0
+282: perf_event_array  name retina_packetpa  flags 0x0
+    "name": "retina_filter",
+    "name": "retina_conntrac",
+    "type": "perf_event_array",
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:28:07 UTC 2026
+Node: aks-np32core-39298647-vmss000001
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-466wd   12m          135Mi           
+retina-agent-466wd   12m          135Mi           
+retina-agent-466wd   135m         122Mi           
+retina-agent-mqgsv   12m          116Mi           
+retina-agent-twv6g   21m          111Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=151 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=169 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=170 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=186 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=229 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=249 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=268 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=282 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=284 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=289 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=71 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=91 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+[11:34:22] 
+[11:34:22] Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+[11:34:26] 
+[11:34:26] ═══════════════════════════════════════
+[11:34:26] Results saved to: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/log-shipper/rbt-pa-05291154/
+[11:34:26] ═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+kernel-env.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+resource-usage.txt
+retina-posttest.log
+retina-pretest.txt
+ringbuf-pressure.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-pa-05291154
+
+=== Scenario: mixed-web-spiky ===
+replicas=20 conns/pod=20 payload=1024B qps/conn=5k duration=300s
+[11:34:26] ============================================
+[11:34:26] Running test on: rbt-pa-05291154
+[11:34:26] Duration: 300s | Clients: 20 pods
+[11:34:26] Load profile: conns/pod=20 payload=1024B qps/conn=5k
+[11:34:26] Results: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/mixed-web-spiky/rbt-pa-05291154
+[11:34:26] KUBECONFIG: /tmp/kube-rbt-pa-05291154.yaml
+[11:34:26] ============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+namespace/perf-test configured
+[11:34:44] [1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+[11:34:49]   Receiver pod: tcp-receiver-6bd7d55766-pqrq7  node: aks-np32core-39298647-vmss000000
+[11:34:49] [2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+[11:34:52]   Waiting for bpftool to install (30s)...
+[11:35:22]   Monitor pod ready
+[11:35:22] [3/8] Capturing cluster metadata...
+[11:35:25] [4/8] Capturing Retina pre-test state...
+[11:35:27]   Retina pod: retina-agent-466wd
+[11:35:27] [4.5/8] Capturing kernel/sysctl network configuration...
+[11:35:49]   Kernel env captured
+[11:35:49] [5/8] Capturing eBPF map state (pre-test)...
+[11:35:55]   eBPF maps captured (85 entries)
+[11:35:55] [6/8] Capturing softirq baseline...
+[11:35:58]   Softirq baseline captured
+[11:35:58] [7/8] Deploying 20 client pods (duration=300s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 1 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 2 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 3 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 4 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 5 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 6 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 7 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 8 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 9 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 10 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 11 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 12 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 13 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 14 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 15 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 16 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 17 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 18 of 20 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 19 of 20 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+[11:36:06]   All client pods ready — test started at Fri May 29 11:36:06 UTC 2026
+[11:36:06] 
+[11:36:06]   Test running... sampling throughput every 5s:
+[11:36:06]   [11:36:06] [11:36:03] throughput=2.26 Gb/s  conns_total=400  conns_active=400
+[11:36:12]   [11:36:12] [11:36:09] throughput=2.12 Gb/s  conns_total=400  conns_active=400
+[11:36:18]   [11:36:18] [11:36:15] throughput=2.11 Gb/s  conns_total=400  conns_active=400
+[11:36:24]   [11:36:24] [11:36:21] throughput=2.14 Gb/s  conns_total=400  conns_active=400
+[11:36:29]   [11:36:29] [11:36:27] throughput=2.17 Gb/s  conns_total=400  conns_active=400
+[11:36:35]   [11:36:35] [11:36:33] throughput=2.14 Gb/s  conns_total=400  conns_active=400
+[11:36:41]   [11:36:41] [11:36:37] throughput=2.14 Gb/s  conns_total=400  conns_active=400
+[11:36:47]   [11:36:47] [11:36:43] throughput=2.14 Gb/s  conns_total=400  conns_active=400
+[11:36:52]   [11:36:52] [11:36:49] throughput=2.16 Gb/s  conns_total=400  conns_active=400
+[11:36:58]   [11:36:58] [11:36:55] throughput=2.15 Gb/s  conns_total=400  conns_active=400
+[11:37:04]   [11:37:04] [11:37:01] throughput=2.21 Gb/s  conns_total=400  conns_active=400
+[11:37:10]   [11:37:10] [11:37:07] throughput=2.20 Gb/s  conns_total=400  conns_active=400
+[11:37:16]   [11:37:16] [11:37:13] throughput=2.12 Gb/s  conns_total=400  conns_active=400
+[11:37:21]   [11:37:21] [11:37:19] throughput=2.15 Gb/s  conns_total=400  conns_active=400
+[11:37:27]   [11:37:27] [11:37:25] throughput=5.29 Gb/s  conns_total=400  conns_active=400
+[11:37:33]   [11:37:33] [11:37:29] throughput=5.67 Gb/s  conns_total=400  conns_active=400
+[11:37:39]   [11:37:39] [11:37:35] throughput=8.21 Gb/s  conns_total=400  conns_active=400
+[11:37:44]   [11:37:44] [11:37:41] throughput=8.20 Gb/s  conns_total=400  conns_active=400
+[11:37:50]   [11:37:50] [11:37:47] throughput=8.08 Gb/s  conns_total=400  conns_active=400
+[11:37:56]   [11:37:56] [11:37:53] throughput=8.32 Gb/s  conns_total=400  conns_active=400
+[11:38:02]   [11:38:02] [11:37:59] throughput=8.29 Gb/s  conns_total=400  conns_active=400
+[11:38:07]   [11:38:07] [11:38:05] throughput=8.12 Gb/s  conns_total=400  conns_active=400
+[11:38:13]   [11:38:13] [11:38:11] throughput=8.11 Gb/s  conns_total=400  conns_active=400
+[11:38:19]   [11:38:19] [11:38:15] throughput=8.20 Gb/s  conns_total=400  conns_active=400
+[11:38:25]   [11:38:25] [11:38:21] throughput=8.18 Gb/s  conns_total=400  conns_active=400
+[11:38:31]   [11:38:31] [11:38:27] throughput=8.17 Gb/s  conns_total=400  conns_active=400
+[11:38:36]   [11:38:36] [11:38:33] throughput=8.30 Gb/s  conns_total=400  conns_active=400
+[11:38:42]   [11:38:42] [11:38:39] throughput=8.28 Gb/s  conns_total=400  conns_active=400
+[11:38:48]   [11:38:48] [11:38:45] throughput=8.28 Gb/s  conns_total=400  conns_active=400
+[11:38:54]   [11:38:54] [11:38:51] throughput=8.25 Gb/s  conns_total=400  conns_active=400
+[11:39:00]   [11:39:00] [11:38:57] throughput=8.28 Gb/s  conns_total=400  conns_active=400
+[11:39:05]   [11:39:05] [11:39:03] throughput=8.05 Gb/s  conns_total=400  conns_active=400
+[11:39:11]   [11:39:11] [11:39:07] throughput=8.22 Gb/s  conns_total=400  conns_active=400
+[11:39:17]   [11:39:17] [11:39:15] throughput=8.15 Gb/s  conns_total=400  conns_active=400
+[11:39:23]   [11:39:23] [11:39:19] throughput=8.15 Gb/s  conns_total=400  conns_active=400
+[11:39:29]   [11:39:29] [11:39:25] throughput=8.16 Gb/s  conns_total=400  conns_active=400
+[11:39:34]   [11:39:34] [11:39:31] throughput=8.14 Gb/s  conns_total=400  conns_active=400
+[11:39:40]   [11:39:40] [11:39:37] throughput=8.13 Gb/s  conns_total=400  conns_active=400
+[11:39:46]   [11:39:46] [11:39:43] throughput=8.24 Gb/s  conns_total=400  conns_active=400
+[11:39:52]   [11:39:52] [11:39:49] throughput=8.17 Gb/s  conns_total=400  conns_active=400
+[11:39:57]   [11:39:57] [11:39:55] throughput=8.26 Gb/s  conns_total=400  conns_active=400
+[11:40:03]   [11:40:03] [11:40:01] throughput=8.09 Gb/s  conns_total=400  conns_active=400
+[11:40:09]   [11:40:09] [11:40:05] throughput=8.09 Gb/s  conns_total=400  conns_active=400
+[11:40:15]   [11:40:15] [11:40:11] throughput=8.19 Gb/s  conns_total=400  conns_active=400
+[11:40:21]   [11:40:21] [11:40:17] throughput=8.18 Gb/s  conns_total=400  conns_active=400
+[11:40:27]   [11:40:27] [11:40:23] throughput=8.02 Gb/s  conns_total=400  conns_active=400
+[11:40:32]   [11:40:32] [11:40:29] throughput=8.03 Gb/s  conns_total=400  conns_active=400
+[11:40:38]   [11:40:38] [11:40:35] throughput=8.05 Gb/s  conns_total=400  conns_active=400
+[11:40:44]   [11:40:44] [11:40:41] throughput=8.25 Gb/s  conns_total=400  conns_active=400
+[11:40:50]   [11:40:50] [11:40:47] throughput=8.21 Gb/s  conns_total=400  conns_active=400
+[11:40:56]   [11:40:56] [11:40:53] throughput=8.21 Gb/s  conns_total=400  conns_active=400
+[11:41:02]   [11:41:02] [11:40:59] throughput=8.18 Gb/s  conns_total=400  conns_active=300
+[11:41:08]   [11:41:08] [11:41:05] throughput=7.63 Gb/s  conns_total=780  conns_active=380
+[11:41:15]   [11:41:15] [11:41:11] throughput=8.08 Gb/s  conns_total=800  conns_active=400
+[11:41:20]   Test complete — 54 throughput samples collected
+[11:41:20] 
+[11:41:20] [8/8] Collecting final results...
+[11:41:28]   Saving receiver logs...
+[11:41:29]   Saving client logs...
+[11:41:47]   Saving Retina logs...
+[11:41:48]   Computing summary...
+[11:41:50] 
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 11:41:48 UTC 2026
+Duration: 300s
+Client replicas: 20
+Conns per pod: 20
+Total TCP streams: 400
+Payload size: 1024 bytes
+QPS per connection: 5k (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000000
+Throughput samples: 54 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:41:27] throughput=8.27 Gb/s  conns_total=800  conns_active=400
+[11:41:29] throughput=8.02 Gb/s  conns_total=800  conns_active=400
+[11:41:31] throughput=8.16 Gb/s  conns_total=800  conns_active=400
+[11:41:33] throughput=8.22 Gb/s  conns_total=800  conns_active=400
+[11:41:35] throughput=8.03 Gb/s  conns_total=800  conns_active=400
+[11:41:37] throughput=8.16 Gb/s  conns_total=800  conns_active=400
+[11:41:39] throughput=8.18 Gb/s  conns_total=800  conns_active=400
+[11:41:41] throughput=8.27 Gb/s  conns_total=800  conns_active=400
+[11:41:43] throughput=8.17 Gb/s  conns_total=800  conns_active=400
+[11:41:45] throughput=8.19 Gb/s  conns_total=800  conns_active=400
+
+=== PEAK THROUGHPUT ===
+  Peak: 8.36 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+61: lpm_trie  name retina_filter  flags 0x1
+62: lru_hash  name retina_conntrac  flags 0x0
+68: perf_event_array  name retina_packetpa  flags 0x0
+92: perf_event_array  name retina_packetpa  flags 0x0
+104: perf_event_array  name retina_packetpa  flags 0x0
+122: ringbuf  name events  flags 0x0
+123: ringbuf  name dns_events  flags 0x0
+148: perf_event_array  name retina_packetpa  flags 0x0
+163: perf_event_array  name retina_packetpa  flags 0x0
+218: perf_event_array  name retina_packetpa  flags 0x0
+306: perf_event_array  name retina_packetpa  flags 0x0
+360: perf_event_array  name retina_packetpa  flags 0x0
+417: perf_event_array  name retina_packetpa  flags 0x0
+    "name": "retina_filter",
+    "name": "retina_conntrac",
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:35:27 UTC 2026
+Node: aks-np32core-39298647-vmss000000
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-mqgsv   14m          124Mi           
+retina-agent-mqgsv   13m          124Mi           
+retina-agent-mqgsv   97m          121Mi           
+retina-agent-mqgsv   97m          121Mi           
+retina-agent-466wd   14m          120Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=104 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=122 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=123 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=148 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=163 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=218 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=306 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=360 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=408 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=413 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=417 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=68 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=92 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+[11:41:50] 
+[11:41:50] Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+[11:41:53] 
+[11:41:53] ═══════════════════════════════════════
+[11:41:53] Results saved to: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/mixed-web-spiky/rbt-pa-05291154/
+[11:41:53] ═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+kernel-env.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+resource-usage.txt
+retina-posttest.log
+retina-pretest.txt
+ringbuf-pressure.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-pa-05291154
+
+=== Scenario: low-load ===
+replicas=4 conns/pod=4 payload=1024B qps/conn=1k duration=300s
+[11:41:53] ============================================
+[11:41:53] Running test on: rbt-pa-05291154
+[11:41:53] Duration: 300s | Clients: 4 pods
+[11:41:53] Load profile: conns/pod=4 payload=1024B qps/conn=1k
+[11:41:53] Results: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/low-load/rbt-pa-05291154
+[11:41:53] KUBECONFIG: /tmp/kube-rbt-pa-05291154.yaml
+[11:41:53] ============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+namespace/perf-test configured
+[11:42:12] [1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+[11:42:17]   Receiver pod: tcp-receiver-6bd7d55766-kn745  node: aks-np32core-39298647-vmss000001
+[11:42:17] [2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+[11:42:19]   Waiting for bpftool to install (30s)...
+[11:42:49]   Monitor pod ready
+[11:42:49] [3/8] Capturing cluster metadata...
+[11:42:53] [4/8] Capturing Retina pre-test state...
+[11:42:54]   Retina pod: retina-agent-mqgsv
+[11:42:54] [4.5/8] Capturing kernel/sysctl network configuration...
+[11:43:16]   Kernel env captured
+[11:43:16] [5/8] Capturing eBPF map state (pre-test)...
+[11:43:21]   eBPF maps captured (87 entries)
+[11:43:21] [6/8] Capturing softirq baseline...
+[11:43:25]   Softirq baseline captured
+[11:43:25] [7/8] Deploying 4 client pods (duration=300s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 of 4 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 1 of 4 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 2 of 4 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 3 of 4 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+[11:43:29]   All client pods ready — test started at Fri May 29 11:43:29 UTC 2026
+[11:43:29] 
+[11:43:29]   Test running... sampling throughput every 5s:
+[11:43:30]   [11:43:30] [11:43:26] throughput=42.81 Mb/s  conns_total=16  conns_active=16
+[11:43:36]   [11:43:36] [11:43:32] throughput=117.50 Mb/s  conns_total=16  conns_active=16
+[11:43:41]   [11:43:41] [11:43:38] throughput=116.24 Mb/s  conns_total=16  conns_active=16
+[11:43:47]   [11:43:47] [11:43:44] throughput=117.31 Mb/s  conns_total=16  conns_active=16
+[11:43:53]   [11:43:53] [11:43:50] throughput=117.76 Mb/s  conns_total=16  conns_active=16
+[11:43:59]   [11:43:59] [11:43:54] throughput=117.17 Mb/s  conns_total=16  conns_active=16
+[11:44:04]   [11:44:04] [11:44:00] throughput=117.01 Mb/s  conns_total=16  conns_active=16
+[11:44:10]   [11:44:10] [11:44:06] throughput=117.25 Mb/s  conns_total=16  conns_active=16
+[11:44:16]   [11:44:16] [11:44:12] throughput=116.05 Mb/s  conns_total=16  conns_active=16
+[11:44:21]   [11:44:21] [11:44:18] throughput=117.52 Mb/s  conns_total=16  conns_active=16
+[11:44:27]   [11:44:27] [11:44:24] throughput=117.64 Mb/s  conns_total=16  conns_active=16
+[11:44:33]   [11:44:33] [11:44:30] throughput=117.75 Mb/s  conns_total=16  conns_active=16
+[11:44:39]   [11:44:39] [11:44:34] throughput=117.57 Mb/s  conns_total=16  conns_active=16
+[11:44:45]   [11:44:45] [11:44:40] throughput=117.31 Mb/s  conns_total=16  conns_active=16
+[11:44:50]   [11:44:50] [11:44:46] throughput=116.75 Mb/s  conns_total=16  conns_active=16
+[11:44:56]   [11:44:56] [11:44:52] throughput=117.88 Mb/s  conns_total=16  conns_active=16
+[11:45:02]   [11:45:02] [11:44:58] throughput=116.92 Mb/s  conns_total=16  conns_active=16
+[11:45:08]   [11:45:08] [11:45:04] throughput=117.12 Mb/s  conns_total=16  conns_active=16
+[11:45:14]   [11:45:14] [11:45:10] throughput=118.04 Mb/s  conns_total=16  conns_active=16
+[11:45:19]   [11:45:19] [11:45:16] throughput=117.82 Mb/s  conns_total=16  conns_active=16
+[11:45:25]   [11:45:25] [11:45:22] throughput=117.86 Mb/s  conns_total=16  conns_active=16
+[11:45:31]   [11:45:31] [11:45:28] throughput=117.40 Mb/s  conns_total=16  conns_active=16
+[11:45:37]   [11:45:37] [11:45:32] throughput=118.23 Mb/s  conns_total=16  conns_active=16
+[11:45:43]   [11:45:43] [11:45:38] throughput=116.22 Mb/s  conns_total=16  conns_active=16
+[11:45:48]   [11:45:48] [11:45:44] throughput=118.04 Mb/s  conns_total=16  conns_active=16
+[11:45:54]   [11:45:54] [11:45:50] throughput=117.66 Mb/s  conns_total=16  conns_active=16
+[11:46:00]   [11:46:00] [11:45:56] throughput=118.02 Mb/s  conns_total=16  conns_active=16
+[11:46:05]   [11:46:05] [11:46:02] throughput=117.41 Mb/s  conns_total=16  conns_active=16
+[11:46:11]   [11:46:11] [11:46:08] throughput=117.55 Mb/s  conns_total=16  conns_active=16
+[11:46:17]   [11:46:17] [11:46:14] throughput=118.15 Mb/s  conns_total=16  conns_active=16
+[11:46:23]   [11:46:23] [11:46:18] throughput=118.35 Mb/s  conns_total=16  conns_active=16
+[11:46:28]   [11:46:28] [11:46:24] throughput=117.68 Mb/s  conns_total=16  conns_active=16
+[11:46:34]   [11:46:34] [11:46:30] throughput=118.18 Mb/s  conns_total=16  conns_active=16
+[11:46:40]   [11:46:40] [11:46:36] throughput=118.44 Mb/s  conns_total=16  conns_active=16
+[11:46:46]   [11:46:46] [11:46:42] throughput=117.45 Mb/s  conns_total=16  conns_active=16
+[11:46:51]   [11:46:51] [11:46:48] throughput=117.93 Mb/s  conns_total=16  conns_active=16
+[11:46:57]   [11:46:57] [11:46:54] throughput=117.79 Mb/s  conns_total=16  conns_active=16
+[11:47:03]   [11:47:03] [11:47:00] throughput=118.34 Mb/s  conns_total=16  conns_active=16
+[11:47:09]   [11:47:09] [11:47:04] throughput=118.44 Mb/s  conns_total=16  conns_active=16
+[11:47:15]   [11:47:15] [11:47:10] throughput=117.70 Mb/s  conns_total=16  conns_active=16
+[11:47:20]   [11:47:20] [11:47:16] throughput=117.70 Mb/s  conns_total=16  conns_active=16
+[11:47:26]   [11:47:26] [11:47:22] throughput=118.14 Mb/s  conns_total=16  conns_active=16
+[11:47:32]   [11:47:32] [11:47:28] throughput=118.41 Mb/s  conns_total=16  conns_active=16
+[11:47:38]   [11:47:38] [11:47:34] throughput=118.50 Mb/s  conns_total=16  conns_active=16
+[11:47:44]   [11:47:44] [11:47:40] throughput=117.04 Mb/s  conns_total=16  conns_active=16
+[11:47:49]   [11:47:49] [11:47:46] throughput=118.96 Mb/s  conns_total=16  conns_active=16
+[11:47:55]   [11:47:55] [11:47:52] throughput=117.86 Mb/s  conns_total=16  conns_active=16
+[11:48:01]   [11:48:01] [11:47:56] throughput=117.93 Mb/s  conns_total=16  conns_active=16
+[11:48:07]   [11:48:07] [11:48:02] throughput=118.39 Mb/s  conns_total=16  conns_active=16
+[11:48:12]   [11:48:12] [11:48:08] throughput=117.35 Mb/s  conns_total=16  conns_active=16
+[11:48:18]   [11:48:18] [11:48:14] throughput=118.19 Mb/s  conns_total=16  conns_active=16
+[11:48:24]   [11:48:24] [11:48:20] throughput=118.82 Mb/s  conns_total=16  conns_active=16
+[11:48:30]   [11:48:30] [11:48:26] throughput=74.31 Mb/s  conns_total=16  conns_active=0
+[11:48:36]   [11:48:36] [11:48:32] throughput=118.25 Mb/s  conns_total=32  conns_active=16
+[11:48:41]   Test complete — 54 throughput samples collected
+[11:48:41] 
+[11:48:41] [8/8] Collecting final results...
+[11:48:48]   Saving receiver logs...
+[11:48:49]   Saving client logs...
+[11:48:53]   Saving Retina logs...
+[11:48:54]   Computing summary...
+[11:48:55] 
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 11:48:54 UTC 2026
+Duration: 300s
+Client replicas: 4
+Conns per pod: 4
+Total TCP streams: 16
+Payload size: 1024 bytes
+QPS per connection: 1k (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000001
+Throughput samples: 54 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:48:32] throughput=118.25 Mb/s  conns_total=32  conns_active=16
+[11:48:34] throughput=117.90 Mb/s  conns_total=32  conns_active=16
+[11:48:36] throughput=117.35 Mb/s  conns_total=32  conns_active=16
+[11:48:38] throughput=116.52 Mb/s  conns_total=32  conns_active=16
+[11:48:40] throughput=117.54 Mb/s  conns_total=32  conns_active=16
+[11:48:42] throughput=116.30 Mb/s  conns_total=32  conns_active=16
+[11:48:44] throughput=117.46 Mb/s  conns_total=32  conns_active=16
+[11:48:46] throughput=117.96 Mb/s  conns_total=32  conns_active=16
+[11:48:48] throughput=116.85 Mb/s  conns_total=32  conns_active=16
+[11:48:50] throughput=117.53 Mb/s  conns_total=32  conns_active=16
+
+=== PEAK THROUGHPUT ===
+  Peak: N/A Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+64: lpm_trie  name retina_filter  flags 0x1
+65: lru_hash  name retina_conntrac  flags 0x0
+71: perf_event_array  name retina_packetpa  flags 0x0
+91: perf_event_array  name retina_packetpa  flags 0x0
+151: perf_event_array  name retina_packetpa  flags 0x0
+169: ringbuf  name events  flags 0x0
+170: ringbuf  name dns_events  flags 0x0
+186: perf_event_array  name retina_packetpa  flags 0x0
+229: perf_event_array  name retina_packetpa  flags 0x0
+249: perf_event_array  name retina_packetpa  flags 0x0
+268: perf_event_array  name retina_packetpa  flags 0x0
+282: perf_event_array  name retina_packetpa  flags 0x0
+297: perf_event_array  name retina_packetpa  flags 0x0
+376: perf_event_array  name retina_packetpa  flags 0x0
+    "name": "retina_filter",
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:42:54 UTC 2026
+Node: aks-np32core-39298647-vmss000001
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-s7xvq   47m          123Mi           
+retina-agent-s7xvq   47m          123Mi           
+retina-agent-466wd   11m          116Mi           
+retina-agent-466wd   11m          116Mi           
+retina-agent-mqgsv   95m          115Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=151 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=169 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=170 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=186 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=229 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=249 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=268 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=282 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=297 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=376 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=378 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=383 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=71 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=91 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+[11:48:55] 
+[11:48:55] Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+[11:48:59] 
+[11:48:59] ═══════════════════════════════════════
+[11:48:59] Results saved to: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/low-load/rbt-pa-05291154/
+[11:48:59] ═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+kernel-env.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+resource-usage.txt
+retina-posttest.log
+retina-pretest.txt
+ringbuf-pressure.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-pa-05291154
+
+=== Scenario: microservice-fanout ===
+replicas=40 conns/pod=4 payload=256B qps/conn=0 duration=300s
+[11:49:00] ============================================
+[11:49:00] Running test on: rbt-pa-05291154
+[11:49:00] Duration: 300s | Clients: 40 pods
+[11:49:00] Load profile: conns/pod=4 payload=256B qps/conn=0
+[11:49:00] Results: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/microservice-fanout/rbt-pa-05291154
+[11:49:00] KUBECONFIG: /tmp/kube-rbt-pa-05291154.yaml
+[11:49:00] ============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+namespace/perf-test configured
+[11:49:20] [1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+[11:49:24]   Receiver pod: tcp-receiver-6bd7d55766-rv8gr  node: aks-np32core-39298647-vmss000000
+[11:49:24] [2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+[11:49:27]   Waiting for bpftool to install (30s)...
+[11:49:57]   Monitor pod ready
+[11:49:57] [3/8] Capturing cluster metadata...
+[11:50:00] [4/8] Capturing Retina pre-test state...
+[11:50:02]   Retina pod: retina-agent-466wd
+[11:50:02] [4.5/8] Capturing kernel/sysctl network configuration...
+[11:50:23]   Kernel env captured
+[11:50:23] [5/8] Capturing eBPF map state (pre-test)...
+[11:50:29]   eBPF maps captured (89 entries)
+[11:50:29] [6/8] Capturing softirq baseline...
+[11:50:33]   Softirq baseline captured
+[11:50:33] [7/8] Deploying 40 client pods (duration=300s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 out of 40 new replicas have been updated...
+Waiting for deployment "tcp-client" rollout to finish: 0 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 1 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 2 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 3 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 4 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 5 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 6 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 7 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 8 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 9 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 10 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 11 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 12 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 13 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 14 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 15 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 16 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 17 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 18 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 19 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 20 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 21 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 22 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 23 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 24 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 25 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 26 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 27 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 28 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 29 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 30 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 31 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 32 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 33 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 34 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 35 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 36 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 37 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 38 of 40 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 39 of 40 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+[11:50:56]   All client pods ready — test started at Fri May 29 11:50:56 UTC 2026
+[11:50:56] 
+[11:50:56]   Test running... sampling throughput every 5s:
+[11:50:57]   [11:50:57] [11:50:54] throughput=3.35 Gb/s  conns_total=160  conns_active=160
+[11:51:03]   [11:51:03] [11:51:00] throughput=3.97 Gb/s  conns_total=160  conns_active=160
+[11:51:08]   [11:51:08] [11:51:04] throughput=548.60 Mb/s  conns_total=160  conns_active=160
+[11:51:14]   [11:51:14] [11:51:10] throughput=589.57 Mb/s  conns_total=160  conns_active=160
+[11:51:20]   [11:51:20] [11:51:16] throughput=3.86 Gb/s  conns_total=160  conns_active=160
+[11:51:26]   [11:51:26] [11:51:22] throughput=554.86 Mb/s  conns_total=160  conns_active=160
+[11:51:31]   [11:51:31] [11:51:28] throughput=3.06 Gb/s  conns_total=160  conns_active=160
+[11:51:37]   [11:51:37] [11:51:34] throughput=564.38 Mb/s  conns_total=160  conns_active=160
+[11:51:43]   [11:51:43] [11:51:40] throughput=11.40 Gb/s  conns_total=160  conns_active=160
+[11:51:49]   [11:51:49] [11:51:46] throughput=11.09 Gb/s  conns_total=160  conns_active=160
+[11:51:55]   [11:51:55] [11:51:52] throughput=11.39 Gb/s  conns_total=160  conns_active=160
+[11:52:01]   [11:52:01] [11:51:58] throughput=2.44 Gb/s  conns_total=160  conns_active=160
+[11:52:06]   [11:52:06] [11:52:02] throughput=2.43 Gb/s  conns_total=160  conns_active=160
+[11:52:12]   [11:52:12] [11:52:08] throughput=2.28 Gb/s  conns_total=160  conns_active=160
+[11:52:18]   [11:52:18] [11:52:14] throughput=2.36 Gb/s  conns_total=160  conns_active=160
+[11:52:24]   [11:52:24] [11:52:20] throughput=2.44 Gb/s  conns_total=160  conns_active=160
+[11:52:29]   [11:52:29] [11:52:26] throughput=2.32 Gb/s  conns_total=160  conns_active=160
+[11:52:35]   [11:52:35] [11:52:32] throughput=2.46 Gb/s  conns_total=160  conns_active=160
+[11:52:41]   [11:52:41] [11:52:38] throughput=2.32 Gb/s  conns_total=160  conns_active=160
+[11:52:47]   [11:52:47] [11:52:44] throughput=2.43 Gb/s  conns_total=160  conns_active=160
+[11:52:53]   [11:52:53] [11:52:50] throughput=2.73 Gb/s  conns_total=160  conns_active=160
+[11:52:59]   [11:52:59] [11:52:56] throughput=2.41 Gb/s  conns_total=160  conns_active=160
+[11:53:05]   [11:53:05] [11:53:02] throughput=2.55 Gb/s  conns_total=160  conns_active=160
+[11:53:10]   [11:53:10] [11:53:06] throughput=2.40 Gb/s  conns_total=160  conns_active=160
+[11:53:16]   [11:53:16] [11:53:12] throughput=2.39 Gb/s  conns_total=160  conns_active=160
+[11:53:22]   [11:53:22] [11:53:18] throughput=2.48 Gb/s  conns_total=160  conns_active=160
+[11:53:28]   [11:53:28] [11:53:24] throughput=2.36 Gb/s  conns_total=160  conns_active=160
+[11:53:34]   [11:53:34] [11:53:30] throughput=2.44 Gb/s  conns_total=160  conns_active=160
+[11:53:40]   [11:53:40] [11:53:36] throughput=2.36 Gb/s  conns_total=160  conns_active=160
+[11:53:46]   [11:53:46] [11:53:42] throughput=2.36 Gb/s  conns_total=160  conns_active=160
+[11:53:51]   [11:53:51] [11:53:48] throughput=2.34 Gb/s  conns_total=160  conns_active=160
+[11:53:57]   [11:53:57] [11:53:54] throughput=2.41 Gb/s  conns_total=160  conns_active=160
+[11:54:03]   [11:54:03] [11:54:00] throughput=2.46 Gb/s  conns_total=160  conns_active=160
+[11:54:09]   [11:54:09] [11:54:06] throughput=2.35 Gb/s  conns_total=160  conns_active=160
+[11:54:15]   [11:54:15] [11:54:12] throughput=2.23 Gb/s  conns_total=160  conns_active=160
+[11:54:21]   [11:54:21] [11:54:18] throughput=2.27 Gb/s  conns_total=160  conns_active=160
+[11:54:26]   [11:54:26] [11:54:22] throughput=2.24 Gb/s  conns_total=160  conns_active=160
+[11:54:32]   [11:54:32] [11:54:28] throughput=2.35 Gb/s  conns_total=160  conns_active=160
+[11:54:38]   [11:54:38] [11:54:34] throughput=2.31 Gb/s  conns_total=160  conns_active=160
+[11:54:44]   [11:54:44] [11:54:40] throughput=2.37 Gb/s  conns_total=160  conns_active=160
+[11:54:50]   [11:54:50] [11:54:46] throughput=2.28 Gb/s  conns_total=160  conns_active=160
+[11:54:55]   [11:54:55] [11:54:52] throughput=2.32 Gb/s  conns_total=160  conns_active=160
+[11:55:01]   [11:55:01] [11:54:58] throughput=2.28 Gb/s  conns_total=160  conns_active=160
+[11:55:07]   [11:55:07] [11:55:04] throughput=2.51 Gb/s  conns_total=160  conns_active=160
+[11:55:13]   [11:55:13] [11:55:10] throughput=2.66 Gb/s  conns_total=160  conns_active=160
+[11:55:18]   [11:55:18] [11:55:14] throughput=2.40 Gb/s  conns_total=160  conns_active=160
+[11:55:25]   [11:55:25] [11:55:22] throughput=2.43 Gb/s  conns_total=160  conns_active=160
+[11:55:31]   [11:55:31] [11:55:28] throughput=2.46 Gb/s  conns_total=160  conns_active=160
+[11:55:38]   [11:55:38] [11:55:34] throughput=2.54 Gb/s  conns_total=160  conns_active=140
+[11:55:44]   [11:55:44] [11:55:40] throughput=3.59 Gb/s  conns_total=208  conns_active=124
+[11:55:50]   [11:55:50] [11:55:46] throughput=3.20 Gb/s  conns_total=252  conns_active=148
+[11:55:55]   [11:55:55] [11:55:52] throughput=3.58 Gb/s  conns_total=284  conns_active=136
+[11:56:01]   [11:56:01] [11:55:58] throughput=2.97 Gb/s  conns_total=320  conns_active=160
+[11:56:06]   Test complete — 53 throughput samples collected
+[11:56:06] 
+[11:56:06] [8/8] Collecting final results...
+[11:56:14]   Saving receiver logs...
+[11:56:15]   Saving client logs...
+[11:56:51]   Saving Retina logs...
+[11:56:52]   Computing summary...
+[11:56:55] 
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 11:56:52 UTC 2026
+Duration: 300s
+Client replicas: 40
+Conns per pod: 4
+Total TCP streams: 160
+Payload size: 256 bytes
+QPS per connection: 0 (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000000
+Throughput samples: 53 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:56:32] throughput=2.44 Gb/s  conns_total=320  conns_active=160
+[11:56:34] throughput=2.60 Gb/s  conns_total=320  conns_active=160
+[11:56:36] throughput=2.53 Gb/s  conns_total=320  conns_active=160
+[11:56:38] throughput=2.55 Gb/s  conns_total=320  conns_active=160
+[11:56:40] throughput=2.51 Gb/s  conns_total=320  conns_active=160
+[11:56:42] throughput=2.37 Gb/s  conns_total=320  conns_active=160
+[11:56:44] throughput=2.39 Gb/s  conns_total=320  conns_active=160
+[11:56:46] throughput=2.61 Gb/s  conns_total=320  conns_active=160
+[11:56:48] throughput=2.47 Gb/s  conns_total=320  conns_active=160
+[11:56:50] throughput=2.11 Gb/s  conns_total=320  conns_active=160
+
+=== PEAK THROUGHPUT ===
+  Peak: 11.53 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+61: lpm_trie  name retina_filter  flags 0x1
+62: lru_hash  name retina_conntrac  flags 0x0
+68: perf_event_array  name retina_packetpa  flags 0x0
+92: perf_event_array  name retina_packetpa  flags 0x0
+104: perf_event_array  name retina_packetpa  flags 0x0
+122: ringbuf  name events  flags 0x0
+123: ringbuf  name dns_events  flags 0x0
+148: perf_event_array  name retina_packetpa  flags 0x0
+163: perf_event_array  name retina_packetpa  flags 0x0
+218: perf_event_array  name retina_packetpa  flags 0x0
+306: perf_event_array  name retina_packetpa  flags 0x0
+360: perf_event_array  name retina_packetpa  flags 0x0
+417: perf_event_array  name retina_packetpa  flags 0x0
+423: perf_event_array  name retina_packetpa  flags 0x0
+463: perf_event_array  name retina_packetpa  flags 0x0
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:50:02 UTC 2026
+Node: aks-np32core-39298647-vmss000000
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-mqgsv   26m          121Mi           
+retina-agent-mqgsv   26m          121Mi           
+retina-agent-mqgsv   127m         118Mi           
+retina-agent-466wd   16m          118Mi           
+retina-agent-466wd   16m          118Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=104 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=122 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=123 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=148 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=163 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=218 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=306 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=360 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=417 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=423 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=454 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=459 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=463 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=68 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=92 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+[11:56:55] 
+[11:56:55] Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+[11:56:58] 
+[11:56:58] ═══════════════════════════════════════
+[11:56:58] Results saved to: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/microservice-fanout/rbt-pa-05291154/
+[11:56:58] ═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+kernel-env.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+resource-usage.txt
+retina-posttest.log
+retina-pretest.txt
+ringbuf-pressure.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-pa-05291154
+
+=== Scenario: bulk-ingest ===
+replicas=8 conns/pod=8 payload=65536B qps/conn=0 duration=300s
+[11:56:58] ============================================
+[11:56:58] Running test on: rbt-pa-05291154
+[11:56:58] Duration: 300s | Clients: 8 pods
+[11:56:58] Load profile: conns/pod=8 payload=65536B qps/conn=0
+[11:56:58] Results: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/bulk-ingest/rbt-pa-05291154
+[11:56:58] KUBECONFIG: /tmp/kube-rbt-pa-05291154.yaml
+[11:56:58] ============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+namespace/perf-test configured
+[11:57:18] [1/8] Deploying receiver...
+deployment.apps/tcp-receiver created
+service/tcp-receiver created
+Waiting for deployment "tcp-receiver" rollout to finish: 0 of 1 updated replicas are available...
+deployment "tcp-receiver" successfully rolled out
+[11:57:23]   Receiver pod: tcp-receiver-6bd7d55766-n9wtc  node: aks-np32core-39298647-vmss000001
+[11:57:23] [2/8] Deploying monitor pod (bpftool + softirq)...
+pod/softirq-monitor created
+pod/softirq-monitor condition met
+[11:57:26]   Waiting for bpftool to install (30s)...
+[11:57:56]   Monitor pod ready
+[11:57:56] [3/8] Capturing cluster metadata...
+[11:57:59] [4/8] Capturing Retina pre-test state...
+[11:58:01]   Retina pod: retina-agent-mqgsv
+[11:58:01] [4.5/8] Capturing kernel/sysctl network configuration...
+[11:58:21]   Kernel env captured
+[11:58:21] [5/8] Capturing eBPF map state (pre-test)...
+[11:58:27]   eBPF maps captured (91 entries)
+[11:58:27] [6/8] Capturing softirq baseline...
+[11:58:30]   Softirq baseline captured
+[11:58:30] [7/8] Deploying 8 client pods (duration=300s)...
+deployment.apps/tcp-client created
+Waiting for deployment "tcp-client" rollout to finish: 0 of 8 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 1 of 8 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 2 of 8 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 3 of 8 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 4 of 8 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 5 of 8 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 6 of 8 updated replicas are available...
+Waiting for deployment "tcp-client" rollout to finish: 7 of 8 updated replicas are available...
+deployment "tcp-client" successfully rolled out
+[11:58:35]   All client pods ready — test started at Fri May 29 11:58:35 UTC 2026
+[11:58:35] 
+[11:58:35]   Test running... sampling throughput every 5s:
+[11:58:36]   [11:58:36] [11:58:32] throughput=12.68 Gb/s  conns_total=64  conns_active=64
+[11:58:41]   [11:58:41] [11:58:38] throughput=14.76 Gb/s  conns_total=64  conns_active=64
+[11:58:47]   [11:58:47] [11:58:44] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[11:58:53]   [11:58:53] [11:58:50] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[11:58:59]   [11:58:59] [11:58:56] throughput=14.80 Gb/s  conns_total=64  conns_active=64
+[11:59:05]   [11:59:05] [11:59:00] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[11:59:10]   [11:59:10] [11:59:06] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[11:59:16]   [11:59:16] [11:59:12] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[11:59:22]   [11:59:22] [11:59:18] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[11:59:28]   [11:59:28] [11:59:24] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[11:59:33]   [11:59:33] [11:59:30] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[11:59:39]   [11:59:39] [11:59:36] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[11:59:45]   [11:59:45] [11:59:42] throughput=14.80 Gb/s  conns_total=64  conns_active=64
+[11:59:51]   [11:59:51] [11:59:46] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[11:59:57]   [11:59:57] [11:59:52] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:00:02]   [12:00:02] [11:59:58] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:00:08]   [12:00:08] [12:00:04] throughput=14.77 Gb/s  conns_total=64  conns_active=64
+[12:00:14]   [12:00:14] [12:00:10] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:00:20]   [12:00:20] [12:00:16] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:00:26]   [12:00:26] [12:00:22] throughput=14.77 Gb/s  conns_total=64  conns_active=64
+[12:00:31]   [12:00:31] [12:00:28] throughput=14.77 Gb/s  conns_total=64  conns_active=64
+[12:00:37]   [12:00:37] [12:00:34] throughput=14.77 Gb/s  conns_total=64  conns_active=64
+[12:00:48]   [12:00:48] [12:00:44] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:00:55]   [12:00:55] [12:00:52] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:01:01]   [12:01:01] [12:00:56] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:01:07]   [12:01:07] [12:01:04] throughput=14.76 Gb/s  conns_total=64  conns_active=64
+[12:01:13]   [12:01:13] [12:01:10] throughput=14.77 Gb/s  conns_total=64  conns_active=64
+[12:01:20]   [12:01:20] [12:01:16] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:01:26]   [12:01:26] [12:01:22] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:01:31]   [12:01:31] [12:01:28] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:01:37]   [12:01:37] [12:01:34] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:01:43]   [12:01:43] [12:01:38] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:01:49]   [12:01:49] [12:01:44] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:01:54]   [12:01:54] [12:01:50] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:02:00]   [12:02:00] [12:01:56] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:02:06]   [12:02:06] [12:02:02] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:02:12]   [12:02:12] [12:02:08] throughput=14.76 Gb/s  conns_total=64  conns_active=64
+[12:02:18]   [12:02:18] [12:02:14] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:02:23]   [12:02:23] [12:02:20] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:02:29]   [12:02:29] [12:02:26] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:02:35]   [12:02:35] [12:02:32] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:02:41]   [12:02:41] [12:02:36] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:02:47]   [12:02:47] [12:02:42] throughput=14.77 Gb/s  conns_total=64  conns_active=64
+[12:02:52]   [12:02:52] [12:02:48] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:02:58]   [12:02:58] [12:02:54] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:03:04]   [12:03:04] [12:03:00] throughput=14.79 Gb/s  conns_total=64  conns_active=64
+[12:03:10]   [12:03:10] [12:03:06] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:03:16]   [12:03:16] [12:03:12] throughput=14.77 Gb/s  conns_total=64  conns_active=64
+[12:03:21]   [12:03:21] [12:03:18] throughput=14.78 Gb/s  conns_total=64  conns_active=64
+[12:03:27]   [12:03:27] [12:03:24] throughput=14.76 Gb/s  conns_total=64  conns_active=64
+[12:03:33]   [12:03:33] [12:03:30] throughput=14.77 Gb/s  conns_total=64  conns_active=64
+[12:03:39]   [12:03:39] [12:03:34] throughput=14.74 Gb/s  conns_total=96  conns_active=32
+[12:03:45]   [12:03:45] [12:03:40] throughput=14.74 Gb/s  conns_total=128  conns_active=64
+[12:03:50]   Test complete — 53 throughput samples collected
+[12:03:50] 
+[12:03:50] [8/8] Collecting final results...
+[12:03:56]   Saving receiver logs...
+[12:03:57]   Saving client logs...
+[12:04:04]   Saving Retina logs...
+[12:04:05]   Computing summary...
+[12:04:07] 
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-pa-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-pa-05291154
+Date: Fri May 29 12:04:05 UTC 2026
+Duration: 300s
+Client replicas: 8
+Conns per pod: 8
+Total TCP streams: 64
+Payload size: 65536 bytes
+QPS per connection: 0 (0 means unlimited)
+Receiver node: aks-np32core-39298647-vmss000001
+Throughput samples: 53 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[12:03:44] throughput=14.76 Gb/s  conns_total=128  conns_active=64
+[12:03:46] throughput=14.75 Gb/s  conns_total=128  conns_active=64
+[12:03:48] throughput=14.76 Gb/s  conns_total=128  conns_active=64
+[12:03:50] throughput=14.77 Gb/s  conns_total=128  conns_active=64
+[12:03:52] throughput=14.74 Gb/s  conns_total=128  conns_active=64
+[12:03:54] throughput=14.77 Gb/s  conns_total=128  conns_active=64
+[12:03:56] throughput=14.77 Gb/s  conns_total=128  conns_active=64
+[12:03:58] throughput=14.76 Gb/s  conns_total=128  conns_active=64
+[12:04:00] throughput=14.77 Gb/s  conns_total=128  conns_active=64
+[12:04:02] throughput=14.77 Gb/s  conns_total=128  conns_active=64
+
+=== PEAK THROUGHPUT ===
+  Peak: 14.80 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+64: lpm_trie  name retina_filter  flags 0x1
+65: lru_hash  name retina_conntrac  flags 0x0
+71: perf_event_array  name retina_packetpa  flags 0x0
+91: perf_event_array  name retina_packetpa  flags 0x0
+151: perf_event_array  name retina_packetpa  flags 0x0
+169: ringbuf  name events  flags 0x0
+170: ringbuf  name dns_events  flags 0x0
+186: perf_event_array  name retina_packetpa  flags 0x0
+229: perf_event_array  name retina_packetpa  flags 0x0
+249: perf_event_array  name retina_packetpa  flags 0x0
+268: perf_event_array  name retina_packetpa  flags 0x0
+282: perf_event_array  name retina_packetpa  flags 0x0
+297: perf_event_array  name retina_packetpa  flags 0x0
+376: perf_event_array  name retina_packetpa  flags 0x0
+391: perf_event_array  name retina_packetpa  flags 0x0
+
+=== RETINA CONFIG ===
+  config.yaml: apiServer:
+  host: 0.0.0.0
+  port: 10093
+logLevel: info
+enabledPlugin: ["linuxutil","packetforward","packetparser","dns","dropreason"]
+metricsInterval: 10s
+metricsIntervalDuration: 10s
+enableTCX: 
+enableTelemetry: false
+enablePodLevel: true
+enableConntrackMetrics: false
+remoteContext: false
+enableAnnotations: false
+bypassLookupIPOfInterest: false
+dataAggregationLevel: low
+telemetryInterval: 15m
+dataSamplingRate: 1
+packetParserRingBuffer: disabled
+packetParserRingBufferSize: 8388608
+filterMapMaxEntries: 255
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:58:01 UTC 2026
+Node: aks-np32core-39298647-vmss000001
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+retina-agent-mqgsv   12m          116Mi           
+retina-agent-mqgsv   11m          116Mi           
+retina-agent-466wd   8m           114Mi           
+retina-agent-466wd   8m           114Mi           
+retina-agent-s7xvq   155m         113Mi           
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=151 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=169 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=170 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0
+  id=186 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=229 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=249 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=268 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=282 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=297 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=376 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=391 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=528 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=530 name=retina_dns_even type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=535 name=retina_dropreas type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=71 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+  id=91 name=retina_packetpa type=perf_event_array max_entries=32 bytes_memlock=4096
+[12:04:07] 
+[12:04:07] Cleaning up test pods...
+deployment.apps "tcp-client" deleted
+deployment.apps "tcp-receiver" deleted
+service "tcp-receiver" deleted
+pod "softirq-monitor" deleted
+[12:04:11] 
+[12:04:11] ═══════════════════════════════════════
+[12:04:11] Results saved to: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204/bulk-ingest/rbt-pa-05291154/
+[12:04:11] ═══════════════════════════════════════
+client-all.log
+cluster-info.txt
+ebpf-maps-posttest.txt
+ebpf-maps-pretest.txt
+kernel-env.txt
+net-rx-delta.txt
+proc-interrupts-before.txt
+proc-softirqs-after.txt
+proc-softirqs-before.txt
+receiver-full.log
+resource-usage.txt
+retina-posttest.log
+retina-pretest.txt
+ringbuf-pressure.txt
+softirq-after.txt
+softirq-before.txt
+summary.txt
+throughput-live.txt
+
+Done: rbt-pa-05291154
+
+Completed scenario run(s). Results root: /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291154/pa/rbt-pa-05291154/real-05291204
+[12:04:11] === All scenarios complete on rbt-pa-05291154 ===

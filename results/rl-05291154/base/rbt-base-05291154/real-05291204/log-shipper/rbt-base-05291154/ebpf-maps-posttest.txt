@@ -1,0 +1,136 @@
+=== eBPF Maps (post-test) ===
+Date: Fri May 29 11:33:48 UTC 2026
+
+--- All BPF maps ---
+76: lru_hash  name udp_recv_cache  flags 0x0
+	key 8B  value 32B  max_entries 2048  memlock 81920B
+	btf_id 103
+77: ringbuf  name events  flags 0x0
+	key 0B  value 0B  max_entries 4194304  memlock 0B
+78: ringbuf  name dns_events  flags 0x0
+	key 0B  value 0B  max_entries 2097152  memlock 0B
+79: percpu_hash  name sk_cache  flags 0x0
+	key 8B  value 20B  max_entries 4096  memlock 3178496B
+	btf_id 103
+80: lru_hash  name dns_query_cache  flags 0x0
+	key 8B  value 144B  max_entries 2048  memlock 311296B
+	btf_id 103
+81: array  name __force_export_  flags 0x0
+	key 4B  value 192B  max_entries 1  memlock 4096B
+	btf_id 103
+82: array  name config_map  flags 0x0
+	key 4B  value 24B  max_entries 1  memlock 4096B
+	btf_id 103
+83: percpu_array  name last_udp_event_  flags 0x0
+	key 4B  value 8B  max_entries 1  memlock 4096B
+	btf_id 103
+84: percpu_array  name last_tcp_event_  flags 0x0
+	key 4B  value 8B  max_entries 1  memlock 4096B
+	btf_id 103
+85: percpu_array  name last_dns_event_  flags 0x0
+	key 4B  value 8B  max_entries 1  memlock 4096B
+	btf_id 103
+86: array  name __force_export_  flags 0x0
+	key 4B  value 984B  max_entries 1  memlock 4096B
+	btf_id 103
+
+--- Retina map details (JSON) ---
+[
+  {
+    "id": 77,
+    "type": "ringbuf",
+    "name": "events",
+    "flags": 0,
+    "bytes_key": 0,
+    "bytes_value": 0,
+    "max_entries": 4194304,
+    "bytes_memlock": 0,
+    "frozen": 0
+  },
+  {
+    "id": 78,
+    "type": "ringbuf",
+    "name": "dns_events",
+    "flags": 0,
+    "bytes_key": 0,
+    "bytes_value": 0,
+    "max_entries": 2097152,
+    "bytes_memlock": 0,
+    "frozen": 0
+  },
+  {
+    "id": 83,
+    "type": "percpu_array",
+    "name": "last_udp_event_",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 8,
+    "max_entries": 1,
+    "bytes_memlock": 4096,
+    "frozen": 0,
+    "btf_id": 103
+  },
+  {
+    "id": 84,
+    "type": "percpu_array",
+    "name": "last_tcp_event_",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 8,
+    "max_entries": 1,
+    "bytes_memlock": 4096,
+    "frozen": 0,
+    "btf_id": 103
+  },
+  {
+    "id": 85,
+    "type": "percpu_array",
+    "name": "last_dns_event_",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 8,
+    "max_entries": 1,
+    "bytes_memlock": 4096,
+    "frozen": 0,
+    "btf_id": 103
+  }
+]
+
+--- Ring buffer & perf event array maps ---
+[
+  {
+    "id": 77,
+    "type": "ringbuf",
+    "name": "events",
+    "flags": 0,
+    "bytes_key": 0,
+    "bytes_value": 0,
+    "max_entries": 4194304,
+    "bytes_memlock": 0,
+    "frozen": 0
+  },
+  {
+    "id": 78,
+    "type": "ringbuf",
+    "name": "dns_events",
+    "flags": 0,
+    "bytes_key": 0,
+    "bytes_value": 0,
+    "max_entries": 2097152,
+    "bytes_memlock": 0,
+    "frozen": 0
+  }
+]
+
+--- BPF map memory summary ---
+76	udp_recv_cache	lru_hash	max_entries=2048	bytes_memlock=81920
+77	events	ringbuf	max_entries=4194304	bytes_memlock=0
+78	dns_events	ringbuf	max_entries=2097152	bytes_memlock=0
+79	sk_cache	percpu_hash	max_entries=4096	bytes_memlock=3178496
+80	dns_query_cache	lru_hash	max_entries=2048	bytes_memlock=311296
+81	__force_export_	array	max_entries=1	bytes_memlock=4096
+82	config_map	array	max_entries=1	bytes_memlock=4096
+83	last_udp_event_	percpu_array	max_entries=1	bytes_memlock=4096
+84	last_tcp_event_	percpu_array	max_entries=1	bytes_memlock=4096
+85	last_dns_event_	percpu_array	max_entries=1	bytes_memlock=4096
+86	__force_export_	array	max_entries=1	bytes_memlock=4096

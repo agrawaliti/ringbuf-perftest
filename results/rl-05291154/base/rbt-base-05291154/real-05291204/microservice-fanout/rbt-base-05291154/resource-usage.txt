@@ -1,0 +1,90 @@
+=== Fri May 29 11:50:18 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   240m         6%     1650Mi          13%       
+aks-nodepool1-92644760-vmss000001   232m         6%     1893Mi          16%       
+aks-nodepool1-92644760-vmss000002   276m         7%     1688Mi          14%       
+aks-np32core-13791378-vmss000000    507m         1%     2227Mi          1%        
+aks-np32core-13791378-vmss000001    284m         0%     2140Mi          1%        
+=== Fri May 29 11:50:50 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   240m         6%     1650Mi          13%       
+aks-nodepool1-92644760-vmss000001   232m         6%     1893Mi          16%       
+aks-nodepool1-92644760-vmss000002   276m         7%     1688Mi          14%       
+aks-np32core-13791378-vmss000000    507m         1%     2227Mi          1%        
+aks-np32core-13791378-vmss000001    284m         0%     2140Mi          1%        
+=== Fri May 29 11:51:22 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   306m         7%     1668Mi          14%       
+aks-nodepool1-92644760-vmss000001   266m         6%     1915Mi          16%       
+aks-nodepool1-92644760-vmss000002   389m         10%    1701Mi          14%       
+aks-np32core-13791378-vmss000000    31765m       100%   2254Mi          1%        
+aks-np32core-13791378-vmss000001    11256m       35%    2203Mi          1%        
+=== Fri May 29 11:51:54 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   306m         7%     1668Mi          14%       
+aks-nodepool1-92644760-vmss000001   266m         6%     1915Mi          16%       
+aks-nodepool1-92644760-vmss000002   389m         10%    1701Mi          14%       
+aks-np32core-13791378-vmss000000    31765m       100%   2254Mi          1%        
+aks-np32core-13791378-vmss000001    11256m       35%    2203Mi          1%        
+=== Fri May 29 11:52:27 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   218m         5%     1701Mi          14%       
+aks-nodepool1-92644760-vmss000001   222m         5%     1933Mi          16%       
+aks-nodepool1-92644760-vmss000002   285m         7%     1730Mi          14%       
+aks-np32core-13791378-vmss000000    31968m       101%   2287Mi          1%        
+aks-np32core-13791378-vmss000001    11688m       37%    2202Mi          1%        
+=== Fri May 29 11:52:59 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   222m         5%     1700Mi          14%       
+aks-nodepool1-92644760-vmss000001   221m         5%     1932Mi          16%       
+aks-nodepool1-92644760-vmss000002   285m         7%     1730Mi          14%       
+aks-np32core-13791378-vmss000000    31968m       101%   2259Mi          1%        
+aks-np32core-13791378-vmss000001    11688m       37%    2202Mi          1%        
+=== Fri May 29 11:53:31 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   228m         5%     1691Mi          14%       
+aks-nodepool1-92644760-vmss000001   225m         5%     1935Mi          16%       
+aks-nodepool1-92644760-vmss000002   285m         7%     1731Mi          14%       
+aks-np32core-13791378-vmss000000    31974m       101%   2360Mi          1%        
+aks-np32core-13791378-vmss000001    11712m       37%    2198Mi          1%        
+=== Fri May 29 11:54:03 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   231m         5%     1702Mi          14%       
+aks-nodepool1-92644760-vmss000001   210m         5%     1933Mi          16%       
+aks-nodepool1-92644760-vmss000002   302m         7%     1728Mi          14%       
+aks-np32core-13791378-vmss000000    31973m       101%   2395Mi          1%        
+aks-np32core-13791378-vmss000001    11785m       37%    2195Mi          1%        
+=== Fri May 29 11:54:36 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   231m         5%     1702Mi          14%       
+aks-nodepool1-92644760-vmss000001   210m         5%     1933Mi          16%       
+aks-nodepool1-92644760-vmss000002   302m         7%     1728Mi          14%       
+aks-np32core-13791378-vmss000000    31973m       101%   2395Mi          1%        
+aks-np32core-13791378-vmss000001    11785m       37%    2195Mi          1%        
+=== Fri May 29 11:55:08 UTC 2026 ===
+--- retina pods ---
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-92644760-vmss000000   233m         6%     1706Mi          14%       
+aks-nodepool1-92644760-vmss000001   226m         5%     1940Mi          16%       
+aks-nodepool1-92644760-vmss000002   296m         7%     1746Mi          14%       
+aks-np32core-13791378-vmss000000    31965m       101%   2387Mi          1%        
+aks-np32core-13791378-vmss000001    12058m       38%    2208Mi          1%        

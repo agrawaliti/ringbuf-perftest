@@ -1,0 +1,96 @@
+=== tcp-client-5c4c5d458-2wsfv ===
+[12:03:38] sending=2.40 Gb/s  conns=8
+[12:03:40] sending=1.49 Gb/s  conns=8
+[12:03:42] sending=1.43 Gb/s  conns=8
+[12:03:44] sending=1.45 Gb/s  conns=8
+[12:03:46] sending=1.36 Gb/s  conns=8
+[12:03:48] sending=1.53 Gb/s  conns=8
+[12:03:50] sending=1.47 Gb/s  conns=8
+[12:03:52] sending=1.61 Gb/s  conns=8
+[12:03:54] sending=1.65 Gb/s  conns=8
+[12:03:56] sending=1.45 Gb/s  conns=8
+
+=== tcp-client-5c4c5d458-59f2s ===
+2026/05/29 12:03:37 Starting client: target=tcp-receiver.perf-test.svc.cluster.local:8080 conns=8 duration=5m0s payload=65536
+[12:03:39] sending=2.50 Gb/s  conns=8
+[12:03:41] sending=2.68 Gb/s  conns=8
+[12:03:43] sending=2.76 Gb/s  conns=8
+[12:03:45] sending=2.62 Gb/s  conns=8
+[12:03:47] sending=2.86 Gb/s  conns=8
+[12:03:49] sending=2.84 Gb/s  conns=8
+[12:03:51] sending=2.47 Gb/s  conns=8
+[12:03:53] sending=2.60 Gb/s  conns=8
+[12:03:55] sending=2.57 Gb/s  conns=8
+
+=== tcp-client-5c4c5d458-5bnzw ===
+[12:03:39] sending=1.40 Gb/s  conns=8
+[12:03:41] sending=1.31 Gb/s  conns=8
+[12:03:43] sending=1.34 Gb/s  conns=8
+[12:03:45] sending=1.35 Gb/s  conns=8
+[12:03:47] sending=1.31 Gb/s  conns=8
+[12:03:49] sending=1.41 Gb/s  conns=8
+[12:03:51] sending=1.44 Gb/s  conns=8
+[12:03:53] sending=1.35 Gb/s  conns=8
+[12:03:55] sending=1.49 Gb/s  conns=8
+[12:03:57] sending=1.33 Gb/s  conns=8
+
+=== tcp-client-5c4c5d458-5lzg8 ===
+[12:03:39] sending=1.37 Gb/s  conns=8
+[12:03:41] sending=1.43 Gb/s  conns=8
+[12:03:43] sending=1.45 Gb/s  conns=8
+[12:03:45] sending=1.50 Gb/s  conns=8
+[12:03:47] sending=1.41 Gb/s  conns=8
+[12:03:49] sending=1.39 Gb/s  conns=8
+[12:03:51] sending=1.48 Gb/s  conns=8
+[12:03:53] sending=1.38 Gb/s  conns=8
+[12:03:55] sending=1.33 Gb/s  conns=8
+[12:03:57] sending=1.39 Gb/s  conns=8
+
+=== tcp-client-5c4c5d458-9cxnd ===
+[12:03:40] sending=2.21 Gb/s  conns=8
+[12:03:42] sending=2.02 Gb/s  conns=8
+[12:03:44] sending=2.00 Gb/s  conns=8
+[12:03:46] sending=2.05 Gb/s  conns=8
+[12:03:48] sending=1.85 Gb/s  conns=8
+[12:03:50] sending=2.05 Gb/s  conns=8
+[12:03:52] sending=2.19 Gb/s  conns=8
+[12:03:54] sending=2.11 Gb/s  conns=8
+[12:03:56] sending=2.04 Gb/s  conns=8
+[12:03:58] sending=2.13 Gb/s  conns=8
+
+=== tcp-client-5c4c5d458-k9cf5 ===
+[12:03:40] sending=2.44 Gb/s  conns=8
+[12:03:42] sending=2.50 Gb/s  conns=8
+[12:03:44] sending=2.37 Gb/s  conns=8
+[12:03:46] sending=2.16 Gb/s  conns=8
+[12:03:48] sending=2.31 Gb/s  conns=8
+[12:03:50] sending=2.21 Gb/s  conns=8
+[12:03:52] sending=2.30 Gb/s  conns=8
+[12:03:54] sending=2.08 Gb/s  conns=8
+[12:03:56] sending=2.38 Gb/s  conns=8
+[12:03:58] sending=2.20 Gb/s  conns=8
+
+=== tcp-client-5c4c5d458-pw7pn ===
+[12:03:42] sending=1.93 Gb/s  conns=8
+[12:03:44] sending=1.99 Gb/s  conns=8
+[12:03:46] sending=2.04 Gb/s  conns=8
+[12:03:48] sending=2.10 Gb/s  conns=8
+[12:03:50] sending=2.11 Gb/s  conns=8
+[12:03:52] sending=2.12 Gb/s  conns=8
+[12:03:54] sending=2.18 Gb/s  conns=8
+[12:03:56] sending=2.21 Gb/s  conns=8
+[12:03:58] sending=2.02 Gb/s  conns=8
+[12:04:00] sending=2.09 Gb/s  conns=8
+
+=== tcp-client-5c4c5d458-w9hxs ===
+[12:03:42] sending=1.33 Gb/s  conns=8
+[12:03:44] sending=1.54 Gb/s  conns=8
+[12:03:46] sending=1.47 Gb/s  conns=8
+[12:03:48] sending=1.35 Gb/s  conns=8
+[12:03:50] sending=1.46 Gb/s  conns=8
+[12:03:52] sending=1.25 Gb/s  conns=8
+[12:03:54] sending=1.31 Gb/s  conns=8
+[12:03:56] sending=1.30 Gb/s  conns=8
+[12:03:58] sending=1.22 Gb/s  conns=8
+[12:04:00] sending=1.17 Gb/s  conns=8
+

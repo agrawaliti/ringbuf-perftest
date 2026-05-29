@@ -1,0 +1,289 @@
+=== eBPF Maps (pre-test) ===
+Date: Fri May 29 11:05:38 UTC 2026
+
+--- All BPF maps ---
+61: lpm_trie  name retina_filter  flags 0x1
+	key 8B  value 1B  max_entries 255  memlock 4096B
+	btf_id 100
+62: lru_hash  name retina_conntrac  flags 0x0
+	key 16B  value 128B  max_entries 262144  memlock 37748736B
+	btf_id 101
+68: ringbuf  name retina_packetpa  flags 0x0
+	key 0B  value 0B  max_entries 8388608  memlock 0B
+86: percpu_hash  name retina_packetfo  flags 0x0
+	key 4B  value 16B  max_entries 2  memlock 4096B
+	btf_id 133
+87: ringbuf  name retina_packetpa  flags 0x0
+	key 0B  value 0B  max_entries 8388608  memlock 0B
+88: percpu_array  name tmp_dns_events  flags 0x0
+	key 4B  value 72B  max_entries 1  memlock 4096B
+	btf_id 139
+89: perf_event_array  name retina_dns_even  flags 0x0
+	key 4B  value 4B  max_entries 32  memlock 4096B
+91: array  name .bss  flags 0x400
+	key 4B  value 8B  max_entries 1  memlock 4096B
+	btf_id 141
+92: hash  name retina_dropreas  flags 0x0
+	key 4B  value 8B  max_entries 16384  memlock 262144B
+	btf_id 142
+93: percpu_hash  name retina_dropreas  flags 0x0
+	key 8B  value 16B  max_entries 512  memlock 266240B
+	btf_id 144
+94: perf_event_array  name retina_dropreas  flags 0x0
+	key 4B  value 4B  max_entries 32  memlock 4096B
+95: hash  name retina_dropreas  flags 0x0
+	key 4B  value 32B  max_entries 16384  memlock 655360B
+	btf_id 146
+96: hash  name retina_dropreas  flags 0x0
+	key 4B  value 32B  max_entries 16384  memlock 655360B
+	btf_id 149
+
+--- Retina map details (JSON) ---
+[
+  {
+    "id": 61,
+    "type": "lpm_trie",
+    "name": "retina_filter",
+    "flags": 1,
+    "bytes_key": 8,
+    "bytes_value": 1,
+    "max_entries": 255,
+    "bytes_memlock": 4096,
+    "frozen": 0,
+    "btf_id": 100
+  },
+  {
+    "id": 62,
+    "type": "lru_hash",
+    "name": "retina_conntrac",
+    "flags": 0,
+    "bytes_key": 16,
+    "bytes_value": 128,
+    "max_entries": 262144,
+    "bytes_memlock": 37748736,
+    "frozen": 0,
+    "btf_id": 101
+  },
+  {
+    "id": 68,
+    "type": "ringbuf",
+    "name": "retina_packetpa",
+    "flags": 0,
+    "bytes_key": 0,
+    "bytes_value": 0,
+    "max_entries": 8388608,
+    "bytes_memlock": 0,
+    "frozen": 0
+  },
+  {
+    "id": 86,
+    "type": "percpu_hash",
+    "name": "retina_packetfo",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 16,
+    "max_entries": 2,
+    "bytes_memlock": 4096,
+    "frozen": 0,
+    "btf_id": 133
+  },
+  {
+    "id": 87,
+    "type": "ringbuf",
+    "name": "retina_packetpa",
+    "flags": 0,
+    "bytes_key": 0,
+    "bytes_value": 0,
+    "max_entries": 8388608,
+    "bytes_memlock": 0,
+    "frozen": 0
+  },
+  {
+    "id": 88,
+    "type": "percpu_array",
+    "name": "tmp_dns_events",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 72,
+    "max_entries": 1,
+    "bytes_memlock": 4096,
+    "frozen": 0,
+    "btf_id": 139
+  },
+  {
+    "id": 89,
+    "type": "perf_event_array",
+    "name": "retina_dns_even",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 4,
+    "max_entries": 32,
+    "bytes_memlock": 4096,
+    "frozen": 0
+  },
+  {
+    "id": 92,
+    "type": "hash",
+    "name": "retina_dropreas",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 8,
+    "max_entries": 16384,
+    "bytes_memlock": 262144,
+    "frozen": 0,
+    "btf_id": 142
+  },
+  {
+    "id": 93,
+    "type": "percpu_hash",
+    "name": "retina_dropreas",
+    "flags": 0,
+    "bytes_key": 8,
+    "bytes_value": 16,
+    "max_entries": 512,
+    "bytes_memlock": 266240,
+    "frozen": 0,
+    "btf_id": 144
+  },
+  {
+    "id": 94,
+    "type": "perf_event_array",
+    "name": "retina_dropreas",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 4,
+    "max_entries": 32,
+    "bytes_memlock": 4096,
+    "frozen": 0
+  },
+  {
+    "id": 95,
+    "type": "hash",
+    "name": "retina_dropreas",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 32,
+    "max_entries": 16384,
+    "bytes_memlock": 655360,
+    "frozen": 0,
+    "btf_id": 146
+  },
+  {
+    "id": 96,
+    "type": "hash",
+    "name": "retina_dropreas",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 32,
+    "max_entries": 16384,
+    "bytes_memlock": 655360,
+    "frozen": 0,
+    "btf_id": 149
+  }
+]
+
+--- Ring buffer & perf event array maps ---
+[
+  {
+    "id": 68,
+    "type": "ringbuf",
+    "name": "retina_packetpa",
+    "flags": 0,
+    "bytes_key": 0,
+    "bytes_value": 0,
+    "max_entries": 8388608,
+    "bytes_memlock": 0,
+    "frozen": 0
+  },
+  {
+    "id": 87,
+    "type": "ringbuf",
+    "name": "retina_packetpa",
+    "flags": 0,
+    "bytes_key": 0,
+    "bytes_value": 0,
+    "max_entries": 8388608,
+    "bytes_memlock": 0,
+    "frozen": 0
+  },
+  {
+    "id": 89,
+    "type": "perf_event_array",
+    "name": "retina_dns_even",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 4,
+    "max_entries": 32,
+    "bytes_memlock": 4096,
+    "frozen": 0
+  },
+  {
+    "id": 94,
+    "type": "perf_event_array",
+    "name": "retina_dropreas",
+    "flags": 0,
+    "bytes_key": 4,
+    "bytes_value": 4,
+    "max_entries": 32,
+    "bytes_memlock": 4096,
+    "frozen": 0
+  }
+]
+
+--- BPF programs ---
+	btf_id 138
+408: socket_filter  name retina_dns_filt  tag 6395a60c41e3cee7  gpl
+	loaded_at 2026-05-29T11:05:33+0000  uid 0
+	xlated 12800B  jited 7952B  memlock 16384B  map_ids 88,89
+	btf_id 140
+409: kprobe  name inet_csk_accept  tag ee3f1b4178bc5345  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 120B  jited 79B  memlock 4096B  map_ids 92
+	btf_id 143
+410: kprobe  name inet_csk_accept  tag e9cbf914d4815f2f  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 1024B  jited 579B  memlock 4096B  map_ids 92,61,93,94
+	btf_id 145
+411: kprobe  name nf_conntrack_co  tag e7cfd171dbc5fe81  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 1200B  jited 675B  memlock 4096B  map_ids 95,61
+	btf_id 147
+412: kprobe  name nf_conntrack_co  tag d4493f7e7a23d884  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 600B  jited 337B  memlock 4096B  map_ids 95,93,94
+	btf_id 148
+413: kprobe  name nf_hook_slow  tag e7cfd171dbc5fe81  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 1200B  jited 675B  memlock 4096B  map_ids 96,61
+	btf_id 150
+414: kprobe  name nf_hook_slow_re  tag c04e6f05c04dca92  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 608B  jited 340B  memlock 4096B  map_ids 96,93,94
+	btf_id 151
+415: kprobe  name nf_nat_inet_fn  tag 19f4745aa6d8ad99  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 1200B  jited 675B  memlock 4096B  map_ids 95,61
+	btf_id 152
+416: kprobe  name nf_nat_inet_fn_  tag 6dd296693eab62a6  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 592B  jited 337B  memlock 4096B  map_ids 95,93,94
+	btf_id 153
+417: kprobe  name tcp_v4_connect_  tag 2a16d8cbdaca76d1  gpl
+	loaded_at 2026-05-29T11:05:35+0000  uid 0
+	xlated 256B  jited 145B  memlock 4096B  map_ids 93
+	btf_id 154
+
+--- BPF map memory summary ---
+61	retina_filter	lpm_trie	max_entries=255	bytes_memlock=4096
+62	retina_conntrac	lru_hash	max_entries=262144	bytes_memlock=37748736
+68	retina_packetpa	ringbuf	max_entries=8388608	bytes_memlock=0
+86	retina_packetfo	percpu_hash	max_entries=2	bytes_memlock=4096
+87	retina_packetpa	ringbuf	max_entries=8388608	bytes_memlock=0
+88	tmp_dns_events	percpu_array	max_entries=1	bytes_memlock=4096
+89	retina_dns_even	perf_event_array	max_entries=32	bytes_memlock=4096
+91	.bss	array	max_entries=1	bytes_memlock=4096
+92	retina_dropreas	hash	max_entries=16384	bytes_memlock=262144
+93	retina_dropreas	percpu_hash	max_entries=512	bytes_memlock=266240
+94	retina_dropreas	perf_event_array	max_entries=32	bytes_memlock=4096
+95	retina_dropreas	hash	max_entries=16384	bytes_memlock=655360
+96	retina_dropreas	hash	max_entries=16384	bytes_memlock=655360

@@ -1,0 +1,48 @@
+=== tcp-client-f668ddc68-6kg72 ===
+2026/05/29 11:47:55 Rate limit enabled: 1000 writes/s per connection
+[11:47:57] sending=30.65 Mb/s  conns=4
+[11:47:59] sending=31.03 Mb/s  conns=4
+[11:48:01] sending=30.86 Mb/s  conns=4
+[11:48:03] sending=30.61 Mb/s  conns=4
+[11:48:05] sending=31.05 Mb/s  conns=4
+[11:48:07] sending=31.06 Mb/s  conns=4
+[11:48:09] sending=30.68 Mb/s  conns=4
+[11:48:11] sending=30.81 Mb/s  conns=4
+[11:48:13] sending=30.83 Mb/s  conns=4
+
+=== tcp-client-f668ddc68-d4bp2 ===
+2026/05/29 11:47:55 Rate limit enabled: 1000 writes/s per connection
+[11:47:57] sending=30.58 Mb/s  conns=4
+[11:47:59] sending=30.87 Mb/s  conns=4
+[11:48:01] sending=30.87 Mb/s  conns=4
+[11:48:03] sending=30.28 Mb/s  conns=4
+[11:48:05] sending=30.91 Mb/s  conns=4
+[11:48:07] sending=30.83 Mb/s  conns=4
+[11:48:09] sending=30.51 Mb/s  conns=4
+[11:48:11] sending=30.49 Mb/s  conns=4
+[11:48:13] sending=30.59 Mb/s  conns=4
+
+=== tcp-client-f668ddc68-d4mhb ===
+[11:47:57] sending=30.85 Mb/s  conns=4
+[11:47:59] sending=30.98 Mb/s  conns=4
+[11:48:01] sending=30.90 Mb/s  conns=4
+[11:48:03] sending=30.90 Mb/s  conns=4
+[11:48:05] sending=30.74 Mb/s  conns=4
+[11:48:07] sending=30.57 Mb/s  conns=4
+[11:48:09] sending=30.69 Mb/s  conns=4
+[11:48:11] sending=30.55 Mb/s  conns=4
+[11:48:13] sending=30.63 Mb/s  conns=4
+[11:48:15] sending=30.58 Mb/s  conns=4
+
+=== tcp-client-f668ddc68-xr56v ===
+[11:47:57] sending=30.63 Mb/s  conns=4
+[11:47:59] sending=30.86 Mb/s  conns=4
+[11:48:01] sending=30.78 Mb/s  conns=4
+[11:48:03] sending=30.80 Mb/s  conns=4
+[11:48:05] sending=30.93 Mb/s  conns=4
+[11:48:07] sending=30.67 Mb/s  conns=4
+[11:48:09] sending=30.52 Mb/s  conns=4
+[11:48:11] sending=30.45 Mb/s  conns=4
+[11:48:13] sending=30.64 Mb/s  conns=4
+[11:48:15] sending=30.63 Mb/s  conns=4
+

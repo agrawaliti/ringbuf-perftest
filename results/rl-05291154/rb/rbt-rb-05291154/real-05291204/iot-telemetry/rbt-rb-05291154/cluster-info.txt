@@ -1,0 +1,63 @@
+=== Cluster Info ===
+Cluster: rbt-rb-05291154
+Resource Group: rbt-rb-05291154-rg
+Date: Fri May 29 11:20:02 UTC 2026
+K8s version: v1.34.7
+
+=== Nodes ===
+NAME                                STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+aks-nodepool1-25229578-vmss000000   Ready    <none>   22m   v1.34.7   10.224.0.6    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+aks-nodepool1-25229578-vmss000001   Ready    <none>   22m   v1.34.7   10.224.0.5    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+aks-nodepool1-25229578-vmss000002   Ready    <none>   22m   v1.34.7   10.224.0.4    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+aks-np32core-65984885-vmss000000    Ready    <none>   18m   v1.34.7   10.224.0.7    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+aks-np32core-65984885-vmss000001    Ready    <none>   18m   v1.34.7   10.224.0.8    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+
+=== Node details (np32core) ===
+{
+  "name": "aks-np32core-65984885-vmss000000",
+  "cpu": "32",
+  "memory": "131895068Ki"
+}
+{
+  "name": "aks-np32core-65984885-vmss000001",
+  "cpu": "32",
+  "memory": "131895068Ki"
+}
+
+=== Retina Pods ===
+NAME                 READY   STATUS             RESTARTS      AGE   IP           NODE                                NOMINATED NODE   READINESS GATES
+retina-agent-2lxmx   0/1     CrashLoopBackOff   5 (69s ago)   16m   10.224.0.6   aks-nodepool1-25229578-vmss000000   <none>           <none>
+retina-agent-6cv7b   0/1     CrashLoopBackOff   5 (80s ago)   16m   10.224.0.4   aks-nodepool1-25229578-vmss000002   <none>           <none>
+retina-agent-hh7xc   0/1     CrashLoopBackOff   5 (96s ago)   16m   10.224.0.7   aks-np32core-65984885-vmss000000    <none>           <none>
+retina-agent-jhr9j   0/1     CrashLoopBackOff   5 (76s ago)   16m   10.224.0.5   aks-nodepool1-25229578-vmss000001   <none>           <none>
+retina-agent-lfp5t   0/1     CrashLoopBackOff   5 (88s ago)   16m   10.224.0.8   aks-np32core-65984885-vmss000001    <none>           <none>
+
+=== Retina ConfigMap ===
+apiVersion: v1
+data:
+  config.yaml: "apiServer:\n  host: 0.0.0.0\n  port: 10093\nlogLevel: info\nenabledPlugin:
+    [\"linuxutil\",\"packetforward\",\"packetparser\",\"dns\",\"dropreason\"]\nmetricsInterval:
+    10s\nmetricsIntervalDuration: 10s\nenableTCX: \nenableTelemetry: false\nenablePodLevel:
+    true\nenableConntrackMetrics: false\nremoteContext: false\nenableAnnotations:
+    false\nbypassLookupIPOfInterest: false\ndataAggregationLevel: low\ntelemetryInterval:
+    15m\ndataSamplingRate: 1\npacketParserRingBuffer: enabled\npacketParserRingBufferSize:
+    8388608\nfilterMapMaxEntries: 255"
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: retina-perf
+    meta.helm.sh/release-namespace: kube-system
+  creationTimestamp: "2026-05-29T11:03:09Z"
+  labels:
+    app.kubernetes.io/component: config
+    app.kubernetes.io/instance: retina-perf
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: retina
+    app.kubernetes.io/part-of: retina
+    app.kubernetes.io/version: 0.0.1
+    helm.sh/chart: retina-v1.2.0
+    k8s-app: retina
+  name: retina-config
+  namespace: kube-system
+  resourceVersion: "3128"
+  uid: 479acb62-b413-42f2-beaa-5fec6b816cbf

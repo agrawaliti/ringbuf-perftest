@@ -1,0 +1,30 @@
+=== Cluster Info ===
+Cluster: rbt-base-05291154
+Resource Group: rbt-base-05291154-rg
+Date: Fri May 29 11:20:21 UTC 2026
+K8s version: v1.34.7
+
+=== Nodes ===
+NAME                                STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+aks-nodepool1-92644760-vmss000000   Ready    <none>   22m   v1.34.7   10.224.0.5    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+aks-nodepool1-92644760-vmss000001   Ready    <none>   22m   v1.34.7   10.224.0.6    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+aks-nodepool1-92644760-vmss000002   Ready    <none>   22m   v1.34.7   10.224.0.4    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+aks-np32core-13791378-vmss000000    Ready    <none>   20m   v1.34.7   10.224.0.7    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+aks-np32core-13791378-vmss000001    Ready    <none>   20m   v1.34.7   10.224.0.8    <none>        Ubuntu 22.04.5 LTS   5.15.0-1111-azure   containerd://1.7.31-1
+
+=== Node details (np32core) ===
+{
+  "name": "aks-np32core-13791378-vmss000000",
+  "cpu": "32",
+  "memory": "131895076Ki"
+}
+{
+  "name": "aks-np32core-13791378-vmss000001",
+  "cpu": "32",
+  "memory": "131895056Ki"
+}
+
+=== Retina Pods ===
+
+=== Retina ConfigMap ===
+No retina-config

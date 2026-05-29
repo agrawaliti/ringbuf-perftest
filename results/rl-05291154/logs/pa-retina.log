@@ -1,0 +1,45 @@
+[11:02:58] rbt-pa-05291154: installing Retina (packetParserRingBuffer=disabled)...
+============================================
+Setting up Retina on: rbt-pa-05291154
+Ring buffer mode:     disabled
+============================================
+WARNING: The behavior of this command has been altered by the following extension: aks-preview
+WARNING: Merged "rbt-pa-05291154" as current context in /tmp/kube-rbt-pa-05291154.yaml
+Release "retina-perf" does not exist. Installing it now.
+Pulled: ghcr.io/microsoft/retina/charts/retina:v1.2.0
+Digest: sha256:636d79c926644b2f5efb1c578df9057d8ea912dcceee29fc926fa11db73a5082
+NAME: retina-perf
+LAST DEPLOYED: Fri May 29 12:03:09 2026
+NAMESPACE: kube-system
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Installing retina service using helm: helm install retina ./deploy/standard/manifests/controller/helm/retina/ --namespace kube-system --dependency-update
+2. Cleaning up/uninstalling/deleting retina and dependencies related: 
+  helm uninstall retina -n kube-system
+
+Waiting for Retina pods to be ready...
+Waiting for daemon set "retina-agent" rollout to finish: 0 of 5 updated pods are available...
+Waiting for daemon set "retina-agent" rollout to finish: 1 of 5 updated pods are available...
+Waiting for daemon set "retina-agent" rollout to finish: 2 of 5 updated pods are available...
+Waiting for daemon set "retina-agent" rollout to finish: 3 of 5 updated pods are available...
+Waiting for daemon set "retina-agent" rollout to finish: 4 of 5 updated pods are available...
+daemon set "retina-agent" successfully rolled out
+
+Retina pod status:
+NAME                 READY   STATUS    RESTARTS   AGE   IP           NODE                                NOMINATED NODE   READINESS GATES
+retina-agent-466wd   1/1     Running   0          63s   10.224.0.7   aks-np32core-39298647-vmss000000    <none>           <none>
+retina-agent-bww8w   1/1     Running   0          63s   10.224.0.5   aks-nodepool1-30652473-vmss000002   <none>           <none>
+retina-agent-mqgsv   1/1     Running   0          63s   10.224.0.8   aks-np32core-39298647-vmss000001    <none>           <none>
+retina-agent-s7xvq   1/1     Running   0          63s   10.224.0.6   aks-nodepool1-30652473-vmss000000   <none>           <none>
+retina-agent-twv6g   1/1     Running   0          63s   10.224.0.4   aks-nodepool1-30652473-vmss000001   <none>           <none>
+
+Verifying packetparser config:
+ts=2026-05-29T11:03:23.960Z level=info caller=standard/daemon.go:253 msg="Initializing Pod controller"
+ts=2026-05-29T11:03:23.960Z level=info caller=standard/daemon.go:269 msg="Initializing Node controller"
+ts=2026-05-29T11:03:23.960Z level=info caller=standard/daemon.go:275 msg="Initializing Service controller"
+ts=2026-05-29T11:03:23.960Z level=info caller=standard/daemon.go:289 msg="Initializing MetricsConfig controller"
+ts=2026-05-29T11:03:23.960Z level=info caller=controllermanager/controllermanager.go:72 msg="Initializing controller manager ..."
+
+Retina setup complete for rbt-pa-05291154 (mode=disabled)
+[11:04:16] DONE: Retina on rbt-pa-05291154

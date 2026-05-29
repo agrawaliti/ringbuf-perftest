@@ -1,0 +1,126 @@
+=== Fri May 29 11:13:22 UTC 2026 ===
+--- retina pods ---
+  (metrics-server not available or no retina)
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   279m         7%     1655Mi          14%       
+aks-nodepool1-25229578-vmss000001   178m         4%     1575Mi          13%       
+aks-nodepool1-25229578-vmss000002   309m         8%     1830Mi          15%       
+aks-np32core-65984885-vmss000000    218m         0%     2016Mi          1%        
+aks-np32core-65984885-vmss000001    285m         0%     1968Mi          1%        
+=== Fri May 29 11:13:54 UTC 2026 ===
+--- retina pods ---
+  (metrics-server not available or no retina)
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   279m         7%     1655Mi          14%       
+aks-nodepool1-25229578-vmss000001   175m         4%     1615Mi          13%       
+aks-nodepool1-25229578-vmss000002   309m         8%     1830Mi          15%       
+aks-np32core-65984885-vmss000000    218m         0%     2016Mi          1%        
+aks-np32core-65984885-vmss000001    285m         0%     1968Mi          1%        
+=== Fri May 29 11:14:27 UTC 2026 ===
+--- retina pods ---
+NAME                 CPU(cores)   MEMORY(bytes)   
+retina-agent-2lxmx   127m         110Mi           
+retina-agent-6cv7b   90m          113Mi           
+retina-agent-hh7xc   14m          121Mi           
+retina-agent-jhr9j   100m         119Mi           
+retina-agent-lfp5t   62m          121Mi           
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   347m         8%     1792Mi          15%       
+aks-nodepool1-25229578-vmss000001   235m         6%     1716Mi          14%       
+aks-nodepool1-25229578-vmss000002   361m         9%     1968Mi          16%       
+aks-np32core-65984885-vmss000000    26230m       83%    2354Mi          1%        
+aks-np32core-65984885-vmss000001    9343m        29%    2094Mi          1%        
+=== Fri May 29 11:14:58 UTC 2026 ===
+--- retina pods ---
+NAME                 CPU(cores)   MEMORY(bytes)   
+retina-agent-2lxmx   97m          110Mi           
+retina-agent-6cv7b   90m          113Mi           
+retina-agent-hh7xc   15m          121Mi           
+retina-agent-jhr9j   100m         119Mi           
+retina-agent-lfp5t   62m          121Mi           
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   347m         8%     1792Mi          15%       
+aks-nodepool1-25229578-vmss000001   235m         6%     1716Mi          14%       
+aks-nodepool1-25229578-vmss000002   361m         9%     1968Mi          16%       
+aks-np32core-65984885-vmss000000    26230m       83%    2354Mi          1%        
+aks-np32core-65984885-vmss000001    9343m        29%    2094Mi          1%        
+=== Fri May 29 11:15:30 UTC 2026 ===
+--- retina pods ---
+NAME                 CPU(cores)   MEMORY(bytes)   
+retina-agent-2lxmx   17m          113Mi           
+retina-agent-6cv7b   8m           113Mi           
+retina-agent-jhr9j   20m          119Mi           
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   302m         7%     1808Mi          15%       
+aks-nodepool1-25229578-vmss000001   238m         6%     1727Mi          14%       
+aks-nodepool1-25229578-vmss000002   366m         9%     1967Mi          16%       
+aks-np32core-65984885-vmss000000    31627m       100%   2228Mi          1%        
+aks-np32core-65984885-vmss000001    13814m       43%    2112Mi          1%        
+=== Fri May 29 11:16:02 UTC 2026 ===
+--- retina pods ---
+NAME                 CPU(cores)   MEMORY(bytes)   
+retina-agent-2lxmx   17m          113Mi           
+retina-agent-6cv7b   8m           113Mi           
+retina-agent-jhr9j   20m          119Mi           
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   302m         7%     1808Mi          15%       
+aks-nodepool1-25229578-vmss000001   238m         6%     1727Mi          14%       
+aks-nodepool1-25229578-vmss000002   366m         9%     1967Mi          16%       
+aks-np32core-65984885-vmss000000    31627m       100%   2228Mi          1%        
+aks-np32core-65984885-vmss000001    13814m       43%    2112Mi          1%        
+=== Fri May 29 11:16:34 UTC 2026 ===
+--- retina pods ---
+  (metrics-server not available or no retina)
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   327m         8%     1705Mi          14%       
+aks-nodepool1-25229578-vmss000001   217m         5%     1625Mi          13%       
+aks-nodepool1-25229578-vmss000002   322m         8%     1871Mi          15%       
+aks-np32core-65984885-vmss000000    6775m        21%    2232Mi          1%        
+aks-np32core-65984885-vmss000001    12151m       38%    2019Mi          1%        
+=== Fri May 29 11:17:07 UTC 2026 ===
+--- retina pods ---
+  (metrics-server not available or no retina)
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   327m         8%     1705Mi          14%       
+aks-nodepool1-25229578-vmss000001   217m         5%     1625Mi          13%       
+aks-nodepool1-25229578-vmss000002   322m         8%     1871Mi          15%       
+aks-np32core-65984885-vmss000000    6775m        21%    2232Mi          1%        
+aks-np32core-65984885-vmss000001    12151m       38%    2019Mi          1%        
+=== Fri May 29 11:17:39 UTC 2026 ===
+--- retina pods ---
+NAME                 CPU(cores)   MEMORY(bytes)   
+retina-agent-2lxmx   295m         98Mi            
+retina-agent-6cv7b   153m         108Mi           
+retina-agent-hh7xc   175m         119Mi           
+retina-agent-jhr9j   324m         106Mi           
+retina-agent-lfp5t   164m         116Mi           
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   344m         8%     1833Mi          15%       
+aks-nodepool1-25229578-vmss000001   215m         5%     1762Mi          14%       
+aks-nodepool1-25229578-vmss000002   358m         9%     2031Mi          17%       
+aks-np32core-65984885-vmss000000    18864m       59%    2384Mi          1%        
+aks-np32core-65984885-vmss000001    12458m       39%    2120Mi          1%        
+=== Fri May 29 11:18:11 UTC 2026 ===
+--- retina pods ---
+NAME                 CPU(cores)   MEMORY(bytes)   
+retina-agent-2lxmx   295m         98Mi            
+retina-agent-6cv7b   153m         108Mi           
+retina-agent-hh7xc   175m         119Mi           
+retina-agent-jhr9j   324m         106Mi           
+retina-agent-lfp5t   164m         116Mi           
+--- nodes ---
+NAME                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+aks-nodepool1-25229578-vmss000000   309m         8%     1881Mi          15%       
+aks-nodepool1-25229578-vmss000001   192m         4%     1813Mi          15%       
+aks-nodepool1-25229578-vmss000002   326m         8%     2072Mi          17%       
+aks-np32core-65984885-vmss000000    31870m       100%   2405Mi          1%        
+aks-np32core-65984885-vmss000001    13879m       43%    2132Mi          1%        

@@ -1,0 +1,78 @@
+╔══════════════════════════════════════════════════════════════╗
+║ TEST SUMMARY: rbt-base-05291154
+╚══════════════════════════════════════════════════════════════╝
+
+Cluster: rbt-base-05291154
+Date: Fri May 29 11:34:03 UTC 2026
+Duration: 300s
+Client replicas: 12
+Conns per pod: 10
+Total TCP streams: 120
+Payload size: 16384 bytes
+QPS per connection: 400 (0 means unlimited)
+Receiver node: aks-np32core-13791378-vmss000001
+Throughput samples: 54 (5s interval)
+
+=== THROUGHPUT (last 10 reports from receiver) ===
+[11:33:43] throughput=6.28 Gb/s  conns_total=240  conns_active=120
+[11:33:45] throughput=6.27 Gb/s  conns_total=240  conns_active=120
+[11:33:47] throughput=6.29 Gb/s  conns_total=240  conns_active=120
+[11:33:49] throughput=6.28 Gb/s  conns_total=240  conns_active=120
+[11:33:51] throughput=6.28 Gb/s  conns_total=240  conns_active=120
+[11:33:53] throughput=6.28 Gb/s  conns_total=240  conns_active=120
+[11:33:55] throughput=6.28 Gb/s  conns_total=240  conns_active=120
+[11:33:57] throughput=6.28 Gb/s  conns_total=240  conns_active=120
+[11:33:59] throughput=6.29 Gb/s  conns_total=240  conns_active=120
+[11:34:01] throughput=6.28 Gb/s  conns_total=240  conns_active=120
+
+=== PEAK THROUGHPUT ===
+  Peak: 6.29 Gb/s
+
+=== SOFTIRQ DROPS ===
+
+  TOTAL softirq drops: 0
+
+=== eBPF MAP SIZES ===
+77: ringbuf  name events  flags 0x0
+78: ringbuf  name dns_events  flags 0x0
+    "type": "ringbuf",
+    "type": "ringbuf",
+    "type": "ringbuf",
+    "type": "ringbuf",
+77	events	ringbuf	max_entries=4194304	bytes_memlock=0
+78	dns_events	ringbuf	max_entries=2097152	bytes_memlock=0
+
+=== RETINA CONFIG ===
+  No Retina (baseline)
+
+=== KERNEL NET TUNABLE SNAPSHOT ===
+Date: Fri May 29 11:27:57 UTC 2026
+Node: aks-np32core-13791378-vmss000001
+--- Kernel release ---
+--- Key net.core/net.ipv4 sysctls ---
+net.core.rmem_default=1048576
+net.core.rmem_max=1048576
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+net.core.netdev_max_backlog=1000
+net.core.somaxconn=16384
+net.ipv4.tcp_rmem=4096	131072	6291456
+net.ipv4.tcp_wmem=4096	16384	4194304
+net.ipv4.udp_rmem_min=4096
+net.ipv4.udp_wmem_min=4096
+net.ipv4.tcp_max_syn_backlog=16384
+net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_moderate_rcvbuf=1
+--- Socket memory counters ---
+--- NIC queue/tuning (receiver node) ---
+
+=== RETINA RESOURCE USAGE (peak during test) ===
+aks-nodepool1-92644760-vmss000000   561m         14%    1512Mi          12%       
+aks-nodepool1-92644760-vmss000000   561m         14%    1512Mi          12%       
+aks-nodepool1-92644760-vmss000000   298m         7%     1551Mi          13%       
+aks-nodepool1-92644760-vmss000000   298m         7%     1551Mi          13%       
+aks-nodepool1-92644760-vmss000000   230m         5%     1536Mi          13%       
+
+=== RING BUFFER PRESSURE (peak during test) ===
+  id=77 name=events type=ringbuf max_entries=4194304 bytes_memlock=0
+  id=78 name=dns_events type=ringbuf max_entries=2097152 bytes_memlock=0

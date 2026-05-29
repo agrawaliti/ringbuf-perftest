@@ -1,0 +1,33 @@
+
+[1m╔══════════════════════════════════════════════════════════════╗[0m
+[1m║   Ring Buffer vs Perf Array — Parallel Real-Life Test        ║[0m
+[1m╚══════════════════════════════════════════════════════════════╝[0m
+
+[10:53:45] Subscription : 37deca37-c375-4a14-b90a-043849bd2bf1
+[10:53:45] Location     : canadacentral
+[10:53:45] Timestamp    : 05291153
+[10:53:45] Duration     : 300s per scenario
+[10:53:45] Scenario(s)  : all
+[10:53:45] Results root : /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291153
+[10:53:45] Log dir      : /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291153/logs
+
+[10:53:46] [0;32m✓[0m Subscription set
+
+[10:53:46] [1m[0;36m══ PHASE 1 — Creating 3 clusters in parallel ══[0m
+[10:53:46]   base : rbt-base-05291153  RG: rbt-base-05291153-rg
+[10:53:46]   pa   : rbt-pa-05291153   RG: rbt-pa-05291153-rg
+[10:53:46]   rb   : rbt-rb-05291153   RG: rbt-rb-05291153-rg
+
+[10:53:46]   Launching creation: base  -> /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291153/logs/base-create.log
+./8-cross-variant-scenarios.sh: line 93: CLUSTER_VAR: invalid indirect expansion
+[10:53:46]   Launching creation: pa  -> /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291153/logs/pa-create.log
+./8-cross-variant-scenarios.sh: line 93: CLUSTER_VAR: invalid indirect expansion
+[10:53:46]   Launching creation: rb  -> /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291153/logs/rb-create.log
+./8-cross-variant-scenarios.sh: line 93: CLUSTER_VAR: invalid indirect expansion
+[10:53:46]   Waiting for base cluster (pid=7465)...
+[10:53:46] [0;31m✗[0m   base cluster creation FAILED — check /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291153/logs/base-create.log
+[10:53:46]   Waiting for pa cluster (pid=7467)...
+[10:53:46] [0;31m✗[0m   pa cluster creation FAILED — check /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291153/logs/pa-create.log
+[10:53:46]   Waiting for rb cluster (pid=7469)...
+[10:53:46] [0;31m✗[0m   rb cluster creation FAILED — check /home/itiagrawal/Projects/ringbuf-perftest/results/rl-05291153/logs/rb-create.log
+[10:53:46] [0;31m✗[0m One or more clusters failed to create. Aborting.

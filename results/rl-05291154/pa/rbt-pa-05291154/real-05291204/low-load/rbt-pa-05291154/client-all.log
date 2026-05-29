@@ -1,0 +1,48 @@
+=== tcp-client-f668ddc68-csnfj ===
+[11:48:29] sending=29.40 Mb/s  conns=4
+[11:48:31] sending=29.54 Mb/s  conns=4
+[11:48:33] sending=29.40 Mb/s  conns=4
+[11:48:35] sending=29.43 Mb/s  conns=4
+[11:48:37] sending=28.85 Mb/s  conns=4
+[11:48:39] sending=28.81 Mb/s  conns=4
+[11:48:41] sending=28.85 Mb/s  conns=4
+[11:48:43] sending=29.01 Mb/s  conns=4
+[11:48:45] sending=29.43 Mb/s  conns=4
+[11:48:47] sending=29.30 Mb/s  conns=4
+
+=== tcp-client-f668ddc68-dxpzk ===
+[11:48:29] sending=29.22 Mb/s  conns=4
+[11:48:31] sending=29.64 Mb/s  conns=4
+[11:48:33] sending=29.80 Mb/s  conns=4
+[11:48:35] sending=29.14 Mb/s  conns=4
+[11:48:37] sending=29.82 Mb/s  conns=4
+[11:48:39] sending=29.64 Mb/s  conns=4
+[11:48:41] sending=29.68 Mb/s  conns=4
+[11:48:43] sending=29.56 Mb/s  conns=4
+[11:48:45] sending=29.43 Mb/s  conns=4
+[11:48:47] sending=29.48 Mb/s  conns=4
+
+=== tcp-client-f668ddc68-vwld9 ===
+[11:48:31] sending=29.52 Mb/s  conns=4
+[11:48:33] sending=29.50 Mb/s  conns=4
+[11:48:35] sending=29.56 Mb/s  conns=4
+[11:48:37] sending=29.17 Mb/s  conns=4
+[11:48:39] sending=29.05 Mb/s  conns=4
+[11:48:41] sending=28.42 Mb/s  conns=4
+[11:48:43] sending=29.09 Mb/s  conns=4
+[11:48:45] sending=29.37 Mb/s  conns=4
+[11:48:47] sending=29.29 Mb/s  conns=4
+[11:48:49] sending=29.43 Mb/s  conns=4
+
+=== tcp-client-f668ddc68-wf8kq ===
+[11:48:31] sending=29.81 Mb/s  conns=4
+[11:48:33] sending=29.76 Mb/s  conns=4
+[11:48:35] sending=29.50 Mb/s  conns=4
+[11:48:37] sending=29.73 Mb/s  conns=4
+[11:48:39] sending=28.94 Mb/s  conns=4
+[11:48:41] sending=29.48 Mb/s  conns=4
+[11:48:43] sending=29.30 Mb/s  conns=4
+[11:48:45] sending=29.59 Mb/s  conns=4
+[11:48:47] sending=29.60 Mb/s  conns=4
+[11:48:49] sending=29.15 Mb/s  conns=4
+

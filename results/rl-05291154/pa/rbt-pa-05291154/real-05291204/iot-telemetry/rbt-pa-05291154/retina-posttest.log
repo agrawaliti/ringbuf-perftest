@@ -1,0 +1,130 @@
+Defaulted container "retina" out of: retina, init-retina (init)
+Starting Retina Agent
+starting Retina daemon with legacy control plane v1.2.0
+init client-go
+api server:  https://rbt-pa-052-rbt-pa-05291154--37deca-t4kjln1r.hcp.canadacentral.azmk8s.io:443
+init logger
+ts=2026-05-29T11:21:00.699Z level=info caller=metrics/metrics.go:205 msg="Metrics initialized"
+ts=2026-05-29T11:21:00.700Z level=info caller=standard/daemon.go:142 msg="{data aggregation level 15 0 low <nil>}"
+ts=2026-05-29T11:21:00.700Z level=info caller=standard/daemon.go:160 msg="telemetry disabled"
+ts=2026-05-29T11:21:00.700Z level=info caller=standard/daemon.go:178 msg="Remote context is disabled, only pods deployed on the same node as retina-agent will be monitored"
+ts=2026-05-29T11:21:00.700Z level=info caller=standard/daemon.go:199 msg="pod selector when remote context is disabled{pod selector 15 0 spec.nodeName=aks-np32core-39298647-vmss000001,status.podIP!=10.224.0.8 <nil>}"
+ts=2026-05-29T11:21:00.799Z level=info caller=standard/daemon.go:231 msg="Kubernetes server version: v1.34.7"
+ts=2026-05-29T11:21:00.800Z level=info caller=filter/filter_map_linux.go:63 msg="Filter map max entries configured" maxEntries=255
+ts=2026-05-29T11:21:00.800Z level=info caller=standard/daemon.go:253 msg="Initializing Pod controller"
+ts=2026-05-29T11:21:00.800Z level=info caller=pod/controller.go:89 msg="Setting up Pod controller"
+ts=2026-05-29T11:21:00.800Z level=info caller=standard/daemon.go:269 msg="Initializing Node controller"
+ts=2026-05-29T11:21:00.800Z level=info caller=node/controller.go:94 msg="Setting up Node controller"
+ts=2026-05-29T11:21:00.800Z level=info caller=standard/daemon.go:275 msg="Initializing Service controller"
+ts=2026-05-29T11:21:00.800Z level=info caller=service/controller.go:95 msg="Setting up Service controller"
+ts=2026-05-29T11:21:00.800Z level=info caller=standard/daemon.go:289 msg="Initializing MetricsConfig controller"
+ts=2026-05-29T11:21:00.800Z level=info caller=pluginmanager/pluginmanager.go:61 msg="plugin manager has pod level enabled"
+ts=2026-05-29T11:21:00.800Z level=info caller=controllermanager/controllermanager.go:72 msg="Initializing controller manager ..."
+ts=2026-05-29T11:21:00.800Z level=info caller=servermanager/servermanager.go:33 msg="Initializing HTTP server ..."
+ts=2026-05-29T11:21:00.800Z level=info caller=server/server.go:42 msg="Setting up handlers"
+ts=2026-05-29T11:21:00.800Z level=info caller=server/server.go:57 msg="Completed handler setup"
+ts=2026-05-29T11:21:00.800Z level=info caller=servermanager/servermanager.go:37 msg="HTTP server initialized..."
+ts=2026-05-29T11:21:00.800Z level=info caller=standard/daemon.go:314 msg="Started controller manager"
+ts=2026-05-29T11:21:00.800Z level=info caller=server/server.go:208 msg="Starting metrics server"
+ts=2026-05-29T11:21:00.800Z level=info caller=servermanager/servermanager.go:42 msg="Starting HTTP server ..." host=0.0.0.0 port=10093
+ts=2026-05-29T11:21:00.801Z level=info caller=server/server.go:69 msg="starting HTTP server... on " addr=0.0.0.0:10093
+ts=2026-05-29T11:21:00.801Z level=info caller=manager/server.go:83 msg="starting server" name="health probe" addr=[::]:18081
+ts=2026-05-29T11:21:00.801Z level=info caller=pluginmanager/pluginmanager.go:124 msg="Starting plugin manager ..."
+ts=2026-05-29T11:21:00.801Z level=info caller=pluginmanager/pluginmanager.go:137 msg="starting watchers"
+ts=2026-05-29T11:21:00.801Z level=info caller=watchermanager/watchermanager.go:44 msg="watcher started" watcher_type=*endpoint.EndpointWatcher
+ts=2026-05-29T11:21:00.801Z level=info caller=server/server.go:247 msg="Serving metrics server" bindAddress=:18080 secure=false
+ts=2026-05-29T11:21:00.802Z level=info caller=watchermanager/watchermanager.go:44 msg="watcher started" watcher_type=*apiserver.ApiServerWatcher
+ts=2026-05-29T11:21:00.802Z level=info caller=controller/controller.go:204 msg="Starting EventSource" controller=pod controllerGroup= controllerKind=Pod source="kind source: *v1.Pod"
+ts=2026-05-29T11:21:00.802Z level=info caller=controller/controller.go:204 msg="Starting EventSource" controller=service controllerGroup= controllerKind=Service source="kind source: *v1.Service"
+ts=2026-05-29T11:21:00.802Z level=info caller=controller/controller.go:204 msg="Starting EventSource" controller=node controllerGroup= controllerKind=Node source="kind source: *v1.Node"
+ts=2026-05-29T11:21:00.802Z level=info caller=controller/controller.go:204 msg="Starting EventSource" controller=metricsconfiguration controllerGroup=retina.sh controllerKind=MetricsConfiguration source="kind source: *v1alpha1.MetricsConfiguration"
+ts=2026-05-29T11:21:00.802Z level=info caller=conntrack/conntrack_linux.go:106 msg="Starting Conntrack GC loop"
+W0529 11:21:00.809644       1 reflector.go:569] pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User "system:serviceaccount:kube-system:retina-agent" cannot list resource "metricsconfigurations" in API group "retina.sh" at the cluster scope
+level=error msg=k8sError error="pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: Failed to watch *v1alpha1.MetricsConfiguration: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User \"system:serviceaccount:kube-system:retina-agent\" cannot list resource \"metricsconfigurations\" in API group \"retina.sh\" at the cluster scope"
+W0529 11:21:01.750976       1 reflector.go:569] pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User "system:serviceaccount:kube-system:retina-agent" cannot list resource "metricsconfigurations" in API group "retina.sh" at the cluster scope
+level=error msg=k8sError error="pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: Failed to watch *v1alpha1.MetricsConfiguration: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User \"system:serviceaccount:kube-system:retina-agent\" cannot list resource \"metricsconfigurations\" in API group \"retina.sh\" at the cluster scope"
+ts=2026-05-29T11:21:02.079Z level=info caller=dropreason/dropreason_linux.go:132 msg="DropReason metric compiled"
+ts=2026-05-29T11:21:02.082Z level=info caller=dropreason/ebpfsetup_linux.go:69 msg="Distro check:" isMariner=false
+ts=2026-05-29T11:21:02.082Z level=info caller=dropreason/ebpfsetup_linux.go:78 msg="Detected kernel" version=5.15.0
+ts=2026-05-29T11:21:02.082Z level=info caller=dropreason/ebpfsetup_linux.go:82 msg="Ftrace status" enabled=true
+ts=2026-05-29T11:21:02.718Z level=info caller=common/common_linux.go:79 msg="perf reader created" Map=PerfEventArray(retina_dropreason_events)#14 PageSize=4096 BufferSize=65536
+ts=2026-05-29T11:21:02.790Z level=info caller=dropreason/ebpfsetup_linux.go:124 msg="Attached kprobe" program=nf_hook_slow
+ts=2026-05-29T11:21:02.881Z level=info caller=dropreason/ebpfsetup_linux.go:124 msg="Attached kprobe" program=nf_nat_inet_fn
+ts=2026-05-29T11:21:02.982Z level=info caller=dropreason/ebpfsetup_linux.go:124 msg="Attached kprobe" program=__nf_conntrack_confirm
+ts=2026-05-29T11:21:03.009Z level=info caller=dropreason/ebpfsetup_linux.go:124 msg="Attached kprobe" program=inet_csk_accept
+ts=2026-05-29T11:21:03.199Z level=info caller=dropreason/ebpfsetup_linux.go:137 msg="Attached kretprobe" program=nf_nat_inet_fn
+ts=2026-05-29T11:21:03.379Z level=info caller=dropreason/ebpfsetup_linux.go:137 msg="Attached kretprobe" program=__nf_conntrack_confirm
+ts=2026-05-29T11:21:03.417Z level=info caller=dropreason/ebpfsetup_linux.go:137 msg="Attached kretprobe" program=nf_hook_slow
+ts=2026-05-29T11:21:03.500Z level=info caller=dropreason/ebpfsetup_linux.go:137 msg="Attached kretprobe" program=inet_csk_accept
+ts=2026-05-29T11:21:03.603Z level=info caller=dropreason/ebpfsetup_linux.go:137 msg="Attached kretprobe" program=tcp_v4_connect
+ts=2026-05-29T11:21:03.603Z level=info caller=pluginmanager/pluginmanager.go:116 msg="Reconciled plugin" name=dropreason
+ts=2026-05-29T11:21:03.603Z level=info caller=pluginmanager/pluginmanager.go:174 msg="starting plugin dropreason"
+ts=2026-05-29T11:21:03.603Z level=info caller=dropreason/dropreason_linux.go:194 msg="Start listening for drop reason events..."
+ts=2026-05-29T11:21:03.603Z level=info caller=linuxutil/linuxutil_linux.go:48 msg="Initializing linuxutil plugin..."
+ts=2026-05-29T11:21:03.603Z level=info caller=pluginmanager/pluginmanager.go:116 msg="Reconciled plugin" name=linuxutil
+ts=2026-05-29T11:21:03.603Z level=info caller=packetforward/packetforward_linux.go:104 msg="Packet forwarding metric header generated"
+ts=2026-05-29T11:21:03.603Z level=info caller=dropreason/dropreason_linux.go:200 msg="setting up enricher since pod level is enabled"
+ts=2026-05-29T11:21:03.604Z level=info caller=pluginmanager/pluginmanager.go:174 msg="starting plugin linuxutil"
+ts=2026-05-29T11:21:03.604Z level=info caller=linuxutil/linuxutil_linux.go:63 msg="Running linuxutil plugin..."
+W0529 11:21:03.768987       1 reflector.go:569] pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User "system:serviceaccount:kube-system:retina-agent" cannot list resource "metricsconfigurations" in API group "retina.sh" at the cluster scope
+level=error msg=k8sError error="pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: Failed to watch *v1alpha1.MetricsConfiguration: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User \"system:serviceaccount:kube-system:retina-agent\" cannot list resource \"metricsconfigurations\" in API group \"retina.sh\" at the cluster scope"
+ts=2026-05-29T11:21:04.597Z level=info caller=packetforward/packetforward_linux.go:139 msg="Packet forwarding metric compiled"
+ts=2026-05-29T11:21:04.599Z level=info caller=packetforward/packetforward_linux.go:180 msg="Packet forwarding metric initialized"
+ts=2026-05-29T11:21:04.599Z level=info caller=pluginmanager/pluginmanager.go:116 msg="Reconciled plugin" name=packetforward
+ts=2026-05-29T11:21:04.599Z level=info caller=packetparser/packetparser_linux.go:127 msg="data aggregation level" level=low
+ts=2026-05-29T11:21:04.599Z level=info caller=packetparser/packetparser_linux.go:131 msg="sampling rate" rate=1
+ts=2026-05-29T11:21:04.599Z level=info caller=pluginmanager/pluginmanager.go:174 msg="starting plugin packetforward"
+ts=2026-05-29T11:21:04.599Z level=info caller=packetforward/packetforward_linux.go:185 msg="Start collecting packet forward metrics"
+ts=2026-05-29T11:21:04.599Z level=info caller=packetparser/packetparser_linux.go:139 msg="PacketParser header generated at" path=/go/src/github.com/microsoft/retina/pkg/plugin/packetparser/_cprog/dynamic.h
+ts=2026-05-29T11:21:06.020Z level=info caller=packetparser/packetparser_linux.go:226 msg="PacketParser metric compiled"
+ts=2026-05-29T11:21:06.020Z level=info caller=packetparser/packetparser_linux.go:394 msg="Stopping packet parser"
+ts=2026-05-29T11:21:06.021Z level=info caller=packetparser/packetparser_linux.go:436 msg="Stopped packet parser"
+ts=2026-05-29T11:21:07.017Z level=info caller=packetparser/packetparser_linux.go:305 msg="Initializing Perf Reader"
+ts=2026-05-29T11:21:07.020Z level=info caller=common/common_linux.go:79 msg="perf reader created" Map=PerfEventArray(retina_packetparser_events)#85 PageSize=4096 BufferSize=131072
+ts=2026-05-29T11:21:07.021Z level=info caller=packetparser/packetparser_linux.go:328 msg="EnableTCX=auto: TCX not supported, will use traditional TC attachment"
+ts=2026-05-29T11:21:07.021Z level=info caller=pluginmanager/pluginmanager.go:116 msg="Reconciled plugin" name=packetparser
+ts=2026-05-29T11:21:07.021Z level=info caller=pluginmanager/pluginmanager.go:174 msg="starting plugin packetparser"
+ts=2026-05-29T11:21:07.021Z level=info caller=packetparser/packetparser_linux.go:343 msg="Starting packet parser"
+ts=2026-05-29T11:21:07.021Z level=info caller=packetparser/packetparser_linux.go:345 msg="setting up enricher since pod level is enabled"
+ts=2026-05-29T11:21:07.021Z level=info caller=packetparser/packetparser_linux.go:365 msg="Attaching bpf program to default interface of k8s Node in node namespace"
+ts=2026-05-29T11:21:07.022Z level=info caller=packetparser/packetparser_linux.go:376 msg="Attaching Packetparser" outgoingLink.Index=2 outgoingLink.Name=eth0 outgoingLink.HardwareAddr=00:22:48:b3:31:94
+ts=2026-05-29T11:21:07.023Z level=info caller=packetparser/packetparser_linux.go:769 msg="Started packet parser"
+ts=2026-05-29T11:21:07.687Z level=info caller=common/common_linux.go:79 msg="perf reader created" Map=PerfEventArray(retina_dns_events)#113 PageSize=4096 BufferSize=33554432
+ts=2026-05-29T11:21:07.687Z level=info caller=dns/dns_linux.go:103 msg="DNS plugin initialized"
+ts=2026-05-29T11:21:07.687Z level=info caller=pluginmanager/pluginmanager.go:116 msg="Reconciled plugin" name=dns
+ts=2026-05-29T11:21:07.687Z level=info caller=pluginmanager/pluginmanager.go:180 msg="successfully started pluginmanager"
+ts=2026-05-29T11:21:07.687Z level=info caller=pluginmanager/pluginmanager.go:174 msg="starting plugin dns"
+W0529 11:21:08.747501       1 reflector.go:569] pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User "system:serviceaccount:kube-system:retina-agent" cannot list resource "metricsconfigurations" in API group "retina.sh" at the cluster scope
+level=error msg=k8sError error="pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: Failed to watch *v1alpha1.MetricsConfiguration: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User \"system:serviceaccount:kube-system:retina-agent\" cannot list resource \"metricsconfigurations\" in API group \"retina.sh\" at the cluster scope"
+W0529 11:21:15.594922       1 reflector.go:569] pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User "system:serviceaccount:kube-system:retina-agent" cannot list resource "metricsconfigurations" in API group "retina.sh" at the cluster scope
+level=error msg=k8sError error="pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: Failed to watch *v1alpha1.MetricsConfiguration: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User \"system:serviceaccount:kube-system:retina-agent\" cannot list resource \"metricsconfigurations\" in API group \"retina.sh\" at the cluster scope"
+W0529 11:21:29.477738       1 reflector.go:569] pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User "system:serviceaccount:kube-system:retina-agent" cannot list resource "metricsconfigurations" in API group "retina.sh" at the cluster scope
+level=error msg=k8sError error="pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: Failed to watch *v1alpha1.MetricsConfiguration: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User \"system:serviceaccount:kube-system:retina-agent\" cannot list resource \"metricsconfigurations\" in API group \"retina.sh\" at the cluster scope"
+ts=2026-05-29T11:21:31.102Z level=info caller=log/warning_handler.go:65 msg="v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+ts=2026-05-29T11:21:31.120Z level=info caller=apiserver/apiserver.go:133 msg="New Apiserver IPs:" ip=4.229.170.170
+ts=2026-05-29T11:21:31.121Z level=info caller=apiserver/apiserver.go:133 msg="New Apiserver IPs:" ip=10.0.0.1
+ts=2026-05-29T11:22:00.823Z level=info caller=log/warning_handler.go:65 msg="v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+W0529 11:22:04.177715       1 reflector.go:569] pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User "system:serviceaccount:kube-system:retina-agent" cannot list resource "metricsconfigurations" in API group "retina.sh" at the cluster scope
+level=error msg=k8sError error="pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: Failed to watch *v1alpha1.MetricsConfiguration: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User \"system:serviceaccount:kube-system:retina-agent\" cannot list resource \"metricsconfigurations\" in API group \"retina.sh\" at the cluster scope"
+ts=2026-05-29T11:22:30.825Z level=info caller=log/warning_handler.go:65 msg="v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+W0529 11:22:38.441753       1 reflector.go:569] pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User "system:serviceaccount:kube-system:retina-agent" cannot list resource "metricsconfigurations" in API group "retina.sh" at the cluster scope
+level=error msg=k8sError error="pkg/mod/k8s.io/client-go@v0.32.4/tools/cache/reflector.go:251: Failed to watch *v1alpha1.MetricsConfiguration: failed to list *v1alpha1.MetricsConfiguration: metricsconfigurations.retina.sh is forbidden: User \"system:serviceaccount:kube-system:retina-agent\" cannot list resource \"metricsconfigurations\" in API group \"retina.sh\" at the cluster scope"
+ts=2026-05-29T11:23:00.802Z level=error caller=controller/controller.go:216 msg="Could not wait for Cache to sync" controller=metricsconfiguration controllerGroup=retina.sh controllerKind=MetricsConfiguration source="kind source: *v1alpha1.MetricsConfiguration" error="failed to wait for metricsconfiguration caches to sync kind source: *v1alpha1.MetricsConfiguration: timed out waiting for cache to be synced for Kind *v1alpha1.MetricsConfiguration"
+ts=2026-05-29T11:23:00.802Z level=error caller=controller/controller.go:216 msg="Could not wait for Cache to sync" controller=service controllerGroup= controllerKind=Service source="kind source: *v1.Service" error="failed to wait for service caches to sync kind source: *v1.Service: timed out waiting for cache to be synced for Kind *v1.Service"
+ts=2026-05-29T11:23:00.802Z level=info caller=manager/internal.go:538 msg="Stopping and waiting for non leader election runnables"
+ts=2026-05-29T11:23:00.802Z level=error caller=source/kind.go:76 msg="failed to get informer from cache" error="Timeout: failed waiting for *v1alpha1.MetricsConfiguration Informer to sync"
+ts=2026-05-29T11:23:00.802Z level=info caller=manager/internal.go:542 msg="Stopping and waiting for leader election runnables"
+ts=2026-05-29T11:23:00.802Z level=info caller=controller/controller.go:239 msg="Starting Controller" controller=node controllerGroup= controllerKind=Node
+ts=2026-05-29T11:23:00.802Z level=info caller=controller/controller.go:248 msg="Starting workers" controller=node controllerGroup= controllerKind=Node worker count=1
+ts=2026-05-29T11:23:00.802Z level=info caller=controller/controller.go:268 msg="Shutdown signal received, waiting for all workers to finish" controller=node controllerGroup= controllerKind=Node
+ts=2026-05-29T11:23:00.802Z level=error caller=manager/internal.go:512 msg="error received after stop sequence was engaged" error="failed to wait for service caches to sync kind source: *v1.Service: timed out waiting for cache to be synced for Kind *v1.Service"
+ts=2026-05-29T11:23:00.803Z level=info caller=controller/controller.go:270 msg="All workers finished" controller=node controllerGroup= controllerKind=Node
+ts=2026-05-29T11:23:00.803Z level=error caller=controller/controller.go:216 msg="Could not wait for Cache to sync" controller=pod controllerGroup= controllerKind=Pod source="kind source: *v1.Pod" error="failed to wait for pod caches to sync kind source: *v1.Pod: timed out waiting for cache to be synced for Kind *v1.Pod"
+ts=2026-05-29T11:23:00.803Z level=info caller=manager/internal.go:550 msg="Stopping and waiting for caches"
+ts=2026-05-29T11:23:00.803Z level=error caller=manager/internal.go:512 msg="error received after stop sequence was engaged" error="failed to wait for pod caches to sync kind source: *v1.Pod: timed out waiting for cache to be synced for Kind *v1.Pod"
+ts=2026-05-29T11:23:00.804Z level=info caller=manager/internal.go:554 msg="Stopping and waiting for webhooks"
+ts=2026-05-29T11:23:00.805Z level=info caller=manager/internal.go:557 msg="Stopping and waiting for HTTP servers"
+ts=2026-05-29T11:23:00.805Z level=info caller=server/server.go:254 msg="Shutting down metrics server with timeout of 1 minute"
+ts=2026-05-29T11:23:00.805Z level=info caller=manager/server.go:68 msg="shutting down server" name="health probe" addr=[::]:18081
+ts=2026-05-29T11:23:00.805Z level=info caller=manager/internal.go:561 msg="Wait completed, proceeding to shutdown the manager"
+ts=2026-05-29T11:23:00.805Z level=fatal caller=standard/daemon.go:318 msg="unable to start manager{error 26 0  failed to wait for metricsconfiguration caches to sync kind source: *v1alpha1.MetricsConfiguration: timed out waiting for cache to be synced for Kind *v1alpha1.MetricsConfiguration}"
